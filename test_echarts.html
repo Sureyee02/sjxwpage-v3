@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Test</title></head>
+<body>
+<div id="test" style="width:600px;height:400px;"></div>
+<script src="./echarts.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  try {
+    var chart = echarts.init(document.getElementById('test'));
+    chart.setOption({
+      xAxis: { type: 'category', data: ['A','B','C'] },
+      yAxis: { type: 'value' },
+      series: [{ type: 'bar', data: [1,2,3] }]
+    });
+    console.log('ECharts OK');
+  } catch(e) {
+    console.error('ECharts ERROR:', e);
+  }
+});
+</script>
+</body>
+</html>
