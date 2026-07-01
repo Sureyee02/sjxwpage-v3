@@ -1785,14 +1785,23 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// 视差滚动效果
+// 视差滚动效果 - 排除 story-layout 内的图片，避免与下方元素重叠
 window.addEventListener('scroll', () => {
   const scrolled = window.scrollY;
   document.querySelectorAll('.story-layout-img').forEach(el => {
     const rect = el.getBoundingClientRect();
+    // 只在视口范围内且非双栏布局时应用轻微视差
     if (rect.top < window.innerHeight && rect.bottom > 0) {
-      const speed = 0.05;
-      el.style.transform = 'translateY(' + (scrolled * speed) + 'px)';
+      // 检查是否在左右双栏布局中（父级是 .story-layout 且有两列）
+      const parent = el.closest('.story-layout');
+      const isTwoColumn = parent && window.getComputedStyle(parent).gridTemplateColumns.includes('1fr 1fr');
+      if (!isTwoColumn) {
+        const speed = 0.03;
+        el.style.transform = 'translateY(' + (scrolled * speed) + 'px)';
+      } else {
+        // 双栏布局中重置 transform，避免重叠
+        el.style.transform = 'translateY(0px)';
+      }
     }
   });
 });
