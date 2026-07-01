@@ -769,6 +769,23 @@ body::before {
   opacity: 1;
 }
 
+/* 过渡层边缘羽化：上下边缘渐隐 */
+.transition-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg,
+      rgba(0,104,55,0.95) 0%,
+      rgba(0,104,55,0.3) 8%,
+      transparent 18%,
+      transparent 82%,
+      rgba(0,104,55,0.3) 92%,
+      rgba(0,104,55,0.95) 100%
+    );
+}
+
 </style>
 </head>
 
