@@ -965,8 +965,8 @@ body::before {
         <div class="stat-box"><div class="val">3.2万㎡</div><div class="lbl">清淤面积</div></div>
       </div>
     </div>
-    <div class="story-layout-img" style="max-width: 100%;">
-      <img src="huang-guofeng.jpg" alt="黄国锋" style="width: 100%; height: auto; display: block;" />
+    <div class="story-layout-img" style="max-width: 100%; height: 100%; overflow: hidden;">
+      <img src="huang-guofeng.jpg" alt="黄国锋" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
     </div>
   </div>
 
@@ -1116,7 +1116,7 @@ body::before {
 
   <div class="chart-container">
 <div class="chart-container ">
-      <div class="chart-title">市集营收构成（矩形树图）</div>
+      <div class="chart-title">村超市集营收构成</div>
       <div class="chart-desc">三年赛场市集总营收13.41亿元，90%以上收益流向本地小微经营者</div>
       <div id="chartSunburst" style="width:100%;height:340px;"></div>
       <div class="hint-text">悬停查看各类目营收金额</div>
@@ -1131,21 +1131,19 @@ body::before {
     <p>这些摊位背后，是榕江最普通的生计。而赛场上踢球的，也正是这些人的邻居。</p>
   </div>
 
-  <div class="chart-container">
-<div class="chart-container ">
-      <div class="chart-title">球员职业分布（旭日图）</div>
+  <div class="chart-row">
+    <div class="chart-container chart-half">
+      <div class="chart-title">村超球员职业分布</div>
       <div class="chart-desc">607名草根球员，农民/摊贩占42%，务工人员31%，教师/手艺人27%</div>
       <div id="chartHexbin" style="width:100%;height:340px;"></div>
       <div class="hint-text">点击扇区查看细分数据</div>
     </div>
-  </div>
-  <div class="story-text" style="max-width:900px;margin:32px auto;font-size:15px;line-height:2.2;">
-    <p>607名参赛球员中，农民/摊贩占42%，务工人员31%，教师与手艺人占27%。没有职业球员，没有赞助商签约球员——</p>
-  </div>
-
-
-  <div class="story-text" style="max-width:900px;margin:32px auto;font-size:15px;line-height:2.2;">
-    <p>每个人都是下了班、关了店、收摊后奔赴球场的普通人。正是这种"非职业性"，让村超保持了最纯粹的草根底色，也创造了最惊人的就业带动。</p>
+    <div class="chart-half" style="padding:0 12px;display:flex;flex-direction:column;justify-content:center;">
+      <div class="story-text" style="font-size:15px;line-height:2.2;text-align:left;">
+        <p>607名参赛球员中，农民/摊贩占42%，务工人员31%，教师与手艺人占27%。没有职业球员，没有赞助商签约球员——</p>
+        <p>每个人都是下了班、关了店、收摊后奔赴球场的普通人。正是这种"非职业性"，让村超保持了最纯粹的草根底色，也创造了最惊人的就业带动。</p>
+      </div>
+    </div>
   </div>
 
   <div class="chart-container">
@@ -1162,7 +1160,7 @@ body::before {
 
   <div class="chart-row">
     <div class="chart-container chart-half">
-      <div class="chart-title">重点省级联赛数据汇总（矩形树图）</div>
+      <div class="chart-title">重点省级联赛数据汇总</div>
       <div class="chart-desc">全赛季2100场 · 2800万观众 · 620亿播放 · 880亿综合消费</div>
       <div id="chartBarLeague" style="width:100%;height:340px;"></div>
   </div>
@@ -1404,7 +1402,7 @@ body::before {
 
   
     <div class="map-wrapper">
-    <div class="chart-title" style="padding:16px 16px 0;">全球来榕江 — 国际足球交流网络（榕江为中心节点）</div>
+    <div class="chart-title" style="padding:16px 16px 0;">国际足球交流网络— 全球来榕江</div>
     <div class="chart-desc" style="padding:0 16px 16px;">50余国传播覆盖 · 12亿海外播放 · 43国友谊赛参与</div>
     <div id="worldMap" style="width:100%;height:480px;"></div>
     <div class="hint-text" style="position:absolute;bottom:8px;left:50%;transform:translateX(-50%);">双向箭头代表榕江与各国的文化交流与友谊赛往来</div>
@@ -1473,7 +1471,7 @@ body::before {
   </div>
   
     <div class="chart-container" style="height:520px;">
-    <div class="chart-title">五维燎原模型：典型县域对比</div>
+    <div class="chart-title">典型县域对比</div>
     <div class="chart-desc">数据溯源：政府公开数据 + 平台指数 + 专家评分（满分100）</div>
     <div id="chartReplicability" style="width:100%;height:420px;"></div>
   </div>
