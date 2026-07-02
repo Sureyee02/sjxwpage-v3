@@ -2357,6 +2357,41 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   } catch (e) { console.error('chartRadarCompare', e); }
 
+  // 7.5 chartReplicability - 典型县域对比（五维雷达图）
+  try {
+    var chart = echarts.init(document.getElementById('chartReplicability'));
+    charts.chartReplicability = chart;
+    chart.setOption({
+      backgroundColor: 'transparent',
+      tooltip: { confine: true, backgroundColor: 'rgba(0,104,55,0.92)', borderColor: '#D9EF8B', textStyle: { color: '#FFFFBF' }, formatter: function(p) { return p.name + '<br/>' + p.value.map((v,i) => chart.getOption().radar[0].indicator[i].name + ': ' + v).join('<br/>'); } },
+      legend: { data: ['榕江·村超', '江苏·苏超', '台江·村BA', '西部典型县', '东部无特色县'], textStyle: { color: '#FFFFBF', fontSize: mFont(10) }, bottom: 0, itemWidth: 14, itemHeight: 8 },
+      radar: {
+        indicator: [
+          { name: '群众基础', max: 100 },
+          { name: '政府能力', max: 100 },
+          { name: '文化资源', max: 100 },
+          { name: '交通条件', max: 100 },
+          { name: '产业配套', max: 100 }
+        ],
+        radius: isMobile ? '50%' : '70%',
+        axisName: { color: '#D9EF8B', fontSize: mFont(12) },
+        splitArea: { areaStyle: { color: ['rgba(217,239,139,0.05)', 'rgba(217,239,139,0.02)'] } },
+        axisLine: { lineStyle: { color: 'rgba(255,255,191,0.2)' } },
+        splitLine: { lineStyle: { color: 'rgba(255,255,191,0.2)' } }
+      },
+      series: [{
+        type: 'radar',
+        data: [
+          { value: [92, 88, 85, 65, 70], name: '榕江·村超', areaStyle: { color: 'rgba(217,239,139,0.25)' }, lineStyle: { color: '#D9EF8B', width: 2 }, itemStyle: { color: '#D9EF8B' } },
+          { value: [85, 90, 60, 95, 88], name: '江苏·苏超', areaStyle: { color: 'rgba(102,189,99,0.25)' }, lineStyle: { color: '#66BD63', width: 2 }, itemStyle: { color: '#66BD63' } },
+          { value: [80, 75, 82, 55, 60], name: '台江·村BA', areaStyle: { color: 'rgba(254,224,139,0.25)' }, lineStyle: { color: '#FEE08B', width: 2 }, itemStyle: { color: '#FEE08B' } },
+          { value: [65, 55, 70, 40, 45], name: '西部典型县', areaStyle: { color: 'rgba(253,174,97,0.25)' }, lineStyle: { color: '#FDAE61', width: 2 }, itemStyle: { color: '#FDAE61' } },
+          { value: [45, 50, 35, 70, 55], name: '东部无特色县', areaStyle: { color: 'rgba(165,0,38,0.25)' }, lineStyle: { color: '#A50026', width: 2 }, itemStyle: { color: '#A50026' } }
+        ]
+      }]
+    });
+  } catch (e) { console.error('chartReplicability', e); }
+
   // 8. chinaMap - MOST IMPORTANT
   try {
     const chartDom = document.getElementById('chinaMap');
