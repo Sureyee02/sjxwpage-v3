@@ -371,7 +371,7 @@ body::before {
 .modal-overlay.active .modal-content { transform: translateY(0); }
 .modal-close { position: absolute; top: 16px; right: 16px; width: 32px; height: 32px; cursor: pointer; background: none; border: none; color: var(--text3); font-size: 24px; transition: color 0.2s; }
 .modal-close:hover { color: var(--gold); }
-.modal-photo { width: 100%; height: 240px; background: linear-gradient(135deg, var(--bg-card), var(--bg-hover)); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+.modal-photo { width: 100%; aspect-ratio: 3/2; background: linear-gradient(135deg, var(--bg-card), var(--bg-hover)); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; overflow: hidden; }
 .modal-photo svg { width: 80px; height: 80px; opacity: 0.3; }
 .modal-name { font-size: 28px; color: var(--gold); margin-bottom: 4px; }
 .modal-title { font-size: 15px; color: var(--text3); margin-bottom: 20px; }
@@ -1814,6 +1814,15 @@ function openModal(id) {
     photoHtml = '<div class="modal-photo"><img src="刘欣.webp" alt="刘欣" style="width:100%;height:100%;object-fit:cover;display:block;"></div>';
   }
   if (id === 'yongzhou') {
+    photoHtml = '<div class="modal-photo"><img src="yangfan.jpg" alt="杨樊" style="width:100%;height:100%;object-fit:cover;display:block;"></div>';
+  }
+  if (id === 'dongha') {
+    photoHtml = '<div class="modal-photo"><img src="东哈.webp" alt="东哈" style="width:100%;height:100%;object-fit:cover;display:block;"></div>';
+  }
+  if (id === 'liuzhi') {
+    photoHtml = '<div class="modal-photo"><img src="赖蕾.jpg" alt="赖蕾" style="width:100%;height:100%;object-fit:cover;display:block;"></div>';
+  }
+  if (id === 'xiaoli') {
     photoHtml = '<div class="modal-photo"><img src="yangfan.jpg" alt="杨樊" style="width:100%;height:100%;object-fit:cover;display:block;"></div>';
   }
   modalBody.innerHTML = photoHtml + '<div class="modal-name">' + p.name + '</div><div class="modal-title">' + p.title + '</div><div style="font-style:italic;color:#D9EF8B;margin-bottom:16px;">' + p.quote + '</div><div class="modal-story">' + p.story + '</div><div class="modal-stats">' + statsHtml + '</div>';
