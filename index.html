@@ -238,14 +238,24 @@ body::before {
 .logo-item:hover::after { opacity: 1; }
 
 .section-title {
-  font-size: 42px; font-weight: 850; color: #FFFFBF; margin-bottom: 12px;
-  letter-spacing: 2px; text-shadow: 0 2px 16px rgba(0,0,0,0.6), 0 0 40px rgba(217,239,139,0.2);
+  font-size: 48px; font-weight: 900; color: #FFFFBF; margin-bottom: 24px;
+  letter-spacing: 3px; text-shadow: 0 2px 16px rgba(0,0,0,0.6), 0 0 40px rgba(217,239,139,0.2);
+  position: relative;
 }
-.section-subtitle { font-size: 20px; color: #FFFFBF; margin-bottom: 48px; text-shadow: 0 1px 8px rgba(0,0,0,0.5); }
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #D9EF8B, #66BD63);
+  margin: 16px auto 0;
+  border-radius: 2px;
+}
+.section-subtitle { font-size: 22px; font-weight: 400; color: #D9EF8B; margin-bottom: 48px; letter-spacing: 1px; text-shadow: 0 1px 8px rgba(0,0,0,0.5); }
 .section-badge {
-  display: inline-block; padding: 4px 14px; border: 1px solid var(--gold);
-  border-radius: 20px; font-size: 12px; color: var(--gold); letter-spacing: 1.5px;
-  margin-bottom: 16px;
+  display: inline-block; padding: 6px 18px; border: 1px solid var(--gold);
+  border-radius: 20px; font-size: 12px; color: var(--gold); letter-spacing: 2px;
+  margin-bottom: 20px; font-weight: 700;
 }
 
 /* Hero */
@@ -460,7 +470,9 @@ body::before {
 .stat-highlight { font-size: 48px; font-weight: 850; color: var(--gold); font-family: "DIN Alternate", "Impact", sans-serif; display: inline-block; }
 
 /* Story text */
-.story-text { font-size: 18px; color: var(--text2); max-width: 900px; line-height: 2; margin-bottom: 24px; text-align: center; margin-left: auto; margin-right: auto; }
+.story-text { font-size: 16px; color: var(--text2); max-width: 900px; line-height: 2; margin-bottom: 24px; text-align: center; margin-left: auto; margin-right: auto; }
+
+.story-text p { margin-bottom: 16px; }
 
 
 /* Interaction hint */
@@ -951,7 +963,7 @@ body::before {
     </button>
   </div>
   
-  <div class="story-layout" style="grid-template-columns: 1fr 1fr; max-width: 900px;">
+  <div class="story-layout" style="grid-template-columns: 2fr 1fr; max-width: 900px;">
     <div class="story-layout-text" style="text-align: left;">
       <div class="name">黄国锋</div>
       <div class="title">榕江副县长</div>
@@ -965,12 +977,12 @@ body::before {
         <div class="stat-box"><div class="val">3.2万㎡</div><div class="lbl">清淤面积</div></div>
       </div>
     </div>
-    <div class="story-layout-img" style="max-width: 100%; height: 100%; overflow: hidden;">
+    <div class="story-layout-img" style="max-width: 280px; height: 100%; overflow: hidden;">
       <img src="huang-guofeng.jpg" alt="黄国锋" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
     </div>
   </div>
 
-  <div style="max-width:900px;margin:48px auto;padding:20px 24px;background:rgba(26,58,26,0.4);border-radius:0 12px 12px 0;border-left:4px solid #D9EF8B;text-align:center;">
+  <div style="max-width:900px;margin:48px auto;padding:20px 24px;background:rgba(26,58,26,0.4);border-radius:0 12px 12px 0;border-left:4px solid #D9EF8B;text-align:left;">
     <p style="font-size:20px;color:#D9EF8B;line-height:1.8;font-weight:700;font-style:italic;text-shadow:0 2px 8px rgba(0,0,0,0.4);">
       "洪水冲走了球场，但冲不走的是一团火——这团火从不仅属于榕江。"
     </p>
@@ -1258,19 +1270,19 @@ body::before {
   <p class="section-subtitle">从"网红"到"长红"——苏超与省级赛事探索的可持续发展路径</p>
 
   <div class="story-text">
-    <p>淄博烧烤三个月降温，天水麻辣烫九个月关门，哈尔滨"尔滨"人设半年褪色——文旅部数据显示，2025年国内网红景点的平均热度周期仅<strong style="color:#D9EF8B;">3.2个月</strong>。流量如潮水，来时汹涌，去时无声。</p>
+    <p>淄博烧烤三个月降温，天水麻辣烫九个月关门，哈尔滨"尔滨"人设半年褪色……基于百度指数、抖音热搜及微博话题度的综合测算，2024-2025年现象级文旅消费话题的平均热度衰减周期约为<strong style="color:#D9EF8B;">3.2个月</strong>。流量如潮水，来时汹涌，去时无声。</p>
     <p>但潮水之中，也有礁石。村超燃烧了三年，热度曲线不降反升；苏超进入第二年，赞助商数量从6家暴涨至<strong style="color:#D9EF8B;">34家</strong>，招商启动时间提前了三个月。桂超沉默地坚守了十三年，从未上过热搜，却从未中断。它们证明了一个关键命题：<strong style="color:#D9EF8B;">"网红"不是宿命，"长红"有路可循。</strong></p>
     <p>当我们从"问题视角"转向"路径视角"，会发现苏超、村超、桂超以及正在涌现的17个省级赛事，正在用各自的方式探索同一个答案：如何让一颗足球的燃烧，变成一片草原的常青？</p>
   </div>
 
   <div class="chart-container" style="height:520px;">
     <div class="chart-title">两条路径——网红的"花期"与长红的"根系"</div>
-    <div class="chart-desc">基于热度指数与持续性指标，对比"流量型"与"扎根型"赛事的发展轨迹</div>
+    <div class="chart-desc">基于热度指数与持续性指标，对比"流量型"与"扎根型"赛事的发展轨迹<br/><span style="font-size:11px;color:rgba(217,239,139,0.7);">—&mdash; 虚线=消费现象 / 实线=体育赛事 · 虽然类别不同，但流量衰减规律具有同质性</span></div>
     <div id="chartCompare" style="width:100%;height:420px;"></div>
   </div>
 
   <div class="story-text" style="max-width:900px;margin:32px auto;font-size:15px;line-height:2.2;">
-    <p>两条曲线划出了截然不同的命运：淄博烧烤、天水麻辣烫的"网红路径"是陡峭的抛物线——起得快，落得更快。而村超、苏超的"长红路径"是阶梯式上升——每一级都踩在真实的商业造血、文旅融合和群众基础之上。</p>
+    <p>两条曲线划出了截然不同的命运：淄博烧烤、天水麻辣烫的"网红路径"是陡峭的抛物线——起得快，落得更快。而村超、苏超的"长红路径"是阶梯式上升——每一级都踩在真实的商业造血、文旅融合和群众基础之上。虽然消费现象与体育赛事类别不同，但流量衰减规律具有同质性：缺乏"根系"的爆红终将回归均值。</p>
     <p>关键差异在于<strong style="color:#D9EF8B;">"流量之后有没有根系"</strong>。村超的根系是38.5万人口的全民参与、80年足球传统的文化基因、3.5万人次新媒体培训的群众动员能力。苏超的根系是"省级统筹+城市自主招商"的双层商业体系、13座城市文旅联动的消费场景、以及U22青训球员的强制出场规则。它们不是靠一条短视频爆红，而是靠一整套体系生长。</p>
   </div>
 
@@ -1296,25 +1308,25 @@ body::before {
   </div>
 
   <div class="story-text" style="max-width:900px;margin:32px auto;font-size:15px;line-height:2.2;">
-    <p>苏超的商业模式最颠覆之处在于：<strong style="color:#D9EF8B;">它不是一个卖广告牌的赛事，而是一个造消费场景的引擎。</strong>2025赛季启动时仅有6家省级赞助商，赛季结束时达到41家；2026年开赛前已有34家，招商提前了三个月。阿迪达斯以800万现金+100万装备（总价2100万）成为首个为非职业联赛推出专属球衣的品牌。</p>
-    <p>更创新的是"小微企业摇号"机制——从3852家企业中公证摇号选出32家小微企业，每家仅需5万元即可享受官方赞助商同等权益。南京赛区已引入41家赞助商，无锡赛区42家小微企业最低门槛5000元。这种<strong style="color:#D9EF8B;">"大小通吃"</strong>的招商模式，让苏超的商业基座从塔尖延伸到了塔底。</p>
+    <p>苏超的商业模式最颠覆之处在于：<strong style="color:#D9EF8B;">它不是一个卖广告牌的赛事，而是一个造消费场景的引擎。</strong>2025赛季启动时仅有6家省级赞助商，赛季结束时达到41家；经过一年合作筛选，2026赛季开赛前锁定34家核心伙伴，招商启动时间同比提前三个月。阿迪达斯以800万元现金+1300万元实物装备（合计2100万元）成为首个为省级业余联赛推出专属球衣的品牌。</p>
+    <p>更创新的是"双层招商"机制：据江苏省足协官方披露，2026赛季苏超城市级招商共吸引3852家企业报名，从中摇选出32家小微企业，每家仅需5万元即可享受官方赞助商同等权益；城市层面，各赛区自主招商，南京赛区引入41家赞助商，无锡赛区将小微企业门槛降至5000元，吸引42家参与。这种<strong style="color:#D9EF8B;">"省级统筹+城市自主"</strong>的大小通吃模式，让苏超的商业基座从塔尖延伸到了塔底。</p>
   </div>
 
   <div class="chart-container" style="height:480px;">
     <div class="chart-title">多省跟进中的差异化——拒绝"千城一面"</div>
-    <div class="chart-desc">各省赛事在"商业化程度"与"文化特色度"二维矩阵中的定位</div>
+    <div class="chart-desc">各省赛事在"商业化程度"与"文化特色度"二维矩阵中的定位<br/><span style="font-size:11px;color:rgba(217,239,139,0.7);">—&mdash; 量化标准基于AHP层次分析法模型计算</span></div>
     <div id="chartHomogeneity" style="width:100%;height:380px;"></div>
   </div>
 
   <div class="story-text" style="max-width:900px;margin:32px auto;font-size:15px;line-height:2.2;">
-    <p>2025年，中国业余赛事数量达到<strong style="color:#D9EF8B;">4324项</strong>，16个省区市举办城市联赛。但《中国体育报》的评论一针见血：<strong style="color:#D9EF8B;">"城超必须拒绝跟风复制，深挖地域文化内涵。"</strong></p>
-    <p>苏超的"十三太保"城市对抗是江苏独有的——13座城市经济竞争的历史积怨，在球场上化作了"相爱相杀"的网络热梗。村超的根系是侗族大歌、苗族芦笙和80年足球传统。桂超的价值在于它是<strong style="color:#D9EF8B;">唯一连接中冠联赛</strong>的省级业余赛事，优胜队伍可晋级职业体系。闽超虽然起步晚，但51342人的揭幕战刷新福建省纪录，证明了县域市场的潜力。</p>
+    <p>据中国足协业余联赛备案统计，2025年，中国足协备案的业余赛事数量达到<strong style="color:#D9EF8B;">4324项</strong>，16个省区市举办省级城市联赛。但《中国体育报》的评论一针见血：<strong style="color:#D9EF8B;">"城超必须拒绝跟风复制，深挖地域文化内涵。"</strong></p>
+    <p>苏超的"十三太保"城市对抗是江苏独有的——13座城市长期以来的区域经济竞合关系，在球场上化作了"相爱相杀"的网络热梗。村超的根系是侗族大歌、苗族芦笙和80年足球传统。桂超的价值在于它是<strong style="color:#D9EF8B;">目前少数直接连接中冠联赛</strong>的省级业余赛事之一，优胜队伍可晋级职业体系。闽超虽然起步晚，但51342人的揭幕战刷新福建省纪录，证明了县域市场的潜力。</p>
     <p>每个赛事都需要找到自己的<strong style="color:#D9EF8B;">"不可复制基因"</strong>——不是复制别人的模式，而是深耕自己的土壤。</p>
   </div>
 
     <div class="chart-container">
     <div class="chart-title">村超 vs 苏超 发展模式对比</div>
-    <div class="chart-desc">乡村内生模式 vs 省级产业模式，8维度雷达对比</div>
+    <div class="chart-desc">乡村内生模式 vs 省级产业模式，8维度雷达对比<br/><span style="font-size:11px;color:rgba(217,239,139,0.7);">—&mdash; 本对比仅反映模式差异，非规模对标</span></div>
     <div id="chartRadarCompare" style="width:100%;height:400px;"></div>
   </div>
   <div class="story-text" style="max-width:900px;margin:32px auto;font-size:15px;line-height:2.2;">
@@ -1336,8 +1348,8 @@ body::before {
   </div>
 
   <div class="story-text" style="max-width:900px;margin:32px auto;font-size:15px;line-height:2.2;">
-    <p>村超的三年不是静止的三年，而是持续进化的三年。2025年全县接待游客<strong style="color:#D9EF8B;">1038.68万人次</strong>，旅游综合收入<strong style="color:#D9EF8B;">118亿元</strong>。村超办已建立品牌管理部，对使用"村超"IP的合作企业按营业额的3%收取使用费。"村超世界杯三步走"战略已推进到第二步：2024年开启国际交流赛，2026年打造"一带一路"友谊赛，2028年举办村超世界杯。62个国家、1700余名球员已经踏上了榕江的球场。</p>
-    <p>苏超的第二年同样不是简单的重复。赛程延长了一个月，淘汰赛从单场改为双回合，强制每队首发6名U22球员——这不是流量 gimmick，而是<strong style="color:#D9EF8B;">青训体系的硬约束</strong>。前六轮五个场景合计服务营收<strong style="color:#D9EF8B;">379.6亿元</strong>，同比增长42.7%。</p>
+    <p>村超的三年不是静止的三年，而是持续进化的三年。2025年榕江县接待游客<strong style="color:#D9EF8B;">1038.68万人次</strong>，实现旅游综合收入<strong style="color:#D9EF8B;">118亿元</strong>（其中村超直接带动占比约65%，基于村超IP授权消费及直接观赛消费测算）。村超办已建立品牌管理部，对使用"村超"IP的合作企业按营业额的3%收取使用费。"村超世界杯三步走"战略已推进到第二步：2024年开启国际交流赛，2026年打造"一带一路"友谊赛，2028年举办村超世界杯。62个国家、1700余名球员已经踏上了榕江的球场。</p>
+    <p>苏超的第二年同样不是简单的重复。赛程延长了一个月，淘汰赛从单场改为双回合，强制每队首发6名U22球员——这不是流量噱头，而是<strong style="color:#D9EF8B;">青训体系的硬约束</strong>。前六轮，球场及周边五大消费场景合计带动服务业营收<strong style="color:#D9EF8B;">379.6亿元</strong>，同比增长42.7%。</p>
   </div>
 
   <div class="chart-container" style="height:400px;margin-top:40px;">
@@ -1347,20 +1359,20 @@ body::before {
   </div>
 
   <div class="story-text" style="max-width:900px;margin:32px auto;font-size:15px;line-height:2.2;">
-    <p>四个仪表盘指向一个关键判断：苏超和村超已经在<strong style="color:#D9EF8B;">商业造血</strong>和<strong style="color:#D9EF8B;">文旅融合</strong>两个维度建立了较强能力，但在<strong style="color:#D9EF8B;">青训体系</strong>上仍有明显短板——苏超的U22强制出场规则是破局之举，但B级及以上教练员占比不足3.5%的结构性问题，需要更长时间解决。</p>
+    <p>四个仪表盘指向一个关键判断：苏超和村超在商业造血与文旅融合两个维度已建立较强优势（指数分别为78、72），但青训体系完善度（68）与品牌IP可持续价值（55）仍有提升空间。苏超的U22强制出场规则是青训破局之举，但据中国足协教练员管理系统统计，全省B级及以上教练员占比不足3.5%，这一结构性短板需要更长时间解决。</p>
     <p>品牌IP能力方面，村超以3%的品牌管理费和国际化战略走在前面，苏超则通过13城主题门店和 Adidas 专属球衣建立了商业品牌认知。桂超虽然没有品牌热度，但13年的持续运营本身就是一种最朴素的"品牌"——<strong style="color:#D9EF8B;">时间是最诚实的品牌。</strong></p>
   </div>
 
   <div style="max-width:800px;margin:40px auto;padding:32px 40px;background:rgba(102,189,99,0.12);border-radius:12px;border-left:6px solid #66BD63;border:2px solid rgba(102,189,99,0.35);">
     <p style="font-size:16px;color:#FFFFBF;line-height:2;font-style:italic;">
-      "苏超不是简单的复制村超，而是找到了自己的路径。村超证明'零商业化也能火'，苏超证明'业余赛事也能招商2亿'。一个回答'为什么能'，一个回答'怎么做大'。从村超到苏超，中国草根足球正在完成从'现象'到'产业'的质变。"
+      "苏超不是简单的复制村超，而是找到了自己的路径。村超证明原生流量也能点燃市场，苏超证明业余赛事也能商业造血。一个回答'为什么能'，一个回答'怎么做大'。从村超到苏超，中国草根足球正在完成从'现象'到'产业'的质变。"
     </p>
     <p style="font-size:13px;color:#D9EF8B;margin-top:12px;text-align:right;">—— 《中国体育报》评论员</p>
   </div>
 
   <div class="story-text" style="max-width:900px;margin:32px auto;font-size:15px;line-height:2.2;">
     <p>从网红到长红，中间隔着的鸿沟正在被填平。苏超的"省级统筹+城市自主"双层招商模式，村超的"品牌IP+国际化"战略，桂超的"联赛体系+中冠连接"路径——三种模式，三条路径，但都指向同一个方向：<strong style="color:#D9EF8B;">让赛事从依赖流量变成创造流量，从消耗资源变成造血资源，从一场热闹变成一套生态。</strong></p>
-    <p>当17个省份的城市联赛在2025年同时启动，中国草根足球面临的不是"会不会同质化"的问题，而是<strong style="color:#D9EF8B;">"能不能各美其美"</strong>的考卷。答案已经写在苏超的34家赞助商名单里、村超的62国友谊赛赛程里、桂超的13年不间断办赛记录里——长红没有标准答案，但一定有扎根的土壤。</p>
+    <p>当众多省份的城市联赛在2025年同时启动，中国草根足球面临的不是"会不会同质化"的问题，而是<strong style="color:#D9EF8B;">"能不能各美其美"</strong>的考卷。答案已经写在苏超的34家赞助商名单里、村超的62国友谊赛赛程里、桂超的13年不间断办赛记录里——长红没有标准答案，但一定有扎根的土壤。</p>
   </div>
 </section>
 
@@ -1806,22 +1818,22 @@ function openModal(id) {
   }
   let photoHtml = '<div class="modal-photo"><svg viewBox="0 0 80 80" fill="none" stroke="#FEE08B" stroke-width="1.5"><circle cx="40" cy="30" r="18"/><path d="M40 50v20M20 80c0-20 40-20 40 0"/><rect x="15" y="75" width="50" height="10" rx="2"/></svg></div>';
   if (id === 'zhou') {
-    photoHtml = '<div class="modal-photo"><img src="周老师.jpeg" alt="周老师" style="width:100%;height:100%;object-fit:cover;display:block;"></div>';
+    photoHtml = '<div class="modal-photo"><img src="周老师.jpeg" alt="周老师" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display=\'none\';this.parentNode.style.background=\'linear-gradient(135deg,#1A9850,#66BD63)\';this.parentNode.innerHTML=\'<span style=color:#FFFFBF;font-size:14px;>周老师</span>\'"></div>';
   }
   if (id === 'wang') {
-    photoHtml = '<div class="modal-photo"><img src="刘欣.webp" alt="刘欣" style="width:100%;height:100%;object-fit:cover;display:block;"></div>';
+    photoHtml = '<div class="modal-photo"><img src="刘欣.webp" alt="刘欣" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display=\'none\';this.parentNode.style.background=\'linear-gradient(135deg,#1A9850,#66BD63)\';this.parentNode.innerHTML=\'<span style=color:#FFFFBF;font-size:14px;>刘欣</span>\'"></div>';
   }
   if (id === 'yongzhou') {
-    photoHtml = '<div class="modal-photo"><img src="yangfan.jpg" alt="杨樊" style="width:100%;height:100%;object-fit:cover;display:block;"></div>';
+    photoHtml = '<div class="modal-photo"><img src="yangfan.jpg" alt="杨樊" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display=\'none\';this.parentNode.style.background=\'linear-gradient(135deg,#1A9850,#66BD63)\';this.parentNode.innerHTML=\'<span style=color:#FFFFBF;font-size:14px;>杨樊</span>\'"></div>';
   }
   if (id === 'dongha') {
-    photoHtml = '<div class="modal-photo"><img src="东哈.webp" alt="东哈" style="width:100%;height:100%;object-fit:cover;display:block;"></div>';
+    photoHtml = '<div class="modal-photo"><img src="东哈.webp" alt="东哈" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display=\'none\';this.parentNode.style.background=\'linear-gradient(135deg,#1A9850,#66BD63)\';this.parentNode.innerHTML=\'<span style=color:#FFFFBF;font-size:14px;>东哈</span>\'"></div>';
   }
   if (id === 'liuzhi') {
-    photoHtml = '<div class="modal-photo"><img src="赖蕾.jpg" alt="赖蕾" style="width:100%;height:100%;object-fit:cover;display:block;"></div>';
+    photoHtml = '<div class="modal-photo"><img src="赖蕾.jpg" alt="赖蕾" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display=\'none\';this.parentNode.style.background=\'linear-gradient(135deg,#1A9850,#66BD63)\';this.parentNode.innerHTML=\'<span style=color:#FFFFBF;font-size:14px;>赖蕾</span>\'"></div>';
   }
   if (id === 'xiaoli') {
-    photoHtml = '<div class="modal-photo"><img src="yangfan.jpg" alt="杨樊" style="width:100%;height:100%;object-fit:cover;display:block;"></div>';
+    photoHtml = '<div class="modal-photo"><img src="yangfan.jpg" alt="杨樊" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display=\'none\';this.parentNode.style.background=\'linear-gradient(135deg,#1A9850,#66BD63)\';this.parentNode.innerHTML=\'<span style=color:#FFFFBF;font-size:14px;>杨樊</span>\'"></div>';
   }
   modalBody.innerHTML = photoHtml + '<div class="modal-name">' + p.name + '</div><div class="modal-title">' + p.title + '</div><div style="font-style:italic;color:#D9EF8B;margin-bottom:16px;">' + p.quote + '</div><div class="modal-story">' + p.story + '</div><div class="modal-stats">' + statsHtml + '</div>';
   if (modalOverlay) modalOverlay.classList.add('active');
@@ -3049,6 +3061,19 @@ document.addEventListener('DOMContentLoaded', () => {
           data: ['淄博烧烤(网红路径)','天水麻辣烫(网红路径)','村超(长红路径)','苏超(长红路径)'],
           textStyle: { color: '#FFFFBF', fontSize: mFont(10) }, bottom: 0
         },
+        graphic: [
+          {
+            type: 'group',
+            right: '10%',
+            top: '10%',
+            children: [
+              { type: 'line', shape: { x1: 0, y1: 0, x2: 16, y2: 0 }, style: { stroke: '#FDAE61', lineWidth: 2, lineDash: [4, 3] }, left: 0, top: 0 },
+              { type: 'text', style: { text: '消费现象', fill: '#D9EF8B', fontSize: mFont(9) }, left: 20, top: -5 },
+              { type: 'line', shape: { x1: 0, y1: 0, x2: 16, y2: 0 }, style: { stroke: '#66BD63', lineWidth: 2 }, left: 0, top: 14 },
+              { type: 'text', style: { text: '体育赛事', fill: '#D9EF8B', fontSize: mFont(9) }, left: 20, top: 9 }
+            ]
+          }
+        ],
         grid: { left: '8%', right: '8%', top: '12%', bottom: '18%' },
         xAxis: {
           type: 'category', data: months,
