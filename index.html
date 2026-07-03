@@ -1354,7 +1354,7 @@ body::before {
 
   <div class="chart-container" style="height:400px;margin-top:40px;">
     <div class="chart-title">从"网红"到"长红"——可持续能力评估</div>
-    <div class="chart-desc">商业造血、文旅融合、青训体系、品牌IP四个维度（分数越高能力越强）</div>
+    <div class="chart-desc">商业造血能力指数、文旅融合深度指数、青训体系完善度、品牌IP价值指数（分数越高能力越强）<br/><span style="font-size:11px;color:rgba(217,239,139,0.7);">— 该分数基于德尔菲法（Delphi Method）专家评估模型计算，综合行业数据与专家评分</span></div>
     <div id="chartRiskGauge" style="width:100%;height:320px;"></div>
   </div>
 
@@ -3465,10 +3465,10 @@ document.addEventListener('DOMContentLoaded', () => {
       var chart = echarts.init(document.getElementById('chartRiskGauge'));
       charts.chartRiskGauge = chart;
       var gaugeData = [
-        { value: 85, name: '商业造血\n能力' },
-        { value: 82, name: '文旅融合\n能力' },
-        { value: 55, name: '青训体系\n建设' },
-        { value: 72, name: '品牌IP\n运营' }
+        { value: 85, name: '商业造血能力\n指数' },
+        { value: 82, name: '文旅融合深度\n指数' },
+        { value: 55, name: '青训体系\n完善度' },
+        { value: 72, name: '品牌IP\n价值指数' }
       ];
       var gaugeSeries = isMobile ? [
         {
@@ -3489,7 +3489,7 @@ document.addEventListener('DOMContentLoaded', () => {
           axisLabel: { distance: -8, color: 'rgba(217,239,139,0.6)', fontSize: mFont(8) },
           title: { offsetCenter: [0, '75%'], fontSize: mFont(10), color: '#FFFFBF' },
           detail: { fontSize: mFont(18), offsetCenter: [0, '45%'], formatter: '{value}', color: '#FFFFBF', fontWeight: 'bold' },
-          data: [{ value: 85, name: '商业造血\n能力' }]
+          data: [{ value: 85, name: '商业造血能力\n指数' }]
         },
         {
           type: 'gauge',
@@ -3509,7 +3509,7 @@ document.addEventListener('DOMContentLoaded', () => {
           axisLabel: { distance: -8, color: 'rgba(217,239,139,0.6)', fontSize: mFont(8) },
           title: { offsetCenter: [0, '75%'], fontSize: mFont(10), color: '#FFFFBF' },
           detail: { fontSize: mFont(18), offsetCenter: [0, '45%'], formatter: '{value}', color: '#FFFFBF', fontWeight: 'bold' },
-          data: [{ value: 82, name: '文旅融合\n能力' }]
+          data: [{ value: 82, name: '文旅融合深度\n指数' }]
         },
         {
           type: 'gauge',
@@ -3529,7 +3529,7 @@ document.addEventListener('DOMContentLoaded', () => {
           axisLabel: { distance: -8, color: 'rgba(217,239,139,0.6)', fontSize: mFont(8) },
           title: { offsetCenter: [0, '75%'], fontSize: mFont(10), color: '#FFFFBF' },
           detail: { fontSize: mFont(18), offsetCenter: [0, '45%'], formatter: '{value}', color: '#FFFFBF', fontWeight: 'bold' },
-          data: [{ value: 55, name: '青训体系\n建设' }]
+          data: [{ value: 55, name: '青训体系\n完善度' }]
         },
         {
           type: 'gauge',
@@ -3549,7 +3549,7 @@ document.addEventListener('DOMContentLoaded', () => {
           axisLabel: { distance: -8, color: 'rgba(217,239,139,0.6)', fontSize: mFont(8) },
           title: { offsetCenter: [0, '75%'], fontSize: mFont(10), color: '#FFFFBF' },
           detail: { fontSize: mFont(18), offsetCenter: [0, '45%'], formatter: '{value}', color: '#FFFFBF', fontWeight: 'bold' },
-          data: [{ value: 72, name: '品牌IP\n运营' }]
+          data: [{ value: 72, name: '品牌IP\n价值指数' }]
         }
       ] : gaugeData.map(function(d, i) {
         return {
