@@ -2270,78 +2270,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   } catch (e) { console.error('chartBubble', e); }
 
-  // 6. chartMultiplier - Matchup graph (circular)
-  try {
-    var chart = echarts.init(document.getElementById('chartMultiplier'));
-    charts.chartMultiplier = chart;
-    const cities = ['南京','苏州','无锡','常州','南通','徐州','扬州','盐城','泰州','镇江','宿迁','连云港','淮安'];
-    const cityImgs = { '南京':'南京.webp', '苏州':'苏州.webp', '无锡':'无锡.webp', '常州':'常州.webp', '南通':'南通.webp', '徐州':'徐州.webp', '扬州':'扬州.webp', '盐城':'盐城.webp', '泰州':'泰州.webp', '镇江':'镇江.webp', '宿迁':'宿迁.webp', '连云港':'连云港.webp', '淮安':'淮安.webp' };
-    const nodes = cities.map((c, i) => ({ name: c, value: i, symbol: 'image://' + cityImgs[c], symbolSize: isMobile ? 35 : 50, symbolClip: true, itemStyle: { color: ['#D9EF8B','#FFFFBF','#66BD63','#006837','#FEE08B','#D9EF8B','#FFFFBF','#66BD63','#006837','#FEE08B','#D9EF8B','#FFFFBF','#66BD63'][i] } }));
-    const scoreMap = {};
-    const links = [];
-    const realMatches = [
-      {s:0,t:1,sc:'2:1',hg:2,ag:1},{s:0,t:2,sc:'1:1',hg:1,ag:1},
-      {s:0,t:3,sc:'3:2',hg:3,ag:2},{s:0,t:4,sc:'2:0',hg:2,ag:0},
-      {s:1,t:2,sc:'2:1',hg:2,ag:1},{s:1,t:5,sc:'1:0',hg:1,ag:0},
-      {s:1,t:6,sc:'3:1',hg:3,ag:1},{s:2,t:3,sc:'0:2',hg:0,ag:2},
-      {s:2,t:7,sc:'1:1',hg:1,ag:1},{s:3,t:4,sc:'2:2',hg:2,ag:2},
-      {s:3,t:8,sc:'1:0',hg:1,ag:0},{s:4,t:5,sc:'0:1',hg:0,ag:1},
-      {s:5,t:6,sc:'2:1',hg:2,ag:1},{s:5,t:9,sc:'2:1',hg:2,ag:1},
-      {s:6,t:7,sc:'1:2',hg:1,ag:2},{s:7,t:8,sc:'0:1',hg:0,ag:1},
-      {s:8,t:9,sc:'2:1',hg:2,ag:1},{s:9,t:10,sc:'1:1',hg:1,ag:1},
-      {s:10,t:11,sc:'0:2',hg:0,ag:2},{s:11,t:12,sc:'3:0',hg:3,ag:0},
-      {s:0,t:7,sc:'2:1',hg:2,ag:1},{s:3,t:11,sc:'1:2',hg:1,ag:2},
-      {s:4,t:10,sc:'2:2',hg:2,ag:2},{s:6,t:12,sc:'1:0',hg:1,ag:0}
-    ];
-    realMatches.forEach(m => {
-      const total = m.hg + m.ag;
-      scoreMap[cities[m.s]+'-'+cities[m.t]] = { home: cities[m.s], away: cities[m.t], score: m.sc, homeGoals: m.hg, awayGoals: m.ag };
-      links.push({ source: m.s, target: m.t, value: total*15, score: m.sc, homeGoals: m.hg, awayGoals: m.ag, lineStyle: { width: Math.max(1, total*0.6), opacity: 0.35 } });
-    });
-    chart.setOption({
-      backgroundColor: 'transparent',
-      tooltip: { confine: true, backgroundColor: 'rgba(0,104,55,0.92)', borderColor: '#D9EF8B', textStyle: { color: '#FFFFBF' },
-        formatter: function(params) {
-          if (params.dataType === 'edge') {
-            const d = params.data;
-            return d.homeGoals > d.awayGoals
-              ? '<b>' + cities[d.source] + ' ' + d.score + ' ' + cities[d.target] + '</b><br/>' + cities[d.source] + ' 胜'
-              : d.homeGoals < d.awayGoals
-                ? '<b>' + cities[d.source] + ' ' + d.score + ' ' + cities[d.target] + '</b><br/>' + cities[d.target] + ' 胜'
-                : '<b>' + cities[d.source] + ' ' + d.score + ' ' + cities[d.target] + '</b><br/>平局';
-          }
-          if (params.dataType === 'node') {
-            const city = params.data.name;
-            let wins = 0, draws = 0, losses = 0, goalsFor = 0, goalsAgainst = 0;
-            links.forEach(l => {
-              const home = cities[l.source], away = cities[l.target];
-              if (home === city) { goalsFor += l.homeGoals; goalsAgainst += l.awayGoals; if (l.homeGoals > l.awayGoals) wins++; else if (l.homeGoals < l.awayGoals) losses++; else draws++; }
-              else if (away === city) { goalsFor += l.awayGoals; goalsAgainst += l.homeGoals; if (l.awayGoals > l.homeGoals) wins++; else if (l.awayGoals < l.homeGoals) losses++; else draws++; }
-            });
-            return '<b>' + city + '</b><br/>' + wins + '胜 ' + draws + '平 ' + losses + '负<br/>进球 ' + goalsFor + ' : ' + goalsAgainst + ' 失球';
-          }
-          return params.name;
-        }
-      },
-      series: [{
-        type: 'graph', layout: 'circular', circular: { rotateLabel: true },
-        data: nodes, links: links, roam: true, zoom: isMobile ? 0.9 : 1.2,
-        label: { show: !isMobile, color: '#FFFFBF', fontSize: mFont(11) },
-        lineStyle: { curveness: 0.3, color: '#D9EF8B' },
-        emphasis: { focus: 'adjacency', lineStyle: { width: 4 } }
-      }]
-    });
-    chart.on('roam', function(e) {
-      var option = chart.getOption();
-      var zoom = option.series[0].zoom;
-      if (zoom < 0.8) {
-        chart.setOption({ series: [{ zoom: 0.8 }] }, { animation: false });
-      } else if (zoom > 2.5) {
-        chart.setOption({ series: [{ zoom: 2.5 }] }, { animation: false });
-      }
-    });
-  } catch (e) { console.error('chartMultiplier', e); }
-
   // 7. chartRadarCompare
   try {
     var chart = echarts.init(document.getElementById('chartRadarCompare'));
@@ -2629,58 +2557,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  // 11. chartSunburst2 - 四力贡献玫瑰图
-  try {
-    var chart = echarts.init(document.getElementById('chartSunburst2'));
-    charts.chartSunburst2 = chart;
-    chart.setOption({
-      backgroundColor: 'transparent',
-      tooltip: {
-        confine: true,
-        backgroundColor: 'rgba(0,104,55,0.92)', borderColor: '#D9EF8B', textStyle: { color: '#FFFFBF' },
-        formatter: function(p) {
-          return '<div style="font-weight:bold;">' + p.name + '</div><div>贡献值: ' + p.value + '%</div>';
-        }
-      },
-      legend: {
-        bottom: 0,
-        textStyle: { color: '#FFFFBF', fontSize: mFont(11) },
-        itemWidth: 12,
-        itemHeight: 12,
-        itemGap: 12
-      },
-      series: [{
-        type: 'pie',
-        radius: ['30%', '70%'],
-        center: ['50%', '45%'],
-        roseType: 'area',
-        data: [
-          { name: '群众力量', value: 35, itemStyle: { color: '#D9EF8B' } },
-          { name: '政府力量', value: 25, itemStyle: { color: '#FFFFBF' } },
-          { name: '市场力量', value: 25, itemStyle: { color: '#66BD63' } },
-          { name: '文化力量', value: 15, itemStyle: { color: '#006837' } }
-        ],
-        label: {
-          show: true,
-          formatter: '{b}\n{c}%',
-          color: '#FFFFBF',
-          fontSize: mFont(12),
-          fontWeight: 'bold'
-        },
-        labelLine: {
-          lineStyle: { color: 'rgba(217,239,139,0.4)' }
-        },
-        emphasis: {
-          itemStyle: {
-            shadowBlur: 16,
-            shadowColor: 'rgba(0,0,0,0.5)',
-            borderColor: '#FFFFBF',
-            borderWidth: 2
-          }
-        }
-      }]
-    });
-  } catch (e) { console.error('chartSunburst2', e); }
+  // chartTripleCompare - 三大赛事传播力多雷达叠加图
 
 
 
@@ -3146,47 +3023,6 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 
 
-
-  // chartCompareRadar - 多维度对比雷达
-  (function(){
-    try {
-      var chart = echarts.init(document.getElementById('chartCompareRadar'));
-      charts.chartCompareRadar = chart;
-      chart.setOption({
-        backgroundColor: 'transparent',
-        tooltip: { confine: true, backgroundColor: 'rgba(0,104,55,0.92)', borderColor: '#D9EF8B', textStyle: { color: '#FFFFBF' } },
-        legend: {
-          data: ['村超','淄博烧烤','哈尔滨冰雪','天水麻辣烫'],
-          textStyle: { color: '#FFFFBF', fontSize: mFont(10) }, bottom: 0
-        },
-        radar: {
-          indicator: [
-            { name: '持续性', max: 100 }, { name: '草根性', max: 100 },
-            { name: '文化性', max: 100 }, { name: '经济拉动', max: 100 },
-            { name: '可复制性', max: 100 }, { name: '社交传播', max: 100 }
-          ],
-          radius: isMobile ? '50%' : '65%',
-          axisName: { color: '#D9EF8B', fontSize: mFont(11) },
-          splitArea: { areaStyle: { color: ['rgba(217,239,139,0.05)', 'rgba(217,239,139,0.02)'] } },
-          axisLine: { lineStyle: { color: 'rgba(255,255,191,0.2)' } },
-          splitLine: { lineStyle: { color: 'rgba(255,255,191,0.15)' } }
-        },
-        series: [{
-          type: 'radar',
-          data: [
-            { value: [95, 100, 90, 88, 75, 92], name: '村超',
-              areaStyle: { color: 'rgba(217,239,139,0.35)' }, lineStyle: { color: '#D9EF8B', width: 2 }, itemStyle: { color: '#D9EF8B' } },
-            { value: [25, 70, 50, 85, 40, 95], name: '淄博烧烤',
-              areaStyle: { color: 'rgba(253,174,97,0.2)' }, lineStyle: { color: '#FDAE61', width: 2, type: 'dashed' }, itemStyle: { color: '#FDAE61' } },
-            { value: [35, 60, 75, 80, 50, 88], name: '哈尔滨冰雪',
-              areaStyle: { color: 'rgba(166,217,106,0.2)' }, lineStyle: { color: '#A6D96A', width: 2, type: 'dashed' }, itemStyle: { color: '#A6D96A' } },
-            { value: [20, 80, 55, 70, 35, 90], name: '天水麻辣烫',
-              areaStyle: { color: 'rgba(102,189,99,0.2)' }, lineStyle: { color: '#66BD63', width: 2, type: 'dashed' }, itemStyle: { color: '#66BD63' } }
-          ]
-        }]
-      });
-    } catch(e) { console.error('chartCompareRadar', e); }
-  })();
 
   // chartPyramid - 苏超商业生态金字塔
   (function(){
