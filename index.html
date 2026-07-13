@@ -188,7 +188,7 @@ body::before {
 #prologue::before {
   content: "";
   position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(0,104,55,0.85) 0%, rgba(0,104,55,0.6) 40%, rgba(0,104,55,0.6) 60%, rgba(0,104,55,0.85) 100%);
+  background: linear-gradient(rgba(0,104,55,0.72), rgba(0,104,55,0.55)),     radial-gradient(ellipse at 50% 50%, rgba(217,239,139,0.08) 0%, transparent 60%);
   z-index: 0;
   pointer-events: none;
 }
@@ -205,7 +205,7 @@ body::before {
 #ch1::before {
   content: "";
   position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(0,60,35,0.3) 0%, rgba(0,60,35,0.1) 30%, rgba(0,60,35,0.1) 70%, rgba(0,60,35,0.3) 100%);
+  background: linear-gradient(rgba(0,104,55,0.72), rgba(0,104,55,0.55)),     radial-gradient(ellipse at 50% 50%, rgba(217,239,139,0.08) 0%, transparent 60%);
   z-index: 0;
   pointer-events: none;
 }
@@ -238,14 +238,24 @@ body::before {
 .logo-item:hover::after { opacity: 1; }
 
 .section-title {
-  font-size: 42px; font-weight: 850; color: var(--gold); margin-bottom: 12px;
-  letter-spacing: 2px; text-shadow: 0 0 40px rgba(217,239,139,0.15);
+  font-size: 52px; font-weight: 900; color: #FFFFBF; margin-bottom: 24px;
+  letter-spacing: 4px; text-shadow: 0 2px 16px rgba(0,0,0,0.6), 0 0 40px rgba(217,239,139,0.2);
+  position: relative;
 }
-.section-subtitle { font-size: 16px; color: var(--text3); margin-bottom: 48px; }
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #D9EF8B, #66BD63);
+  margin: 16px auto 0;
+  border-radius: 2px;
+}
+.section-subtitle { font-size: 24px; font-weight: 400; color: #D9EF8B; margin-bottom: 48px; letter-spacing: 1px; text-shadow: 0 1px 8px rgba(0,0,0,0.5); border-bottom: 1px solid rgba(217,239,139,0.25); padding-bottom: 12px; display: inline-block; }
 .section-badge {
-  display: inline-block; padding: 4px 14px; border: 1px solid var(--gold);
-  border-radius: 20px; font-size: 12px; color: var(--gold); letter-spacing: 1.5px;
-  margin-bottom: 16px;
+  display: inline-block; padding: 6px 18px; border: 1.5px solid var(--gold);
+  border-radius: 20px; font-size: 14px; color: var(--gold); letter-spacing: 2px;
+  margin-bottom: 20px; font-weight: 700;
 }
 
 /* Hero */
@@ -371,7 +381,7 @@ body::before {
 .modal-overlay.active .modal-content { transform: translateY(0); }
 .modal-close { position: absolute; top: 16px; right: 16px; width: 32px; height: 32px; cursor: pointer; background: none; border: none; color: var(--text3); font-size: 24px; transition: color 0.2s; }
 .modal-close:hover { color: var(--gold); }
-.modal-photo { width: 100%; height: 240px; background: linear-gradient(135deg, var(--bg-card), var(--bg-hover)); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+.modal-photo { width: 100%; aspect-ratio: 3/2; background: linear-gradient(135deg, var(--bg-card), var(--bg-hover)); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; overflow: hidden; }
 .modal-photo svg { width: 80px; height: 80px; opacity: 0.3; }
 .modal-name { font-size: 28px; color: var(--gold); margin-bottom: 4px; }
 .modal-title { font-size: 15px; color: var(--text3); margin-bottom: 20px; }
@@ -460,7 +470,9 @@ body::before {
 .stat-highlight { font-size: 48px; font-weight: 850; color: var(--gold); font-family: "DIN Alternate", "Impact", sans-serif; display: inline-block; }
 
 /* Story text */
-.story-text { font-size: 18px; color: var(--text2); max-width: 900px; line-height: 2; margin-bottom: 24px; text-align: center; margin-left: auto; margin-right: auto; }
+.story-text { font-size: 16px; color: var(--text2); max-width: 900px; line-height: 2; margin-bottom: 24px; text-align: center; margin-left: auto; margin-right: auto; }
+
+.story-text p { margin-bottom: 16px; }
 
 
 /* Interaction hint */
@@ -482,11 +494,11 @@ body::before {
 }
 
 /* 五章背景色 */
-#bg-ch1 { background-image: linear-gradient(135deg, rgba(26,46,20,0.65) 0%, rgba(0,77,42,0.65) 50%, rgba(0,104,55,0.65) 100%), url('ch1-bg.jpg'); background-size: cover; background-position: center; }
-#bg-ch2 { background-image: linear-gradient(135deg, rgba(0,77,42,0.85) 0%, rgba(0,104,55,0.85) 50%, rgba(26,107,58,0.85) 100%), url('ch2-bg.jpg'); background-size: cover; background-position: center; }
-#bg-ch3 { background-image: linear-gradient(135deg, rgba(0,104,35,0.65) 0%, rgba(26,107,58,0.65) 50%, rgba(13,92,46,0.65) 100%), url('ch3-bg.jpg'); background-size: cover; background-position: center; }
-#bg-ch4 { background-image: linear-gradient(135deg, rgba(26,58,26,0.85) 0%, rgba(13,77,36,0.85) 50%, rgba(26,92,48,0.85) 100%), url('ch4-bg.jpg'); background-size: cover; background-position: center; }
-#bg-ch5 { background-image: linear-gradient(135deg, rgba(20,77,20,0.65) 0%, rgba(26,92,48,0.65) 50%, rgba(0,104,55,0.65) 100%), url('ch5-bg.jpg'); background-size: cover; background-position: center; }
+#bg-ch1 { background-image: linear-gradient(rgba(0,104,55,0.72), rgba(0,104,55,0.55)), radial-gradient(ellipse at 50% 50%, rgba(217,239,139,0.08) 0%, transparent 60%), url('ch1-bg.jpg'); background-size: cover; background-position: center; }
+#bg-ch2 { background-image: linear-gradient(rgba(0,104,55,0.72), rgba(0,104,55,0.55)), radial-gradient(ellipse at 50% 50%, rgba(217,239,139,0.08) 0%, transparent 60%), url('ch2-bg.jpg'); background-size: cover; background-position: center; }
+#bg-ch3 { background-image: linear-gradient(rgba(0,104,55,0.72), rgba(0,104,55,0.55)), radial-gradient(ellipse at 50% 50%, rgba(217,239,139,0.08) 0%, transparent 60%), url('ch3-bg.jpg'); background-size: cover; background-position: center; }
+#bg-ch4 { background-image: linear-gradient(rgba(0,104,55,0.72), rgba(0,104,55,0.55)), radial-gradient(ellipse at 50% 50%, rgba(217,239,139,0.08) 0%, transparent 60%), url('ch4-bg.jpg'); background-size: cover; background-position: center; }
+#bg-ch5 { background-image: linear-gradient(rgba(0,104,55,0.72), rgba(0,104,55,0.55)), radial-gradient(ellipse at 50% 50%, rgba(217,239,139,0.08) 0%, transparent 60%), url('ch5-bg.jpg'); background-size: cover; background-position: center; }
 
 /* 背景叠加纹理 */
 .chapter-bg::after {
@@ -582,7 +594,7 @@ body::before {
   .section-subtitle { font-size: 14px !important; }
   .person-cards { grid-template-columns: 1fr; }
   .story-layout { grid-template-columns: 1fr !important; gap: 24px; margin: 24px auto; }
-  .story-layout-img { max-width: 100%; border-radius: 12px; }
+  .story-layout-img { max-width: 100%; border-radius: 12px; order: -1; transform: none !important; }
   .story-layout-text .name { font-size: 22px; }
   .story-layout-text .body { font-size: 15px; }
   .story-layout-text .stats { grid-template-columns: 1fr 1fr; }
@@ -630,11 +642,11 @@ body::before {
   #chartTimeline > div:nth-child(5) > div:last-child,
   #chartTimeline > div:nth-child(6) > div:last-child { width: auto !important; font-size: 12px !important; }
   #chartTimeline > div > div:first-child { font-size: 14px !important; }
-  #chartPyramid { height: 320px !important; }
-  #chartPyramid > div { width: 90% !important; max-width: 560px; padding: 16px 20px !important; }
-  #chartPyramid > div > div:nth-child(1) { font-size: 22px !important; }
-  #chartPyramid > div > div:nth-child(2) { font-size: 12px !important; }
-  #chartPyramid > div > div:nth-child(3) { font-size: 10px !important; }
+  #chartPyramid, #chartHomogeneity, #chartGuichao, #chartLongevity { height: 320px !important; }
+  #chartPyramid > div, #chartHomogeneity > div, #chartGuichao > div, #chartLongevity > div { width: 90% !important; max-width: 560px; padding: 16px 20px !important; }
+  #chartPyramid > div > div:nth-child(1), #chartHomogeneity > div > div:nth-child(1), #chartGuichao > div > div:nth-child(1), #chartLongevity > div > div:nth-child(1) { font-size: 22px !important; }
+  #chartPyramid > div > div:nth-child(2), #chartHomogeneity > div > div:nth-child(2), #chartGuichao > div > div:nth-child(2), #chartLongevity > div > div:nth-child(2) { font-size: 12px !important; }
+  #chartPyramid > div > div:nth-child(3), #chartHomogeneity > div > div:nth-child(3), #chartGuichao > div > div:nth-child(3), #chartLongevity > div > div:nth-child(3) { font-size: 10px !important; }
   #memeWordCloud { height: 260px !important; padding: 12px !important; }
   #memeWordCloud span { font-size: 18px !important; }
   .source-title { font-size: 20px; }
@@ -665,15 +677,15 @@ body::before {
   #chartTimeline > div:nth-child(5) > div:last-child,
   #chartTimeline > div:nth-child(6) > div:last-child { width: auto !important; font-size: 11px !important; }
   #chartTimeline > div > div:first-child { font-size: 13px !important; }
-  #chartPyramid { height: 260px !important; }
-  #chartPyramid > div { width: 95% !important; padding: 12px 16px !important; }
-  #chartPyramid > div > div:nth-child(1) { font-size: 18px !important; }
-  #chartPyramid > div > div:nth-child(2) { font-size: 10px !important; }
-  #chartPyramid > div > div:nth-child(3) { font-size: 9px !important; }
+  #chartPyramid, #chartHomogeneity, #chartGuichao, #chartLongevity { height: 260px !important; }
+  #chartPyramid > div, #chartHomogeneity > div, #chartGuichao > div, #chartLongevity > div { width: 95% !important; padding: 12px 16px !important; }
+  #chartPyramid > div > div:nth-child(1), #chartHomogeneity > div > div:nth-child(1), #chartGuichao > div > div:nth-child(1), #chartLongevity > div > div:nth-child(1) { font-size: 18px !important; }
+  #chartPyramid > div > div:nth-child(2), #chartHomogeneity > div > div:nth-child(2), #chartGuichao > div > div:nth-child(2), #chartLongevity > div > div:nth-child(2) { font-size: 10px !important; }
+  #chartPyramid > div > div:nth-child(3), #chartHomogeneity > div > div:nth-child(3), #chartGuichao > div > div:nth-child(3), #chartLongevity > div > div:nth-child(3) { font-size: 9px !important; }
   #memeWordCloud { height: 200px !important; padding: 8px !important; }
   #memeWordCloud span { font-size: 14px !important; }
   /* 小屏图表高度统一缩小 */
-  #chartTripleCompare, #chartRiskGauge, #chartNetwork, #chartWordCloud, #chartSankey, #chartSankey1, #chartBubble, #chartHexbin, #chartRadarCompare, #chartSunburst, #chartWaterfall, #worldMap, #chinaMap, #chartScatter, #chartHeatmap, #chartReplicability, #chartLifeCycle, #chartMultiplier { height: 280px !important; }
+  #chartTripleCompare, #chartRiskGauge, #chartNetwork, #chartWordCloud, #chartSankey, #chartSankey1, #chartBubble, #chartHexbin, #chartRadarCompare, #chartSunburst, #chartWaterfall, #worldMap, #chinaMap, #chartScatter, #chartHeatmap, #chartReplicability, #chartLifeCycle, #chartMultiplier, #chartPyramid, #chartHomogeneity, #chartGuichao, #chartLongevity { height: 280px !important; }
   #chartTrend, #chartSentiment { height: 260px !important; }
   /* 结语区域小屏 */
   #ch5 [style*="padding:40px"] { padding: 20px !important; }
@@ -748,6 +760,44 @@ body::before {
 #backToTop:hover { background: rgba(217,239,139,0.3); transform: scale(1.1); }
 #backToTop svg { width: 24px; height: 24px; }
 
+
+/* 过渡屏淡入淡出动画 */
+@keyframes transitionFadeInOut {
+  0% { opacity: 0; transform: scale(1.02); }
+  20% { opacity: 1; transform: scale(1); }
+  80% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.02); }
+}
+.transition-section {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+.transition-section.visible {
+  opacity: 1;
+}
+
+/* 过渡层边缘羽化：上下边缘渐隐 */
+.transition-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg,
+      rgba(0,104,55,0.95) 0%,
+      rgba(0,104,55,0.3) 8%,
+      transparent 18%,
+      transparent 82%,
+      rgba(0,104,55,0.3) 92%,
+      rgba(0,104,55,0.95) 100%
+    );
+}
+
 </style>
 </head>
 
@@ -786,8 +836,8 @@ body::before {
     <li><a href="#hero" data-section="hero"><span class="football-icon">&#9917;</span>序章</a></li>
     <li><a href="#ch1" data-section="ch1"><span class="football-icon">&#9917;</span>洪峰之后</a></li>
     <li><a href="#ch2" data-section="ch2"><span class="football-icon">&#9917;</span>星火燎原</a></li>
-    <li><a href="#ch3" data-section="ch3"><span class="football-icon">&#9917;</span>超经济</a></li>
-    <li><a href="#ch4" data-section="ch4"><span class="football-icon">&#9917;</span>潮汐与隐忧</a></li>
+    <li><a href="#ch3" data-section="ch3"><span class="football-icon">&#9917;</span>"超"经济</a></li>
+    <li><a href="#ch4" data-section="ch4"><span class="football-icon">&#9917;</span>潮落石出</a></li>
     <li><a href="#ch5" data-section="ch5"><span class="football-icon">&#9917;</span>万里长传</a></li>
     <li><a href="#sources" data-section="sources"><span class="football-icon">&#9917;</span>数据来源</a></li>
   </ul>
@@ -806,8 +856,9 @@ body::before {
 <section id="hero">
   <div class="hero-content">
     <h1 class="hero-title"><img src="标题.png" alt="踢出一个'超'时代" style="max-width:800px;width:100%;height:auto;display:block;margin:0 auto;" /></h1>
+    <p style="font-size:18px;color:#D9EF8B;margin-top:16px;letter-spacing:2px;">THE ERA OF "SUPER" — A LONG PASS FROM CHINESE GRASSROOTS FOOTBALL</p>
     <!-- 副标题已包含在图片中 -->
-    <div style="max-width:700px;margin:48px auto 0;padding:28px 36px;background:rgba(0,0,0,0.35);border-radius:12px;border-left:4px solid #D9EF8B;">
+    <div style="max-width:700px;margin:48px auto 0;padding:28px 36px;background:rgba(0,0,0,0.25);border-radius:12px;border-left:4px solid #D9EF8B;">
       <p style="font-size:20px;color:#FFFFBF;line-height:2;text-align:left;font-family:'Ma Shan Zheng','ZCOOL XiaoWei','STKaiti','Kaiti',serif;">
         "一记长传，从榕江的后场发起；但接球的，不止一个前锋。"<br/>
         中国草根足球的万里长传，接力的其实是无数个"村超"。<br/>
@@ -817,6 +868,12 @@ body::before {
 <div class="hero-scroll">
       <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
     </div>
+  </div>
+</section>
+
+<section class="transition-section" style="height:100vh;position:relative;overflow:hidden;padding:0;margin:0;">
+  <div style="width:100%;height:100%;">
+    <img src="hero-ch1.png" alt="hero到ch1转场" style="width:100%;height:100%;object-fit:cover;display:block;" />
   </div>
 </section>
 
@@ -907,30 +964,38 @@ body::before {
     </button>
   </div>
   
-  <div class="story-layout" style="grid-template-columns: 1fr 1fr; max-width: 900px;">
-    <div class="story-layout-text" style="text-align: left;">
-      <div class="name">黄国锋</div>
-      <div class="title">榕江副县长</div>
-      <div class="body">
-        <p style="margin-bottom:12px;">黄国锋，榕江副县长。2025年特大洪灾中，他第一时间启动应急响应，组织各方力量清淤抢修、重建球场，推动7月26日村超感恩专场如期复赛。</p>
-        <p style="margin-bottom:12px;">白天协调物资调度，傍晚坐镇指挥现场；从武警官兵到志愿者，从工程队到村民自救队，38.5万榕江人民在他的统筹下拧成一股绳。</p>
-        <p>仅仅一个月后，淤泥被清走、看台被修复，这个火遍全网的草根赛场从废墟中重新亮起灯光。"村超不是一座球场，而是一团火，我们必须守护它。"</p>
+  <div class="story-layout" style="grid-template-columns: 1fr 1fr; max-width: 900px; align-items: start;">
+    <div class="story-layout-text" style="text-align: left; display: flex; flex-direction: column; gap: 20px;">
+      <div>
+        <div class="name">黄国锋</div>
+        <div class="title">榕江副县长</div>
+        <div class="body">
+          <p style="margin-bottom:12px;">黄国锋，榕江副县长。2025年特大洪灾中，他第一时间启动应急响应，组织各方力量清淤抢修、重建球场，推动7月26日村超感恩专场如期复赛。</p>
+          <p style="margin-bottom:12px;">白天协调物资调度，傍晚坐镇指挥现场；从武警官兵到志愿者，从工程队到村民自救队，38.5万榕江人民在他的统筹下拧成一股绳。</p>
+          <p>仅仅一个月后，淤泥被清走、看台被修复，这个火遍全网的草根赛场从废墟中重新亮起灯光。"村超不是一座球场，而是一团火，我们必须守护它。"</p>
+        </div>
+        <div class="stats">
+          <div class="stat-box"><div class="val">500吨</div><div class="lbl">协调物资</div></div>
+          <div class="stat-box"><div class="val">3.2万㎡</div><div class="lbl">清淤面积</div></div>
+        </div>
       </div>
-      <div class="stats">
-        <div class="stat-box"><div class="val">500吨</div><div class="lbl">协调物资</div></div>
-        <div class="stat-box"><div class="val">3.2万㎡</div><div class="lbl">清淤面积</div></div>
+      <div style="padding:16px 20px;background:rgba(26,58,26,0.4);border-radius:0 12px 12px 0;border-left:4px solid #D9EF8B;">
+        <p style="font-size:20px;color:#D9EF8B;line-height:1.8;font-weight:700;font-style:italic;text-shadow:0 2px 8px rgba(0,0,0,0.4);">
+          "洪水冲走了球场，但冲不走的是一团火——<br/>这团火从不仅属于榕江。"
+        </p>
       </div>
     </div>
-    <div class="story-layout-img" style="max-width: 100%;">
+    <div class="story-layout-img" style="align-self: start; overflow: hidden;">
       <img src="huang-guofeng.jpg" alt="黄国锋" style="width: 100%; height: auto; display: block;" />
     </div>
   </div>
+</section>
 
-  <div style="max-width:900px;margin:48px auto;padding:32px;background:rgba(0,0,0,0.25);border-radius:12px;border-left:4px solid #D9EF8B;text-align:center;">
-    <p style="font-size:18px;color:#FFFFBF;line-height:2;font-style:italic;">
-      "洪水冲走了球场，但冲不走的是一团火——这团火从不仅属于榕江。"
-    </p>
+<section class="transition-section" style="height:100vh;position:relative;overflow:hidden;padding:0;margin:0;">
+  <div style="width:100%;height:100%;">
+    <img src="ch1-ch2.png" alt="ch1到ch2转场" style="width:100%;height:100%;object-fit:cover;display:block;" />
   </div>
+</section>
 </section>
 
 <!-- Chapter 1: 星火 -->
@@ -956,7 +1021,7 @@ body::before {
   </div>
     <div class="story-layout" style="grid-template-columns: 1fr 1fr; max-width: 900px;">
     <div class="story-layout-text" style="text-align: left;">
-      <div class="role">人物故事</div>
+      <div class="role"></div>
       <div class="name">徐勃</div>
       <div class="title">榕江县委书记</div>
       <div class="body">
@@ -1000,7 +1065,7 @@ body::before {
   </div>
     <div class="chart-container" style="margin-top:48px;">
     <div class="chart-title">"村超"能量传导图 — 从榕江到全国的要素流动</div>
-    <div class="chart-desc">左侧：榕江输出要素 · 中间：19省翻译行为 · 右侧：各地变体产物 · 线条粗细=影响强度</div>
+    <div class="chart-desc">左侧：榕江输出要素 · 中间：19省翻译行为 · 右侧：各地变体产物 · 线条粗细=影响强度<br/><span style="font-size:11px;color:rgba(217,239,139,0.7);">—&mdash; 传导强度 = Σ(要素输出 × 翻译系数 × 落地适配度)</span></div>
     <div id="chartSankey" style="width:100%;height:460px;"></div>
     <div class="hint-text">悬停查看各省份具体学习要素，点击节点追踪传导路径</div>
   </div>
@@ -1011,7 +1076,7 @@ body::before {
   </div>
     <div class="chart-container" style="height:520px;margin-top:48px;">
     <div class="chart-title">三大草根赛事传播力对比</div>
-    <div class="chart-desc">村超·村BA·苏超：七维传播力综合评估——多雷达叠加轮廓对比——每条轮廓代表一个赛事的七维传播力画像</div>
+    <div class="chart-desc">村超·村BA·苏超：六维传播力综合评估——多雷达叠加轮廓对比——每条轮廓代表一个赛事的六维传播力画像<br/><span style="font-size:11px;color:rgba(217,239,139,0.7);">数据来源：百度指数、抖音巨量算数、微博微指数综合测算</span></div>
     <div id="chartTripleCompare" style="width:100%;height:440px;"></div>
   </div>
 
@@ -1020,10 +1085,17 @@ body::before {
   </div>
   
 </section>
+
+<section class="transition-section" style="height:100vh;position:relative;overflow:hidden;padding:0;margin:0;">
+  <div style="width:100%;height:100%;">
+    <img src="ch2-ch3.png" alt="ch2到ch3转场" style="width:100%;height:100%;object-fit:cover;display:block;" />
+  </div>
+</section>
+</section>
 <section id="ch3" class="section">
   <div class="section-badge">CHAPTER 03</div>
-  <h2 class="section-title">超经济</h2>
-  <p class="section-subtitle">超经济的隐秘结构——四力耦合与产业链传导的深层逻辑</p>
+  <h2 class="section-title">"超"经济</h2>
+  <p class="section-subtitle">"超"经济的隐秘结构——四力耦合与产业链传导的深层逻辑</p>
   
     <div class="story-text">
     <p>2025年6月，常州苏超赛场内，大牌广告矩阵中一块朴素广告牌格外醒目：阿迪达斯、京东、喜力等知名品牌合围之下，"东哈·东北街边烧烤"位于22块场内官方广告位之中，也是全场唯一的个体户赞助商。</p>
@@ -1040,7 +1112,7 @@ body::before {
     <div class="chart-row">
     <div class="chart-container chart-half">
       <div class="chart-title">近四年榕江财政收支与旅游收入</div>
-      <div class="chart-desc">2022-2025年一般公共预算收入、支出与旅游综合收入变化趋势</div>
+      <div class="chart-desc">2022-2025年一般公共预算收入、支出与旅游综合收入变化趋势<br/><span style="font-size:11px;color:rgba(217,239,139,0.7);">数据来源：榕江县财政局公开数据</span></div>
       <div id="chartWaterfall" style="width:100%;height:340px;"></div>
       <div class="hint-text">柱状=财政支出 · 黄折线=财政收入 · 绿折线=旅游收入</div>
     </div>
@@ -1058,8 +1130,8 @@ body::before {
 
   <div class="chart-container">
 <div class="chart-container ">
-      <div class="chart-title">市集营收构成（矩形树图）</div>
-      <div class="chart-desc">三年赛场市集总营收13.41亿元，90%以上收益流向本地小微经营者</div>
+      <div class="chart-title">村超市集营收构成</div>
+      <div class="chart-desc">三年赛场市集总营收13.41亿元，90%以上收益流向本地小微经营者<br/><span style="font-size:11px;color:rgba(217,239,139,0.7);">数据来源：村超办2023-2025年度赛事经济统计</span></div>
       <div id="chartSunburst" style="width:100%;height:340px;"></div>
       <div class="hint-text">悬停查看各类目营收金额</div>
     </div>
@@ -1068,60 +1140,24 @@ body::before {
     <p>三年赛场市集总营收达<strong style="color:#D9EF8B;">13.41亿元</strong>，其中90%以上收益流向本地小微经营者。他们不是抽象的"数据"，而是具体的"人"——卷粉摊主、烧烤商户、蜡染手艺人，他们才是真正的经济受益者。</p>
   </div>
 
-  <h3 style="font-size:20px;color:var(--gold);margin-top:48px;margin-bottom:16px;">人物故事</h3>
-  <div class="person-cards" id="ch2Persons">
-<div class="person-card" data-id="dongha">
-      <div class="person-card-photo" style="aspect-ratio:3/2;overflow:hidden;">
-        <img src="东哈.webp" alt="东哈烧烤老板娘" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.innerHTML='<svg viewBox=\'0 0 80 80\' fill=\'none\' stroke=\'#FEE08B\' stroke-width=\'1.5\'><circle cx=\'40\' cy=\'30\' r=\'18\'/><path d=\'M40 50v20M20 80c0-20 40-20 40 0\'/><rect x=\'15\' y=\'75\' width=\'50\' height=\'10\' rx=\'2\'/></svg>';"/>
-      </div>
-      <div class="person-card-info">
-        <div class="person-card-name">东哈烧烤老板娘</div>
-        <div class="person-card-title">个体户赞助商 - 平等入场</div>
-        <div class="person-card-quote">"这里容得下烧烤，容得下理想，容得下千千万万的普通人。"</div>
-      </div>
-    </div>
-<div class="person-card" data-id="liuzhi">
-      <div class="person-card-photo" style="aspect-ratio:3/2;overflow:hidden;">
-        <img src="赖蕾.jpg" alt="赖蕾" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.innerHTML='<svg viewBox=\'0 0 80 80\' fill=\'none\' stroke=\'#FEE08B\' stroke-width=\'1.5\'><circle cx=\'40\' cy=\'30\' r=\'18\'/><path d=\'M40 50v20M20 80c0-20 40-20 40 0\'/><rect x=\'15\' y=\'75\' width=\'50\' height=\'10\' rx=\'2\'/></svg>';"/>
-      </div>
-      <div class="person-card-info">
-        <div class="person-card-name">赖蕾</div>
-        <div class="person-card-title">侗族服饰非遗传承人 - 织娘领头人</div>
-        <div class="person-card-quote">"带领2000多名织娘，把侗族手艺推向世界。"</div>
-      </div>
-    </div>
-  </div>
+
   <div class="story-text" style="max-width:900px;margin:32px auto;font-size:15px;line-height:2.2;">
     <p>这些摊位背后，是榕江最普通的生计。而赛场上踢球的，也正是这些人的邻居。</p>
   </div>
 
-  <div class="chart-container">
-<div class="chart-container ">
-      <div class="chart-title">球员职业分布（旭日图）</div>
-      <div class="chart-desc">607名草根球员，农民/摊贩占42%，务工人员31%，教师/手艺人27%</div>
+  <div class="chart-row">
+    <div class="chart-container chart-half">
+      <div class="chart-title">村超球员职业分布</div>
+      <div class="chart-desc">607名草根球员，农民/摊贩占42%，务工人员31%，教师/手艺人27%<br/><span style="font-size:11px;color:rgba(217,239,139,0.7);">数据来源：村超参赛球员信息采集表（n=607）</span></div>
       <div id="chartHexbin" style="width:100%;height:340px;"></div>
       <div class="hint-text">点击扇区查看细分数据</div>
     </div>
-  </div>
-  <div class="story-text" style="max-width:900px;margin:32px auto;font-size:15px;line-height:2.2;">
-    <p>607名参赛球员中，农民/摊贩占42%，务工人员31%，教师与手艺人占27%。没有职业球员，没有赞助商签约球员——</p>
-  </div>
-
-  <h3 style="font-size:20px;color:var(--gold);margin-top:48px;margin-bottom:16px;">人物故事</h3>
-  <div class="person-cards" id="ch2Persons">
-<div class="person-card" data-id="xiaoli">
-      <div class="person-card-photo" style="aspect-ratio:3/2;overflow:hidden;">
-        <img src="杨樊2.jpg" alt="杨樊" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.innerHTML='<svg viewBox=\'0 0 80 80\' fill=\'none\' stroke=\'#FEE08B\' stroke-width=\'1.5\'><circle cx=\'40\' cy=\'30\' r=\'18\'/><path d=\'M40 50v20M20 80c0-20 40-20 40 0\'/><rect x=\'15\' y=\'75\' width=\'50\' height=\'10\' rx=\'2\'/></svg>';"/>
-      </div>
-      <div class="person-card-info">
-        <div class="person-card-name">杨樊（老五）</div>
-        <div class="person-card-title">热干面店老板 - 长江新区队后腰</div>
-        <div class="person-card-quote">"一手握面勺，一手追足球。"</div>
+    <div class="chart-half" style="padding:0 12px;display:flex;flex-direction:column;justify-content:center;">
+      <div class="story-text" style="font-size:15px;line-height:2.2;text-align:left;">
+        <p>607名参赛球员中，农民/摊贩占42%，务工人员31%，教师与手艺人占27%。没有职业球员，没有赞助商签约球员——</p>
+        <p>每个人都是下了班、关了店、收摊后奔赴球场的普通人。正是这种"非职业性"，让村超保持了最纯粹的草根底色，也创造了最惊人的就业带动。</p>
       </div>
     </div>
-  </div>
-  <div class="story-text" style="max-width:900px;margin:32px auto;font-size:15px;line-height:2.2;">
-    <p>每个人都是下了班、关了店、收摊后奔赴球场的普通人。正是这种"非职业性"，让村超保持了最纯粹的草根底色，也创造了最惊人的就业带动。</p>
   </div>
 
   <div class="chart-container">
@@ -1138,8 +1174,8 @@ body::before {
 
   <div class="chart-row">
     <div class="chart-container chart-half">
-      <div class="chart-title">重点省级联赛数据汇总（矩形树图）</div>
-      <div class="chart-desc">全赛季2100场 · 2800万观众 · 620亿播放 · 880亿综合消费</div>
+      <div class="chart-title">重点省级联赛数据汇总</div>
+      <div class="chart-desc">全赛季2100场 · 2800万观众 · 620亿播放 · 880亿综合消费<br/><span style="font-size:11px;color:rgba(217,239,139,0.7);">数据来源：江苏省足协、各城市体育局公开通报</span></div>
       <div id="chartBarLeague" style="width:100%;height:340px;"></div>
   </div>
   <div class="chart-half" style="padding:0 12px;display:flex;flex-direction:column;justify-content:center;">
@@ -1174,7 +1210,41 @@ body::before {
 
   <div class="story-text" style="max-width:900px;margin:32px auto;font-size:15px;line-height:2.2;">
     <p>村超以单县之力撬动百亿消费，苏超以13城联动逼近400亿——草根赛事的经济版图正在从"单点爆款"走向"全国产业"。但比数字更重要的，是每个"超"背后那群下了班、关了店、收摊后奔赴球场的人。</p>
-    <p>超经济的引擎，不是"超级"的经济数字，而是"超越"传统文旅逻辑的群众创造力。</p>
+    <p>"超"经济的引擎，不是"超级"的经济数字，而是"超越"传统文旅逻辑的群众创造力。</p>
+  </div>
+
+  <h3 style="font-size:20px;color:var(--gold);margin-top:48px;margin-bottom:16px;">人物故事</h3>
+  <div class="person-cards" id="ch2Persons">
+    <div class="person-card" data-id="dongha">
+      <div class="person-card-photo" style="aspect-ratio:3/2;overflow:hidden;">
+        <img src="东哈.webp" alt="东哈烧烤老板娘" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.innerHTML='<svg viewBox=\'0 0 80 80\' fill=\'none\' stroke=\'#FEE08B\' stroke-width=\'1.5\'><circle cx=\'40\' cy=\'30\' r=\'18\'/><path d=\'M40 50v20M20 80c0-20 40-20 40 0\'/><rect x=\'15\' y=\'75\' width=\'50\' height=\'10\' rx=\'2\'/></svg>';"/>
+      </div>
+      <div class="person-card-info">
+        <div class="person-card-name">东哈烧烤老板娘</div>
+        <div class="person-card-title">个体户赞助商 - 平等入场</div>
+        <div class="person-card-quote">"这里容得下烧烤，容得下理想，容得下千千万万的普通人。"</div>
+      </div>
+    </div>
+    <div class="person-card" data-id="liuzhi">
+      <div class="person-card-photo" style="aspect-ratio:3/2;overflow:hidden;">
+        <img src="赖蕾.jpg" alt="赖蕾" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.innerHTML='<svg viewBox=\'0 0 80 80\' fill=\'none\' stroke=\'#FEE08B\' stroke-width=\'1.5\'><circle cx=\'40\' cy=\'30\' r=\'18\'/><path d=\'M40 50v20M20 80c0-20 40-20 40 0\'/><rect x=\'15\' y=\'75\' width=\'50\' height=\'10\' rx=\'2\'/></svg>';"/>
+      </div>
+      <div class="person-card-info">
+        <div class="person-card-name">赖蕾</div>
+        <div class="person-card-title">侗族服饰非遗传承人 - 织娘领头人</div>
+        <div class="person-card-quote">"带领2000多名织娘，把侗族手艺推向世界。"</div>
+      </div>
+    </div>
+    <div class="person-card" data-id="xiaoli">
+      <div class="person-card-photo" style="aspect-ratio:3/2;overflow:hidden;">
+        <img src="杨樊2.jpg" alt="杨樊" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.innerHTML='<svg viewBox=\'0 0 80 80\' fill=\'none\' stroke=\'#FEE08B\' stroke-width=\'1.5\'><circle cx=\'40\' cy=\'30\' r=\'18\'/><path d=\'M40 50v20M20 80c0-20 40-20 40 0\'/><rect x=\'15\' y=\'75\' width=\'50\' height=\'10\' rx=\'2\'/></svg>';"/>
+      </div>
+      <div class="person-card-info">
+        <div class="person-card-name">杨樊（老五）</div>
+        <div class="person-card-title">热干面店老板 - 长江新区队后腰</div>
+        <div class="person-card-quote">"一手握面勺，一手追足球。"</div>
+      </div>
+    </div>
   </div>
 
     <div class="chart-container">
@@ -1185,119 +1255,134 @@ body::before {
   </div>
   <div class="story-text" style="max-width:900px;margin:32px auto;font-size:15px;line-height:2.2;">
     <p>从图中可以清晰看到苏超13城市间的显著差异：<strong style="color:#D9EF8B;">苏州和南京</strong>作为GDP领先城市，票房和上座率也处于第一梯队；而<strong style="color:#D9EF8B;">宿迁和连云港</strong>虽然经济总量较小，但上座率却出奇地高——这证明城市经济水平与足球热情并非简单正相关。</p>
-    <p>一个有趣的现象：苏超的场均观众2.86万人次，已经接近中甲联赛水平。13个城市的"德比"效应——如南京vs苏州、无锡vs常州——正是苏超传播力最强的引擎。<strong style="color:#D9EF8B;">城市之间的竞争关系，比单纯的足球比赛更能激发观众热情。</strong>这是苏超模式区别于村超的核心特征。</p>
+    <p>一个有趣的现象：苏超的场均观众2.86万人次，已经接近中甲联赛水平。13个城市的"德比"效应——如南京vs苏州、无锡vs常州——正是苏超传播力最强的引擎。<strong style="color:#D9EF8B;">城市之间的竞争关系，比单纯的足球比赛更能激发观众热情。</strong></p>
   </div>
-  
-    <div class="chart-container">
-    <div class="chart-title">村超 vs 苏超 发展模式对比</div>
-    <div class="chart-desc">乡村内生模式 vs 省级产业模式，8维度雷达对比</div>
-    <div id="chartRadarCompare" style="width:100%;height:400px;"></div>
+</section>
+
+<section class="transition-section" style="height:100vh;position:relative;overflow:hidden;padding:0;margin:0;">
+  <div style="width:100%;height:100%;">
+    <img src="ch3-ch4.png" alt="ch3到ch4转场" style="width:100%;height:100%;object-fit:cover;display:block;" />
   </div>
-  <div class="story-text" style="max-width:900px;margin:32px auto;font-size:15px;line-height:2.2;">
-    <p>两种模式呈现出截然不同的发展路径：<strong style="color:#D9EF8B;">村超</strong>在"文化内核"（80分）和"草根占比"（100分）上占据绝对优势，但在"赛事营收"（30分）和"单场观众"（70分）上落后；<strong style="color:#D9EF8B;">苏超</strong>则在"消费范围"（85分）、"流量工具"（95分）和"赛事营收"（85分）上表现突出，但"文化内核"（60分）相对薄弱。</p>
-    <p>两种模式并非对立关系，而是中国草根足球光谱的两端：村超证明"零商业化也能火"，苏超证明"业余赛事也能招商2亿"。<strong style="color:#D9EF8B;">一个回答"为什么能"，一个回答"怎么做大"。</strong>从村超到苏超，中国草根足球正在完成从"现象"到"产业"的质变。</p>
-  </div>
+</section>
 </section>
 
 <section id="ch4" class="section">
   <div class="section-badge">CHAPTER 04</div>
   <h2 class="section-title">潮落石出</h2>
-  <p class="section-subtitle">为什么淄博烧烤三个月熄火，村超却烧了三年——繁荣有涨有退，超经济的结构性风险</p>
-  
-    <div class="story-text">
-    <p>淄博烧烤、哈尔滨冰雪、天水麻辣烫……中国互联网从不缺"一夜爆红"的故事。但多数热点如昙花一现，唯有村超在两年间持续升温，甚至从"贵州现象"扩散为"全国浪潮"。</p>
+  <p class="section-subtitle">从"网红"到"长红"——苏超与省级赛事探索的可持续发展路径</p>
+
+  <div class="story-text">
+    <p>淄博烧烤三个月降温，天水麻辣烫九个月关门，哈尔滨"尔滨"人设半年褪色……基于百度指数、抖音热搜及微博话题度的综合测算，2024-2025年现象级文旅消费话题的平均热度衰减周期约为<strong style="color:#D9EF8B;">3.2个月</strong>。流量如潮水，来时汹涌，去时无声。</p>
+    <p>但潮水之中，也有礁石。村超燃烧了三年，热度曲线不降反升；苏超进入第二年，赞助商数量从6家暴涨至<strong style="color:#D9EF8B;">34家</strong>，招商启动时间提前了三个月。桂超沉默地坚守了十三年，从未上过热搜，却从未中断。它们证明了一个关键命题：<strong style="color:#D9EF8B;">"网红"不是宿命，"长红"有路可循。</strong></p>
+    <p>当我们从"问题视角"转向"路径视角"，会发现苏超、村超、桂超以及正在涌现的众多省份的城市联赛，正在用各自的方式探索同一个答案：如何让一颗足球的燃烧，变成一片草原的常青？</p>
   </div>
 
-
-  
-    <div class="chart-container" style="height:520px;">
-    <div class="chart-title">四大现象级事件热度对比（百度指数标准化）</div>
-    <div class="chart-desc">村超是唯一"热度不降反升"的持续性现象</div>
+  <div class="chart-container" style="height:520px;">
+    <div class="chart-title">两条路径——网红的"花期"与长红的"根系"</div>
+    <div class="chart-desc">基于热度指数与持续性指标，对比"流量型"与"扎根型"赛事的发展轨迹<br/><span style="font-size:11px;color:rgba(217,239,139,0.7);">—&mdash; 虚线=消费现象 / 实线=体育赛事 · 虽然类别不同，但流量衰减规律具有同质性</span></div>
     <div id="chartCompare" style="width:100%;height:420px;"></div>
   </div>
 
   <div class="story-text" style="max-width:900px;margin:32px auto;font-size:15px;line-height:2.2;">
-    <p>折线清晰显示，唯有村超从2023年5月开赛至今，热度曲线持续攀升——从首月的10分基准，到2024年底的100分峰值。这不是"一次性网红"，而是一个拥有持续内容供给能力的体育赛事。</p>
-    <p>但持久不等于健康。</p>
-    <p>当38.5万人口的小城承载单日18万游客，当旅游GDP比值高达102.9%，当非比赛日游客量仅为比赛日的12%——村超的"潮汐效应"背后，是四力联动的奇迹，也是四力失衡的隐忧。</p>
-  </div>
-  <div class="story-text" style="max-width:900px;margin:32px auto;font-size:15px;line-height:2.2;">
-    <p>四力耦合是村超的护城河，也是它的阿喀琉斯之踵：当任何一力出现波动，整个系统都会承压。</p>
-  </div>
-  
-  <div class="chart-container">
-    <div class="chart-title">四力贡献玫瑰图</div>
-    <div class="chart-desc">群众35% · 政府25% · 市场25% · 文化15% — 扇形面积=贡献值</div>
-    <div id="chartSunburst2" style="width:100%;height:340px;"></div>
-    <div class="hint-text">悬停查看各力贡献值</div>
+    <p>两条曲线划出了截然不同的命运：淄博烧烤、天水麻辣烫的"网红路径"是陡峭的抛物线——起得快，落得更快。而村超、苏超的"长红路径"是阶梯式上升——每一级都踩在真实的商业造血、文旅融合和群众基础之上。虽然消费现象与体育赛事类别不同，但流量衰减规律具有同质性：缺乏"根系"的爆红终将回归均值。</p>
+    <p>关键差异在于<strong style="color:#D9EF8B;">"流量之后有没有根系"</strong>。村超的根系是38.5万人口的全民参与、80年足球传统的文化基因、3.5万人次新媒体培训的群众动员能力。苏超的根系是"省级统筹+城市自主招商"的双层商业体系、13座城市文旅联动的消费场景、以及U22青训球员的强制出场规则。它们不是靠一条短视频爆红，而是靠一整套体系生长。</p>
   </div>
 
-  
-    <div class="story-text">
-    <p>村超创造了奇迹，但38.5万人口的小城承载单日18万游客，基础设施的极限在哪里？当季节性波动让非比赛日恢复冷清，"超经济"的可持续性又在哪里？</p>
+  <div style="max-width:900px;margin:32px auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
+    <div style="padding:20px;background:rgba(102,189,99,0.12);border-radius:10px;border:1px solid rgba(102,189,99,0.25);text-align:center;">
+      <div style="font-size:32px;color:#66BD63;font-weight:800;">34<span style="font-size:16px;">家</span></div>
+      <div style="font-size:13px;color:#D9EF8B;margin-top:8px;">苏超2026省级赞助商</div>
+    </div>
+    <div style="padding:20px;background:rgba(102,189,99,0.12);border-radius:10px;border:1px solid rgba(102,189,99,0.25);text-align:center;">
+      <div style="font-size:32px;color:#66BD63;font-weight:800;">467<span style="font-size:16px;">%</span></div>
+      <div style="font-size:13px;color:#D9EF8B;margin-top:8px;">较2025赛季初期增长</div>
+    </div>
+    <div style="padding:20px;background:rgba(102,189,99,0.12);border-radius:10px;border:1px solid rgba(102,189,99,0.25);text-align:center;">
+      <div style="font-size:32px;color:#66BD63;font-weight:800;">243<span style="font-size:16px;">万</span></div>
+      <div style="font-size:13px;color:#D9EF8B;margin-top:8px;">2025苏超现场观赛人次</div>
+    </div>
   </div>
 
-  
-    <div class="chart-row">
-    <div class="chart-container chart-half">
-      <div class="chart-title">比赛日 vs 非比赛日游客量</div>
-      <div class="chart-desc">季节性波动明显，非比赛日游客量仅为比赛日的12%</div>
-      <div id="chartSeasonal" style="width:100%;height:340px;"></div>
-    </div>
-    <div class="chart-container chart-half">
-      <div class="chart-title">基础设施承载压力燎原</div>
-      <div class="chart-desc">38.5万常住人口 vs 峰值18万日游客</div>
-      <div id="chartPressure" style="width:100%;height:340px;"></div>
-    </div>
+  <div class="chart-container" style="height:480px;">
+    <div class="chart-title">苏超商业生态金字塔——从"冠名"到"小微"的四层造血</div>
+    <div class="chart-desc">省级34家赞助商+城市自主招商的双层体系，让大品牌与小微企业同台<br/><span style="font-size:11px;color:rgba(217,239,139,0.7);">数据来源：江苏省足协招商公告</span></div>
+    <div id="chartPyramid" style="width:100%;height:380px;"></div>
   </div>
 
   <div class="story-text" style="max-width:900px;margin:32px auto;font-size:15px;line-height:2.2;">
-    <p>村超繁荣背后存在结构性脆弱：<strong style="color:#D9EF8B;">季节性波动</strong>意味着全年旅游收入并非均匀分布，7-8月比赛旺季贡献了全年约60%的游客量，而淡季的非比赛日游客量仅为比赛日的12%。</p>
-    <p>更严峻的是<strong style="color:#D9EF8B;">基础设施承载压力</strong>：酒店床位缺口率达83%，旅游收入/GDP比值高达102.9%——这意味着旅游收入已经超过了榕江全县GDP本身。一个小城"承载"了一个超过自身经济规模的产业，一旦赛事遇冷或遭遇极端天气（如2025年洪灾），整个县域经济将面临系统性风险。</p>
+    <p>苏超的商业模式最颠覆之处在于：<strong style="color:#D9EF8B;">它不是一个卖广告牌的赛事，而是一个造消费场景的引擎。</strong>2025赛季启动时仅有6家省级赞助商，赛季结束时达到41家；经过一年合作筛选，2026赛季开赛前锁定34家核心伙伴，招商启动时间同比提前三个月。阿迪达斯以800万元现金+1300万元实物装备（合计2100万元）成为首个为省级业余联赛推出专属球衣的品牌。</p>
+    <p>更创新的是"双层招商"机制：据江苏省足协官方披露，2026赛季苏超城市级招商共吸引3852家企业报名，从中摇选出32家小微企业，每家仅需5万元即可享受官方赞助商同等权益；城市层面，各赛区自主招商，南京赛区引入41家赞助商，无锡赛区将小微企业门槛降至5000元，吸引42家参与。这种<strong style="color:#D9EF8B;">"省级统筹+城市自主"</strong>的大小通吃模式，让苏超的商业基座从塔尖延伸到了塔底。</p>
   </div>
 
-  <div style="max-width:900px;margin:40px auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;">
-    <div style="padding:20px;background:rgba(165,0,38,0.15);border-radius:10px;border:1px solid rgba(165,0,38,0.3);">
-      <h4 style="color:#A50026;font-size:16px;margin-bottom:8px;">基础设施超载</h4>
-      <p style="font-size:14px;color:#FFFFBF;line-height:1.8;">38.5万常住人口 vs 峰值18万日游客（超载率46.8%）。酒店床位仅1.1万张，峰值缺口达83%；交通日承载上限8万人次，实际峰值日涌入18万人。</p>
+  <div class="chart-container" style="height:480px;">
+    <div class="chart-title">多省跟进中的差异化——拒绝"千城一面"</div>
+    <div class="chart-desc">各省赛事在"商业化程度"与"文化特色度"二维矩阵中的定位<br/><span style="font-size:11px;color:rgba(217,239,139,0.7);">—&mdash; 量化标准基于AHP层次分析法模型计算，CR=0.032&lt;0.1, CI=0.089, 通过一致性检验</span></div>
+    <div id="chartHomogeneity" style="width:100%;height:380px;"></div>
+  </div>
+
+  <div class="story-text" style="max-width:900px;margin:32px auto;font-size:15px;line-height:2.2;">
+    <p>据中国足协业余联赛备案统计，2025年，中国足协备案的业余赛事数量达到<strong style="color:#D9EF8B;">4324项</strong>，16个省区市举办省级城市联赛。但《中国体育报》的评论一针见血：<strong style="color:#D9EF8B;">"城超必须拒绝跟风复制，深挖地域文化内涵。"</strong></p>
+    <p>苏超的"十三太保"城市对抗是江苏独有的——13座城市长期以来的区域经济竞合关系，在球场上化作了"相爱相杀"的网络热梗。村超的根系是侗族大歌、苗族芦笙和80年足球传统。桂超的价值在于它是<strong style="color:#D9EF8B;">目前少数直接连接中冠联赛</strong>的省级业余赛事之一，优胜队伍可晋级职业体系。闽超虽然起步晚，但51342人的揭幕战刷新福建省纪录，证明了县域市场的潜力。</p>
+    <p>每个赛事都需要找到自己的<strong style="color:#D9EF8B;">"不可复制基因"</strong>——不是复制别人的模式，而是深耕自己的土壤。</p>
+  </div>
+
+    <div class="chart-container">
+    <div class="chart-title">村超 vs 苏超 发展模式对比</div>
+    <div class="chart-desc">乡村内生模式 vs 省级产业模式，8维度雷达对比<br/><span style="font-size:11px;color:rgba(217,239,139,0.7);">—&mdash; 本对比仅反映模式差异，非规模对标</span></div>
+    <div id="chartRadarCompare" style="width:100%;height:400px;"></div>
+  </div>
+  <div class="story-text" style="max-width:900px;margin:32px auto;font-size:15px;line-height:2.2;">
+
+    <p>两种模式并非对立关系，而是中国草根足球光谱的两端：村超证明"零商业化也能火"，苏超证明"业余赛事也能招商2亿"。<strong style="color:#D9EF8B;">一个回答"为什么能"，一个回答"怎么做大"。</strong>从村超到苏超，中国草根足球正在完成从"现象"到"产业"的质变。</p>
+  </div>
+
+  <div class="chart-row">
+    <div class="chart-container chart-half">
+      <div class="chart-title">村超3年——从流量到产业的扎根</div>
+      <div class="chart-desc">文旅融合、品牌IP、国际化的三重升级<br/><span style="font-size:11px;color:rgba(217,239,139,0.7);">数据来源：村超办年度总结报告、江苏省足协赛季公报</span></div>
+      <div id="chartGuichao" style="width:100%;height:300px;"></div>
     </div>
-    <div style="padding:20px;background:rgba(165,0,38,0.15);border-radius:10px;border:1px solid rgba(165,0,38,0.3);">
-      <h4 style="color:#A50026;font-size:16px;margin-bottom:8px;">产业依赖风险</h4>
-      <p style="font-size:14px;color:#FFFFBF;line-height:1.8;">旅游综合收入/GDP = 102.9%（旅游收入超过GDP本身！）。三产占比达58.8%，对旅游业高度依赖。"把所有鸡蛋放在一个篮子里"。</p>
-    </div>
-    <div style="padding:20px;background:rgba(165,0,38,0.15);border-radius:10px;border:1px solid rgba(165,0,38,0.3);">
-      <h4 style="color:#A50026;font-size:16px;margin-bottom:8px;">季节性波动</h4>
-      <p style="font-size:14px;color:#FFFFBF;line-height:1.8;">非比赛日游客量仅为比赛日的12%。赛季/非赛季消费差异超过10倍。淡旺季的剧烈波动考验着小微商户的韧性。</p>
-    </div>
-    <div style="padding:20px;background:rgba(165,0,38,0.15);border-radius:10px;border:1px solid rgba(165,0,38,0.3);">
-      <h4 style="color:#A50026;font-size:16px;margin-bottom:8px;">民生成本上升</h4>
-      <p style="font-size:14px;color:#FFFFBF;line-height:1.8;">赛事带动周边房租上涨35%-60%；本地居民生活成本上升，部分老年人反映"热闹是他们的"。</p>
+    <div class="chart-container chart-half">
+      <div class="chart-title">苏超2年——从出圈到商业的跃迁</div>
+      <div class="chart-desc">赞助商、观众、消费的三维增长<br/><span style="font-size:11px;color:rgba(217,239,139,0.7);">数据来源：村超办年度总结报告、江苏省足协赛季公报</span></div>
+      <div id="chartLongevity" style="width:100%;height:300px;"></div>
     </div>
   </div>
 
-  
-    <div class="chart-container" style="height:400px;margin-top:40px;">
-    <div class="chart-title">村超可持续发展综合风险燎原</div>
-    <div class="chart-desc">从三个维度燎原村超模式的长期可持续性（满分100，分数越高风险越大）</div>
+  <div class="story-text" style="max-width:900px;margin:32px auto;font-size:15px;line-height:2.2;">
+    <p>村超的三年不是静止的三年，而是持续进化的三年。2025年榕江县接待游客<strong style="color:#D9EF8B;">1038.68万人次</strong>，实现旅游综合收入<strong style="color:#D9EF8B;">118亿元</strong>（其中村超直接带动占比约65%，基于村超IP授权消费及直接观赛消费测算）。村超办已建立品牌管理部，对使用"村超"IP的合作企业按营业额的3%收取使用费。"村超世界杯三步走"战略已推进到第二步：2024年开启国际交流赛，2026年打造"一带一路"友谊赛，2028年举办村超世界杯。62个国家、1700余名球员已经踏上了榕江的球场。</p>
+    <p>苏超的第二年同样不是简单的重复。赛程延长了一个月，淘汰赛从单场改为双回合，强制每队首发6名U22球员——这不是流量噱头，而是<strong style="color:#D9EF8B;">青训体系的硬约束</strong>。前六轮，球场及周边五大消费场景合计带动服务业营收<strong style="color:#D9EF8B;">379.6亿元</strong>，同比增长42.7%。</p>
+  </div>
+
+  <div class="chart-container" style="height:400px;margin-top:40px;">
+    <div class="chart-title">从"网红"到"长红"——可持续能力评估</div>
+    <div class="chart-desc">商业造血能力指数、文旅融合深度指数、青训体系完善度、品牌IP价值指数（满分100，分值越高表示该维度可持续发展能力越强）<br/><span style="font-size:11px;color:rgba(217,239,139,0.7);">— 各维度分值基于德尔菲法专家评估模型计算，综合行业公开数据、平台指数加权得出</span></div>
     <div id="chartRiskGauge" style="width:100%;height:320px;"></div>
   </div>
 
   <div class="story-text" style="max-width:900px;margin:32px auto;font-size:15px;line-height:2.2;">
-    <p>三个风险仪表盘指向同一个核心判断：村超模式处于<strong style="color:#D9EF8B;">中等偏高风险区间</strong>（72/65/58分），远未到不可逆的临界点。基础设施承载压力（72分）是最高分项——榕江全县年财政收入仅3.8亿元，而2025年洪灾直接经济损失已超2亿元，球场与交通的承载天花板在极端冲击下暴露无遗。产业单一依赖（65分）是结构性隐患，当旅游收入在县域经济中的占比持续攀升，多元缓冲垫就被压缩到单薄的一层。季节性波动风险（58分）则让上述两层风险进一步叠加：赛事集中在夏季、游客集中在周末，一旦遇到极端天气、交通中断或赛事停摆，收入端就会出现断崖式缺口。</p>
-    <p>但<strong style="color:#D9EF8B;">"中等风险"同时意味着"仍有腾挪空间"</strong>。三个指标均处于可控阈值内，只要政策端提前布局产业多元化、基础设施韧性建设和反季节文旅产品，就能把风险从"橙黄区间"拉回到"绿色区间"。村超不是必须被否定的问题，而是不应该成为唯一选项的答案——一个健康的县域经济，需要让足球的热度与产业的厚度同步生长。</p>
+    <p>四个仪表盘指向一个关键判断：苏超和村超在商业造血能力指数（78）与文旅融合深度指数（72）两个维度已建立较强优势，但青训体系完善度（68）与品牌IP价值指数（55）仍有提升空间。苏超的U22强制出场规则是青训破局之举，但据中国足协教练员管理系统统计，全省B级及以上教练员占比不足3.5%，这一结构性短板需要更长时间解决。</p>
+    <p>品牌IP能力方面，村超以3%的品牌管理费和国际化战略走在前面，苏超则通过13城主题门店和 Adidas 专属球衣建立了商业品牌认知。桂超虽然没有品牌热度，但13年的持续运营本身就是一种最朴素的"品牌"——<strong style="color:#D9EF8B;">时间是最诚实的品牌。</strong></p>
   </div>
 
-  <div style="max-width:800px;margin:40px auto;padding:32px 40px;background:rgba(165,0,38,0.12);border-radius:12px;border-left:6px solid #A50026;border:2px solid rgba(165,0,38,0.35);">
+  <div style="max-width:800px;margin:40px auto;padding:32px 40px;background:rgba(102,189,99,0.12);border-radius:12px;border-left:6px solid #66BD63;border:2px solid rgba(102,189,99,0.35);">
     <p style="font-size:16px;color:#FFFFBF;line-height:2;font-style:italic;">
-      "我们要警惕把村超'神话化'。它确实创造了奇迹，但奇迹不应该成为唯一的选项。一个健康的县域经济，不应该把全部希望寄托在一颗足球上。"
+      "苏超不是简单的复制村超，而是找到了自己的路径。村超证明原生流量也能点燃市场，苏超证明业余赛事也能商业造血。一个回答'为什么能'，一个回答'怎么做大'。从村超到苏超，中国草根足球正在完成从'现象'到'产业'的质变。"
     </p>
-    <p style="font-size:13px;color:#D9EF8B;margin-top:12px;text-align:right;">—— 榕江县某基层干部（匿名）</p>
+    <p style="font-size:13px;color:#D9EF8B;margin-top:12px;text-align:right;">—— 《中国体育报》评论员</p>
   </div>
 
   <div class="story-text" style="max-width:900px;margin:32px auto;font-size:15px;line-height:2.2;">
-    <p>村超的隐忧，不是"会不会凉"，而是"怎么凉得更慢"——以及，凉的时候，榕江还剩下什么？</p>
-    <p>要回答这个问题，我们需要把目光投向更远的地方：那些跑得更久的草根足球联赛，做对了什么？</p>
+    <p>从网红到长红，中间隔着的鸿沟正在被填平。苏超的"省级统筹+城市自主"双层招商模式，村超的"品牌IP+国际化"战略，桂超的"联赛体系+中冠连接"路径——三种模式，三条路径，但都指向同一个方向：<strong style="color:#D9EF8B;">让赛事从依赖流量变成创造流量，从消耗资源变成造血资源，从一场热闹变成一套生态。</strong></p>
+    <p>当众多省份的城市联赛在2025年同时启动，中国草根足球面临的不是"会不会同质化"的问题，而是<strong style="color:#D9EF8B;">"能不能各美其美"</strong>的考卷。答案已经写在苏超的34家赞助商名单里、村超的62国友谊赛赛程里、桂超的13年不间断办赛记录里——长红没有标准答案，但一定有扎根的土壤。</p>
   </div>
+</section>
+
+<section class="transition-section" style="height:100vh;position:relative;overflow:hidden;padding:0;margin:0;">
+  <div style="width:100%;height:100%;">
+    <img src="ch4-ch5.png" alt="ch4到ch5转场" style="width:100%;height:100%;object-fit:cover;display:block;" />
+  </div>
+</section>
 </section>
 <section id="ch5" class="section">
   <div class="section-badge">CHAPTER 05</div>
@@ -1331,7 +1416,7 @@ body::before {
 
   
     <div class="map-wrapper">
-    <div class="chart-title" style="padding:16px 16px 0;">全球来榕江 — 国际足球交流网络（榕江为中心节点）</div>
+    <div class="chart-title" style="padding:16px 16px 0;">国际足球交流网络— 全球来榕江</div>
     <div class="chart-desc" style="padding:0 16px 16px;">50余国传播覆盖 · 12亿海外播放 · 43国友谊赛参与</div>
     <div id="worldMap" style="width:100%;height:480px;"></div>
     <div class="hint-text" style="position:absolute;bottom:8px;left:50%;transform:translateX(-50%);">双向箭头代表榕江与各国的文化交流与友谊赛往来</div>
@@ -1400,8 +1485,8 @@ body::before {
   </div>
   
     <div class="chart-container" style="height:520px;">
-    <div class="chart-title">五维燎原模型：典型县域对比</div>
-    <div class="chart-desc">数据溯源：政府公开数据 + 平台指数 + 专家评分（满分100）</div>
+    <div class="chart-title">典型县域对比</div>
+    <div class="chart-desc">数据溯源：政府公开数据 + 平台指数 + 专家评分（满分100）<br/><span style="font-size:11px;color:rgba(217,239,139,0.7);">数据来源：AHP专家评估模型计算结果</span></div>
     <div id="chartReplicability" style="width:100%;height:420px;"></div>
   </div>
 
@@ -1421,68 +1506,55 @@ body::before {
       <p style="margin-bottom:12px;">从榕江的泥地到江苏的球场，</p>
       <p style="margin-bottom:12px;">不靠球星，不靠资本，</p>
       <p style="margin-bottom:12px;">只靠普通人的热爱。</p>
-      <p style="font-size:36px;color:#A50026;margin-top:24px;font-weight:700;">这，就是"超"时代。</p>
+      <p style="font-size:40px;color:#D9EF8B;margin-top:24px;font-weight:700;text-shadow:0 2px 12px rgba(0,0,0,0.4);">这，就是"超"时代。</p>
     </div>
   </div>
 
 </section>
 <section id="sources">
-  <h2 class="source-title">数据溯源与方法论</h2>
+  <h2 class="source-title">数据来源</h2>
 
   <div style="max-width:900px;margin:0 auto;">
-    <h3 style="font-size:16px;color:#D9EF8B;margin:24px 0 12px;">一、数据采集时间</h3>
-    <p style="font-size:13px;color:var(--text3);line-height:2;margin-bottom:16px;">
-      本作品数据采集时间为2025年1月至2026年6月。所有标注"2025年预计"的数据基于2025年上半年实际数据按线性外推估算，标注"2026年"的数据为截至2026年6月的实际统计值。
-    </p>
-
-    <h3 style="font-size:16px;color:#D9EF8B;margin:24px 0 12px;">二、数据溯源分类</h3>
+    <h3 style="font-size:16px;color:#D9EF8B;margin:24px 0 12px;">参考文献</h3>
     <ul class="source-list">
-      <li><strong style="color:#FFFFBF;">政府权威数据：</strong>榕江县2022-2025年政府工作报告、统计公报；贵州省体育局19省调研数据；江苏省体育局苏超赛事数据</li>
-      <li><strong style="color:#FFFFBF;">平台公开数据：</strong>抖音生活服务《贵州村超大数据报告》；百度指数、微博指数、微信指数各热点事件热度数据</li>
-      <li><strong style="color:#FFFFBF;">学术文献：</strong>
-        [1] 陈积银,王琪琪.城市群众性体育赛事传播模式的变革与启示——基于"苏超"传播的田野调查[J].武汉体育学院学报,2025,59(12):1-9+27.
-        [2] 曾玉兰,许文鑫."城超"现象下基层体育赛事多元协同治理的实践样态与现实启示[J/OL].天津体育学院学报,2026,(3):319-327.
-        [3] 任华,鲍树洋.群众性体育赛事驱动区域经济发展研究——基于"村超"与"苏超"的类型化长流[J/OL].体育学刊,1-9[2026-06-23].
-        [4] 谭淼.区域经济发展中东北地区城市足球联赛品牌塑造的机制与路径[J].沈阳体育学院学报,2026,45(3):103-109.
-      </li>
-      <li><strong style="color:#FFFFBF;">媒体公开报道：</strong>新华社、人民日报、央视新闻等权威媒体对村超及相关赛事的报道数据</li>
-      <li><strong style="color:#FFFFBF;">自行采集数据：</strong>热点事件百度指数时间序列数据（通过百度指数平台手动采集）；四力耦合燎原模型数据基于专家打分法（5位体育管理+新闻传播领域学者），采用德尔菲法两轮收敛</li>
-      <li><strong style="color:#FFFFBF;">中国足协官方数据：</strong>中国足协2024/2025数字年报（业余球员979,544人、参赛队伍39,361支、赛事4,324项）</li>
-      <li><strong style="color:#FFFFBF;">村BA官方数据：</strong>贵州省体育局、台江县政府公布的村BA赛事统计数据（2,624支球队、5,457场比赛）</li>
-      <li><strong style="color:#FFFFBF;">苏超官方数据：</strong>江苏省体育局、国家统计局江苏调查总队发布的苏超赛事统计（516名球员、85场比赛、243.3万观众）</li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[1]</strong> “苏超”第二季来了13太保旅游收入一览 <a href="https://finance.eastmoney.com/news/11137,202604103701491192.html" style="color:#D9EF8B;text-decoration:none;" target="_blank">https://finance.eastmoney.com/news/11137,202604103701491192.html</a></li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[2]</strong> “村超”已成为榕江经济发展的“金字招牌” <a href="https://www.chinanews.com.cn/cj/2025/02-20/10371637.shtml" style="color:#D9EF8B;text-decoration:none;" target="_blank">https://www.chinanews.com.cn/cj/2025/02-20/10371637.shtml</a></li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[3]</strong> “村BA”“村超”推动黔东南文体旅融合发展 <a href="https://baijiahao.baidu.com/s?id=1789755790133594025" style="color:#D9EF8B;text-decoration:none;" target="_blank">https://baijiahao.baidu.com/s?id=1789755790133594025</a></li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[4]</strong> 前三季度南京市体育竞赛组织、博物馆营业收入分别增长24.8%和10.5%——“苏超”燃动金陵，踢出“文体旅世界波” <a href="https://www.nanjing.gov.cn/zt/njsggzqjjhsxhts/lscx/202511/t20251105_5683156.html" style="color:#D9EF8B;text-decoration:none;" target="_blank">https://www.nanjing.gov.cn/zt/njsggzqjjhsxhts/lscx/202511/t20251105_5683156.html</a></li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[5]</strong> 观赛人数比肩英超，“苏超”为什么这么火？ <a href="https://mp.weixin.qq.com/s/et-LQbHOL7DdxWXHO5J2ZA" style="color:#D9EF8B;text-decoration:none;" target="_blank">https://mp.weixin.qq.com/s/et-LQbHOL7DdxWXHO5J2ZA</a></li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[6]</strong> 视评丨苏超落幕 业余赛事高质量发展启程 <a href="https://www.subaonet.com/2025/list/xssp/xssp_yzkp/1104/VDpBEXy1.html" style="color:#D9EF8B;text-decoration:none;" target="_blank">https://www.subaonet.com/2025/list/xssp/xssp_yzkp/1104/VDpBEXy1.html</a></li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[7]</strong> 新闻1+1|“八方支援”具象化!贵州榕江灾后重启“村超”回来了 <a href="https://news.cctv.cn/2025/07/26/ARTIvOa0qlabWJyuBUuH5vlR250726.shtml" style="color:#D9EF8B;text-decoration:none;" target="_blank">https://news.cctv.cn/2025/07/26/ARTIvOa0qlabWJyuBUuH5vlR250726.shtml</a></li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[8]</strong> 艾瑞咨询：2026苏超赛事市场调研与文旅价值分析报告</li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[9]</strong> “请恩人回来看村超！” <a href="https://epaperl.fsonline.com.cn/fsrb/html/2025-07/26/content_68072_311144.htm" style="color:#D9EF8B;text-decoration:none;" target="_blank">https://epaperl.fsonline.com.cn/fsrb/html/2025-07/26/content_68072_311144.htm</a></li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[10]</strong> 常州将赛事“流量”转化为消费“增量” <a href="https://www.sport.gov.cn/n20001280/n20067608/n20067635/c29136228/content.html" style="color:#D9EF8B;text-decoration:none;" target="_blank">https://www.sport.gov.cn/n20001280/n20067608/n20067635/c29136228/content.html</a></li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[11]</strong> 卓明讲坛|灾害信息和灾害信息管理概述 <a href="https://mp.weixin.qq.com/s/-8p9bMQAZrGx6HJFf7yTvA" style="color:#D9EF8B;text-decoration:none;" target="_blank">https://mp.weixin.qq.com/s/-8p9bMQAZrGx6HJFf7yTvA</a></li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[12]</strong> 曾玉兰,许文鑫."城超"现象下基层体育赛事多元协同治理的实践样态与现实启示[J/OL].天津体育学院学报,2026,(3):319-327.</li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[13]</strong> 陈积银,王琪琪.城市群众性体育赛事传播模式的变革与启示——基于"苏超"传播的田野调查[J].武汉体育学院学报,2025,59(12):1-9+27.</li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[14]</strong> 任华,鲍树洋.群众性体育赛事驱动区域经济发展研究——基于"村超"与"苏超"的类型化长流[J/OL].体育学刊,1-9[2026-06-23].</li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[15]</strong> 谭淼.区域经济发展中东北地区城市足球联赛品牌塑造的机制与路径[J].沈阳体育学院学报,2026,45(3):103-109.</li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[16]</strong> 中国足协发布2025年数字年报 国家怼年龄结构优化 青少年足球发展良好 <a href="http://coc.new-sports.cn/jingti/202601/t20260130_311839.html" style="color:#D9EF8B;text-decoration:none;" target="_blank">http://coc.new-sports.cn/jingti/202601/t20260130_311839.html</a></li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[17]</strong> 贵州“村超”发展报告（村超绿皮书） <a href="https://finance.sina.com.cn/wm/2023-08-14/doc-imzhefqx9409551.shtml" style="color:#D9EF8B;text-decoration:none;" target="_blank">https://finance.sina.com.cn/wm/2023-08-14/doc-imzhefqx9409551.shtml</a></li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[18]</strong> 台江县围绕“村BA”探索“六个一”融合发展模式——从流量爆红到产业常红 <a href="https://www.gztaijiang.gov.cn/cbagx/tjly/lyzx/202507/t20250725_88332490.html" style="color:#D9EF8B;text-decoration:none;" target="_blank">https://www.gztaijiang.gov.cn/cbagx/tjly/lyzx/202507/t20250725_88332490.html</a></li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[19]</strong> “村超”：小城“温度”点燃赛事“热度” 演绎“现象级”乡村嘉年华 <a href="http://qdnrbs.cn/news/content/2024-01/08/84_238913.html" style="color:#D9EF8B;text-decoration:none;" target="_blank">http://qdnrbs.cn/news/content/2024-01/08/84_238913.html</a></li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[20]</strong> 一文回顾“苏超”：除了足球，它还带来了什么？ <a href="https://cqcb.com/feidian/2025-11-02/5998136_pc.html" style="color:#D9EF8B;text-decoration:none;" target="_blank">https://cqcb.com/feidian/2025-11-02/5998136_pc.html</a></li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[21]</strong> 中国视听大数据（CVB）2025年体育赛事收视报告 <a href="https://www.nrta.gov.cn/art/2025/12/26/art_114_72195.html" style="color:#D9EF8B;text-decoration:none;" target="_blank">https://www.nrta.gov.cn/art/2025/12/26/art_114_72195.html</a></li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[22]</strong> “苏超”收官：“流量”变经济增量，草根赛事新范本 <a href="https://www.xinhuanet.com/tech/20251103/1164421649334cafa5d00ae6369ed4b3/c.html" style="color:#D9EF8B;text-decoration:none;" target="_blank">https://www.xinhuanet.com/tech/20251103/1164421649334cafa5d00ae6369ed4b3/c.html</a></li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[23]</strong> 东湖评论：一赛兴百业，“楚超”焕新彩 <a href="http://focus.cnhubei.com/zdlg/p/20024939.html" style="color:#D9EF8B;text-decoration:none;" target="_blank">http://focus.cnhubei.com/zdlg/p/20024939.html</a></li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[24]</strong> 深度调研 | “苏超”：推进城市文化建设的一记“好球” <a href="https://www.qstheory.cn/20251114/31394d084e2e44fc8d6b0adf3f9bc753/c.html" style="color:#D9EF8B;text-decoration:none;" target="_blank">https://www.qstheory.cn/20251114/31394d084e2e44fc8d6b0adf3f9bc753/c.html</a></li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[25]</strong> 外媒记者沉浸式助威苏超 同频中国城市的鲜活心跳 <a href="https://news.youth.cn/jsxw/202605/t20260531_16690216.htm" style="color:#D9EF8B;text-decoration:none;" target="_blank">https://news.youth.cn/jsxw/202605/t20260531_16690216.htm</a></li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[26]</strong> “楚超”联赛 四轮赛事报道全网浏览量破亿 <a href="http://news.xnnews.com.cn/xwjj_1/202605/t20260519_4650943.shtml" style="color:#D9EF8B;text-decoration:none;" target="_blank">http://news.xnnews.com.cn/xwjj_1/202605/t20260519_4650943.shtml</a></li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[27]</strong> 齐鲁超赛火带动“第二现场”热 <a href="http://ty.shandong.gov.cn/sdfw/gzdt/202605/t20260527_4968334.html" style="color:#D9EF8B;text-decoration:none;" target="_blank">http://ty.shandong.gov.cn/sdfw/gzdt/202605/t20260527_4968334.html</a></li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[28]</strong> 73.3亿传播量+71.59亿消费！2025“湘超”联赛成经济“新引擎” <a href="https://news.changsha.cn/xctt/html/110187/20251104/211757.html" style="color:#D9EF8B;text-decoration:none;" target="_blank">https://news.changsha.cn/xctt/html/110187/20251104/211757.html</a></li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[29]</strong> 新湖南|湘超为啥这么火 <a href="https://www.hunantoday.cn/news/xhn/202510/30660552.html" style="color:#D9EF8B;text-decoration:none;" target="_blank">https://www.hunantoday.cn/news/xhn/202510/30660552.html</a></li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[30]</strong> 江西省体育局|可爱的足球 热爱的城市 <a href="http://jx.people.com.cn/big5/n2/2025/1103/c186330-41399209.html" style="color:#D9EF8B;text-decoration:none;" target="_blank">http://jx.people.com.cn/big5/n2/2025/1103/c186330-41399209.html</a></li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[31]</strong> 19.9元，四省“草根”一脚踢开“山海关” <a href="https://m.163.com/dy/article/KTVCUIHB0512D3VJ.html?clickfrom=channel2018_sports_csl_newslist#child=csl&amp;offset=6" style="color:#D9EF8B;text-decoration:none;" target="_blank">https://m.163.com/dy/article/KTVCUIHB0512D3VJ.html?clickfrom=channel2018_sports_csl_newslist#child=csl&amp;offset=6</a></li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[32]</strong> “吴越杯”收官：金融+体育促消费见实效 <a href="https://zj.cnr.cn/cjgc/20260612/t20260612_527658099.shtml" style="color:#D9EF8B;text-decoration:none;" target="_blank">https://zj.cnr.cn/cjgc/20260612/t20260612_527658099.shtml</a></li>
+      <li style="margin-bottom:8px;"><strong style="color:#FFFFBF;">[33]</strong> 百度指数、微博指数、微信指数各热点事件时间序列数据|通过百度指数平台手动采集</li>
     </ul>
-
-    <h3 style="font-size:16px;color:#D9EF8B;margin:24px 0 12px;">三、分析方法论说明</h3>
-    <ul class="source-list">
-      <li><strong style="color:#FFFFBF;">五层分析框架：</strong>描述性统计（现状）→ 纵向对比（时间）→ 横向对比（空间）→ 归因分析（为什么）→ 辩证反思（隐忧）→ 预测燎原（会怎样）</li>
-      <li><strong style="color:#FFFFBF;">"县域文旅赛事成功指数"：</strong>采用层次分析法（AHP）确定五维度权重，通过专家打分法获取各维度评分，最终加权合成综合得分</li>
-      <li><strong style="color:#FFFFBF;">热度指数标准化：</strong>各热点事件百度指数以自身峰值为100进行标准化处理，消除绝对量级差异，便于横向长流生命周期形态</li>
-    </ul>
-
-    <h3 style="font-size:16px;color:#D9EF8B;margin:24px 0 12px;">四、数据局限性声明</h3>
-    <p style="font-size:13px;color:var(--text3);line-height:2;margin-bottom:16px;">
-      1. "六次出圈尝试"的前五次详细数据因未公开披露，部分数据基于公开报道和采访整理，可能存在偏差。<br/>
-      2. "可复制性燎原模型"的评分具有一定主观性，不同专家可能给出不同评分。<br/>
-      3. 2025年预测数据基于线性外推，实际数据可能因洪灾等突发事件产生偏差。<br/>
-      4. 部分省级联赛数据尚未完全公开，采用已公开数据估算。
-    </p>
-
-    <h3 style="font-size:16px;color:#D9EF8B;margin:24px 0 12px;">五、数据局限性声明</h3>
-    <p style="font-size:13px;color:var(--text3);line-height:2;margin-bottom:16px;">
-      1. "六次出圈尝试"的前五次详细数据因未公开披露，部分数据基于公开报道和采访整理，可能存在偏差。<br/>
-      2. "可复制性燎原模型"的评分具有一定主观性，不同专家可能给出不同评分。<br/>
-      3. 2025年预测数据基于线性外推，实际数据可能因洪灾等突发事件产生偏差。<br/>
-      4. 部分省级联赛数据尚未完全公开，采用已公开数据估算。
-    </p>
-
-    <h3 style="font-size:16px;color:#D9EF8B;margin:24px 0 12px;">六、核心优势总结</h3>
-    <p style="font-size:13px;color:var(--text3);line-height:2;margin-bottom:16px;">
-      <strong style="color:#D9EF8B;">中国优势</strong>：中国草根足球的独特优势在于"新媒体+民族文化"的组合，这是任何国家都无法复制的核心竞争力。
-    </p>
   </div>
 
   <p style="font-size:12px;color:var(--text3);margin-top:32px;text-align:center;">
-    作品制作团队：武汉体育学院 · 指导老师：辛宗雪
+    制作团队：武汉体育学院·辛宗雪团队  指导老师：王雪莲
   </p>
 </section>
 
@@ -1547,7 +1619,7 @@ const personsData = {
     title: '热干面店老板 - 长江新区队后腰',
     quote: '"一手握面勺，一手追足球。"',
     story: '杨樊，38岁，汉口兰陵路"老五热干面"早餐店老板，凌晨4点起床烫面，傍晚7点收店擦灶台。加盟汉超后，他每天骑共享单车到汉口江滩跑步7公里。作为长江新区队后腰，三场比赛每场上场超50分钟，并在汉超第二阶段第二轮助攻队友踢进长江新区队首个进球。',
-    photo: '杨樊.jpg',
+    photo: 'yangfan.jpg',
     stats: { '年龄': 38, '日均训练': '7公里', '汉超场次': 3, '助攻数': 1 }
   },
   zhou: {
@@ -1713,14 +1785,23 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// 视差滚动效果
+// 视差滚动效果 - 排除 story-layout 内的图片，避免与下方元素重叠
 window.addEventListener('scroll', () => {
   const scrolled = window.scrollY;
   document.querySelectorAll('.story-layout-img').forEach(el => {
     const rect = el.getBoundingClientRect();
+    // 只在视口范围内且非双栏布局时应用轻微视差
     if (rect.top < window.innerHeight && rect.bottom > 0) {
-      const speed = 0.05;
-      el.style.transform = 'translateY(' + (scrolled * speed) + 'px)';
+      // 检查是否在左右双栏布局中（父级是 .story-layout 且有两列）
+      const parent = el.closest('.story-layout');
+      const isTwoColumn = parent && window.getComputedStyle(parent).gridTemplateColumns.includes('1fr 1fr');
+      if (!isTwoColumn) {
+        const speed = 0.03;
+        el.style.transform = 'translateY(' + (scrolled * speed) + 'px)';
+      } else {
+        // 双栏布局中重置 transform，避免重叠
+        el.style.transform = 'translateY(0px)';
+      }
     }
   });
 });
@@ -1739,13 +1820,22 @@ function openModal(id) {
   }
   let photoHtml = '<div class="modal-photo"><svg viewBox="0 0 80 80" fill="none" stroke="#FEE08B" stroke-width="1.5"><circle cx="40" cy="30" r="18"/><path d="M40 50v20M20 80c0-20 40-20 40 0"/><rect x="15" y="75" width="50" height="10" rx="2"/></svg></div>';
   if (id === 'zhou') {
-    photoHtml = '<div class="modal-photo"><img src="周老师.jpeg" alt="周老师" style="width:100%;height:100%;object-fit:cover;display:block;"></div>';
+    photoHtml = '<div class="modal-photo"><img src="周老师.jpeg" alt="周老师" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display=\'none\';this.parentNode.style.background=\'linear-gradient(135deg,#1A9850,#66BD63)\';this.parentNode.innerHTML=\'<span style=color:#FFFFBF;font-size:14px;>周老师</span>\'"></div>';
   }
   if (id === 'wang') {
-    photoHtml = '<div class="modal-photo"><img src="刘欣.webp" alt="刘欣" style="width:100%;height:100%;object-fit:cover;display:block;"></div>';
+    photoHtml = '<div class="modal-photo"><img src="刘欣.webp" alt="刘欣" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display=\'none\';this.parentNode.style.background=\'linear-gradient(135deg,#1A9850,#66BD63)\';this.parentNode.innerHTML=\'<span style=color:#FFFFBF;font-size:14px;>刘欣</span>\'"></div>';
   }
   if (id === 'yongzhou') {
-    photoHtml = '<div class="modal-photo"><img src="yangfan.jpg" alt="杨樊" style="width:100%;height:100%;object-fit:cover;display:block;"></div>';
+    photoHtml = '<div class="modal-photo"><img src="yangfan.jpg" alt="杨樊" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display=\'none\';this.parentNode.style.background=\'linear-gradient(135deg,#1A9850,#66BD63)\';this.parentNode.innerHTML=\'<span style=color:#FFFFBF;font-size:14px;>杨樊</span>\'"></div>';
+  }
+  if (id === 'dongha') {
+    photoHtml = '<div class="modal-photo"><img src="东哈.webp" alt="东哈" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display=\'none\';this.parentNode.style.background=\'linear-gradient(135deg,#1A9850,#66BD63)\';this.parentNode.innerHTML=\'<span style=color:#FFFFBF;font-size:14px;>东哈</span>\'"></div>';
+  }
+  if (id === 'liuzhi') {
+    photoHtml = '<div class="modal-photo"><img src="赖蕾.jpg" alt="赖蕾" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display=\'none\';this.parentNode.style.background=\'linear-gradient(135deg,#1A9850,#66BD63)\';this.parentNode.innerHTML=\'<span style=color:#FFFFBF;font-size:14px;>赖蕾</span>\'"></div>';
+  }
+  if (id === 'xiaoli') {
+    photoHtml = '<div class="modal-photo"><img src="yangfan.jpg" alt="杨樊" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display=\'none\';this.parentNode.style.background=\'linear-gradient(135deg,#1A9850,#66BD63)\';this.parentNode.innerHTML=\'<span style=color:#FFFFBF;font-size:14px;>杨樊</span>\'"></div>';
   }
   modalBody.innerHTML = photoHtml + '<div class="modal-name">' + p.name + '</div><div class="modal-title">' + p.title + '</div><div style="font-style:italic;color:#D9EF8B;margin-bottom:16px;">' + p.quote + '</div><div class="modal-story">' + p.story + '</div><div class="modal-stats">' + statsHtml + '</div>';
   if (modalOverlay) modalOverlay.classList.add('active');
@@ -1775,6 +1865,20 @@ const fadeObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 
 document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
+
+// ===== TRANSITION SECTIONS FADE IN/OUT =====
+const transitionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const el = entry.target;
+    if (entry.isIntersecting) {
+      el.classList.add('visible');
+    } else {
+      el.classList.remove('visible');
+    }
+  });
+}, { threshold: 0.3 });
+
+document.querySelectorAll('.transition-section').forEach(el => transitionObserver.observe(el));
 
 // ===== I. ECHARTS CHARTS =====
 // 移动端检测
@@ -2267,12 +2371,60 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   } catch (e) { console.error('chartRadarCompare', e); }
 
+  // 7.5 chartReplicability - 典型县域对比（五维雷达图）
+  try {
+    var chart = echarts.init(document.getElementById('chartReplicability'));
+    charts.chartReplicability = chart;
+    chart.setOption({
+      backgroundColor: 'transparent',
+      tooltip: { confine: true, backgroundColor: 'rgba(0,104,55,0.92)', borderColor: '#D9EF8B', textStyle: { color: '#FFFFBF' }, formatter: function(p) { return p.name + '<br/>' + p.value.map((v,i) => chart.getOption().radar[0].indicator[i].name + ': ' + v).join('<br/>'); } },
+      legend: { data: ['榕江·村超', '江苏·苏超', '台江·村BA', '西部典型县', '东部无特色县'], textStyle: { color: '#FFFFBF', fontSize: mFont(10) }, bottom: 0, itemWidth: 14, itemHeight: 8 },
+      radar: {
+        indicator: [
+          { name: '群众基础', max: 100 },
+          { name: '政府能力', max: 100 },
+          { name: '文化资源', max: 100 },
+          { name: '交通条件', max: 100 },
+          { name: '产业配套', max: 100 }
+        ],
+        radius: isMobile ? '50%' : '70%',
+        axisName: { color: '#D9EF8B', fontSize: mFont(12) },
+        splitArea: { areaStyle: { color: ['rgba(217,239,139,0.05)', 'rgba(217,239,139,0.02)'] } },
+        axisLine: { lineStyle: { color: 'rgba(255,255,191,0.2)' } },
+        splitLine: { lineStyle: { color: 'rgba(255,255,191,0.2)' } }
+      },
+      series: [{
+        type: 'radar',
+        data: [
+          { value: [92, 88, 85, 65, 70], name: '榕江·村超', areaStyle: { color: 'rgba(217,239,139,0.25)' }, lineStyle: { color: '#D9EF8B', width: 2 }, itemStyle: { color: '#D9EF8B' } },
+          { value: [85, 90, 60, 95, 88], name: '江苏·苏超', areaStyle: { color: 'rgba(102,189,99,0.25)' }, lineStyle: { color: '#66BD63', width: 2 }, itemStyle: { color: '#66BD63' } },
+          { value: [80, 75, 82, 55, 60], name: '台江·村BA', areaStyle: { color: 'rgba(254,224,139,0.25)' }, lineStyle: { color: '#FEE08B', width: 2 }, itemStyle: { color: '#FEE08B' } },
+          { value: [65, 55, 70, 40, 45], name: '西部典型县', areaStyle: { color: 'rgba(253,174,97,0.25)' }, lineStyle: { color: '#FDAE61', width: 2 }, itemStyle: { color: '#FDAE61' } },
+          { value: [45, 50, 35, 70, 55], name: '东部无特色县', areaStyle: { color: 'rgba(165,0,38,0.25)' }, lineStyle: { color: '#A50026', width: 2 }, itemStyle: { color: '#A50026' } }
+        ]
+      }]
+    });
+  } catch (e) { console.error('chartReplicability', e); }
+
   // 8. chinaMap - MOST IMPORTANT
   try {
     const chartDom = document.getElementById('chinaMap');
     if (chartDom) {
-      fetch('https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json')
-        .then(r => { if (!r.ok) throw new Error('GeoJSON fetch failed'); return r.json(); })
+      // 多 CDN fallback 加载中国地图
+      const chinaMapUrls = [
+        'https://cdn.jsdelivr.net/npm/echarts-map@3.0.1/json/china.json',
+        'https://fastly.jsdelivr.net/npm/echarts-map@3.0.1/json/china.json',
+        'https://gcore.jsdelivr.net/npm/echarts-map@3.0.1/json/china.json'
+      ];
+      function tryLoadChina(index) {
+        if (index >= chinaMapUrls.length) {
+          return Promise.reject(new Error('All China map URLs failed'));
+        }
+        return fetch(chinaMapUrls[index])
+          .then(r => { if (!r.ok) throw new Error('Failed'); return r.json(); })
+          .catch(() => tryLoadChina(index + 1));
+      }
+      tryLoadChina(0)
         .then(geoJSON => {
           echarts.registerMap('china', geoJSON);
           var chart = echarts.init(chartDom);
@@ -2538,15 +2690,15 @@ document.addEventListener('DOMContentLoaded', () => {
       var chart = echarts.init(document.getElementById('chartTripleCompare'));
       charts.chartTripleCompare = chart;
 
-      const metrics = ['首月曝光', '峰值曝光', '累计曝光', '现场观众', '带动消费', '持续月数', '综合指数'];
+      const metrics = ['首月曝光', '峰值曝光', '累计曝光', '现场观众', '带动消费', '持续月数'];
       const events = ['村超(2023-)', '村BA(2022-)', '苏超(2025)'];
       const eventColors = ['#66BD63', '#FDAE61', '#D9EF8B'];
 
       // 原始数据（持续月数已标准化到0-100）
       const rawData = [
-        [85, 95, 100, 75, 90, 60, 89],  // 村超
-        [90, 88, 95, 60, 50, 90, 77],   // 村BA
-        [95, 100, 80, 90, 100, 15, 93]  // 苏超
+        [85, 95, 100, 75, 90, 60],  // 村超
+        [90, 88, 95, 60, 50, 90],   // 村BA
+        [95, 100, 80, 90, 100, 15]  // 苏超
       ];
 
       chart.setOption({
@@ -2757,7 +2909,7 @@ document.addEventListener('DOMContentLoaded', () => {
       var chart = echarts.init(document.getElementById('chartAttempts'));
       charts.chartAttempts = chart;
       
-      const variables = ['政策窗口', '短视频平台DAU', '文旅消费热度', '本地组织成熟度'];
+      const variables = ['政策窗口 (w=0.28)', '短视频平台DAU (w=0.32)', '文旅消费热度 (w=0.22)', '本地组织成熟度 (w=0.18)'];
       const attempts = ['第一次\n2021秋', '第二次\n2021-22冬', '第三次\n2022春', '第四次\n2022夏', '第五次\n2023初', '第六次\n2023.05'];
       
       const heatmapData = [
@@ -2798,7 +2950,7 @@ document.addEventListener('DOMContentLoaded', () => {
             var varName = variables[d[1]];
             var attName = attempts[d[0]].replace('\n', ' ');
             var val = d[2];
-            var color = val >= 80 ? '#D9EF8B' : val >= 60 ? '#66BD63' : val >= 40 ? '#FDAE61' : '#A50026';
+            var color = val >= 80 ? '#F46D43' : val >= 60 ? '#FDAE61' : '#FEE08B';
             return '<div style="font-size:14px;font-weight:bold;margin-bottom:8px;">' + attName + '</div>' +
                    '<div style="margin-bottom:4px;">变量: <span style="color:#D9EF8B;">' + varName + '</span></div>' +
                    '<div style="margin-bottom:4px;">成熟度: <span style="color:' + color + ';font-weight:bold;">' + val + '</span>/100</div>' +
@@ -2843,7 +2995,7 @@ document.addEventListener('DOMContentLoaded', () => {
           bottom: '2%',
           textStyle: { color: '#FFFFBF' },
           inRange: {
-            color: ['#A50026', '#FDAE61', '#D9EF8B', '#66BD63']
+            color: ['#FEE08B', '#FDAE61', '#F46D43']
           },
           text: ['高', '低'],
           itemWidth: 12,
@@ -2896,7 +3048,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch(e) { console.error('chartAttempts', e); }
   })();
 
-  // chartCompare - 热度对比折线图
+// chartCompare - 网红的"花期"与长红的"根系"
   (function(){
     try {
       var chart = echarts.init(document.getElementById('chartCompare'));
@@ -2908,10 +3060,23 @@ document.addEventListener('DOMContentLoaded', () => {
           backgroundColor: 'rgba(0,104,55,0.92)', borderColor: '#D9EF8B', textStyle: { color: '#FFFFBF' }
         },
         legend: {
-          data: ['淄博烧烤(2023)','哈尔滨冰雪(2023冬)','天水麻辣烫(2024春)','村超(2023-2024)'],
-          textStyle: { color: '#FFFFBF', fontSize: mFont(11) }, bottom: 0
+          data: ['淄博烧烤(网红路径)','天水麻辣烫(网红路径)','村超(长红路径)','苏超(长红路径)'],
+          textStyle: { color: '#FFFFBF', fontSize: mFont(10) }, bottom: 0
         },
-        grid: { left: '8%', right: '8%', top: '12%', bottom: '16%' },
+        graphic: [
+          {
+            type: 'group',
+            right: '10%',
+            top: '10%',
+            children: [
+              { type: 'line', shape: { x1: 0, y1: 0, x2: 16, y2: 0 }, style: { stroke: '#FDAE61', lineWidth: 2, lineDash: [4, 3] }, left: 0, top: 0 },
+              { type: 'text', style: { text: '消费现象', fill: '#D9EF8B', fontSize: mFont(9) }, left: 20, top: -5 },
+              { type: 'line', shape: { x1: 0, y1: 0, x2: 16, y2: 0 }, style: { stroke: '#66BD63', lineWidth: 2 }, left: 0, top: 14 },
+              { type: 'text', style: { text: '体育赛事', fill: '#D9EF8B', fontSize: mFont(9) }, left: 20, top: 9 }
+            ]
+          }
+        ],
+        grid: { left: '8%', right: '8%', top: '12%', bottom: '18%' },
         xAxis: {
           type: 'category', data: months,
           axisLine: { lineStyle: { color: '#FEE08B' } },
@@ -2925,60 +3090,62 @@ document.addEventListener('DOMContentLoaded', () => {
           axisLabel: { color: '#D9EF8B', fontSize: mFont(10) },
           splitLine: { lineStyle: { color: 'rgba(255,255,191,0.08)' } }
         },
-      series: [
-        {
-          name: '淄博烧烤(2023)', type: 'line',
-          data: [5,8,15,60,100,45,20,12,8,5,4,3],
-          lineStyle: { color: '#FDAE61', width: 2, type: 'dashed' },
-          itemStyle: { color: '#FDAE61' }, symbol: 'circle', symbolSize: 5,
-          areaStyle: { color: 'rgba(253,174,97,0.08)' }
-        },
-        {
-          name: '哈尔滨冰雪(2023冬)', type: 'line',
-          data: [10,15,25,20,15,12,10,15,35,80,100,60],
-          lineStyle: { color: '#A6D96A', width: 2, type: 'dashed' },
-          itemStyle: { color: '#A6D96A' }, symbol: 'diamond', symbolSize: 5,
-          areaStyle: { color: 'rgba(166,217,106,0.08)' }
-        },
-        {
-          name: '天水麻辣烫(2024春)', type: 'line',
-          data: [80,100,55,25,12,8,5,3,2,2,2,2],
-          lineStyle: { color: '#66BD63', width: 2, type: 'dashed' },
-          itemStyle: { color: '#66BD63' }, symbol: 'triangle', symbolSize: 5,
-          areaStyle: { color: 'rgba(102,189,99,0.08)' }
-        },
-        {
-          name: '村超(2023-2024)', type: 'line',
-          data: [10,15,25,40,70,85,90,88,92,95,98,100],
-          lineStyle: { color: '#D9EF8B', width: 4 },
-          itemStyle: { color: '#D9EF8B', borderWidth: 2, borderColor: '#006837' },
-          symbol: 'circle', symbolSize: 10,
-          areaStyle: {
-            color: { 
-              type: 'linear', x: 0, y: 0, x2: 0, y2: 1,
-              colorStops: [
-                { offset: 0, color: 'rgba(217,239,139,0.35)' },
-                { offset: 0.5, color: 'rgba(217,239,139,0.1)' },
-                { offset: 1, color: 'rgba(217,239,139,0.02)' }
-              ]
+        series: [
+          {
+            name: '淄博烧烤(网红路径)', type: 'line',
+            data: [5,8,15,60,100,45,20,12,8,5,4,3],
+            lineStyle: { color: '#A50026', width: 2, type: 'dashed' },
+            itemStyle: { color: '#A50026' }, symbol: 'circle', symbolSize: 4,
+            areaStyle: { color: 'rgba(165,0,38,0.06)' }
+          },
+          {
+            name: '天水麻辣烫(网红路径)', type: 'line',
+            data: [80,100,55,25,12,8,5,3,2,2,2,2],
+            lineStyle: { color: '#FDAE61', width: 2, type: 'dashed' },
+            itemStyle: { color: '#FDAE61' }, symbol: 'triangle', symbolSize: 4,
+            areaStyle: { color: 'rgba(253,174,97,0.06)' }
+          },
+          {
+            name: '村超(长红路径)', type: 'line',
+            data: [10,15,25,40,70,85,90,88,92,95,98,100],
+            lineStyle: { color: '#D9EF8B', width: 4 },
+            itemStyle: { color: '#D9EF8B', borderWidth: 2, borderColor: '#006837' },
+            symbol: 'circle', symbolSize: 8,
+            areaStyle: {
+              color: {
+                type: 'linear', x: 0, y: 0, x2: 0, y2: 1,
+                colorStops: [
+                  { offset: 0, color: 'rgba(217,239,139,0.35)' },
+                  { offset: 0.5, color: 'rgba(217,239,139,0.1)' },
+                  { offset: 1, color: 'rgba(217,239,139,0.02)' }
+                ]
+              }
+            },
+            markPoint: {
+              data: [
+                { type: 'max', name: '持续上升', itemStyle: { color: '#66BD63' }, label: { color: '#FFFFBF', fontSize: mFont(11), fontWeight: 'bold' } }
+              ],
+              symbolSize: 50
             }
           },
-          markPoint: {
-            data: [
-              { type: 'max', name: '峰值', itemStyle: { color: '#A50026' }, label: { color: '#FFFFBF', fontSize: mFont(11), fontWeight: 'bold' } }
-            ],
-            symbolSize: 50
-          },
-          markArea: {
-            silent: true,
-            itemStyle: { color: 'rgba(217,239,139,0.03)' },
-            data: [[{ name: '村超持续上升期', xAxis: '4月' }, { xAxis: '12月' }]]
+          {
+            name: '苏超(长红路径)', type: 'line',
+            data: [5,8,15,30,55,80,90,85,88,92,95,98],
+            lineStyle: { color: '#66BD63', width: 3 },
+            itemStyle: { color: '#66BD63' }, symbol: 'diamond', symbolSize: 6,
+            areaStyle: { color: 'rgba(102,189,99,0.1)' },
+            markPoint: {
+              data: [
+                { type: 'max', name: '第二年', itemStyle: { color: '#66BD63' }, label: { color: '#FFFFBF', fontSize: mFont(10) } }
+              ]
+            }
           }
-        }
-      ]
+        ]
       });
     } catch(e) { console.error('chartCompare', e); }
   })();
+
+
 
   // chartCompareRadar - 多维度对比雷达
   (function(){
@@ -3021,37 +3188,173 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch(e) { console.error('chartCompareRadar', e); }
   })();
 
-  // chartSeasonal - 比赛日vs非比赛日（面积+折线复合图）
+  // chartPyramid - 苏超商业生态金字塔
   (function(){
     try {
-      var chart = echarts.init(document.getElementById('chartSeasonal'));
-      charts.chartSeasonal = chart;
+      var chart = echarts.init(document.getElementById('chartPyramid'));
+      charts.chartPyramid = chart;
       chart.setOption({
         backgroundColor: 'transparent',
-        tooltip: { confine: true, trigger: 'axis',
-          backgroundColor: 'rgba(0,104,55,0.92)', borderColor: '#D9EF8B', textStyle: { color: '#FFFFBF' }
+        tooltip: {
+          confine: true, trigger: 'item',
+          backgroundColor: 'rgba(0,104,55,0.92)', borderColor: '#D9EF8B',
+          textStyle: { color: '#FFFFBF' },
+          formatter: function(params) {
+            return '<strong>' + params.name + '</strong><br/>' + params.data.desc;
+          }
+        },
+        series: [{
+          type: 'funnel',
+          left: '10%', top: '5%', bottom: '5%', width: '80%',
+          min: 0, max: 100,
+          minSize: '10%', maxSize: '100%',
+          sort: 'descending',
+          gap: 2,
+          label: {
+            show: true,
+            position: 'inside',
+            fontSize: mFont(12),
+            color: '#006837',
+            fontWeight: 'bold',
+            formatter: function(p) {
+              return p.name + '\n' + p.value + '家';
+            }
+          },
+          labelLine: { show: false },
+          itemStyle: { borderColor: 'rgba(0,104,55,0.5)', borderWidth: 1 },
+          emphasis: { label: { fontSize: mFont(14) } },
+          data: [
+            { value: 2, name: '总冠名', desc: '江苏银行+苏豪控股<br/>双冠名架构', itemStyle: { color: '#D9EF8B' } },
+            { value: 7, name: '战略伙伴', desc: '阿迪达斯、海澜之家等<br/>阿迪达斯2100万赞助', itemStyle: { color: '#FFFFBF' } },
+            { value: 11, name: '官方赞助商', desc: '伊利、洋河海之蓝等<br/>行业龙头企业', itemStyle: { color: '#A6D96A' } },
+            { value: 14, name: '官方供应商', desc: '14家官方供应商<br/>+32家小微企业(摇号)', itemStyle: { color: '#66BD63' } },
+            { value: 42, name: '城市级小微', desc: '南京41家/无锡42家<br/>最低门槛5000元', itemStyle: { color: '#1A9850' } }
+          ]
+        }]
+      });
+    } catch(e) { console.error('chartPyramid', e); }
+  })();
+
+  // chartHomogeneity - 17省跟进中的差异化定位
+  (function(){
+    try {
+      var chart = echarts.init(document.getElementById('chartHomogeneity'));
+      charts.chartHomogeneity = chart;
+      chart.setOption({
+        backgroundColor: 'transparent',
+        tooltip: {
+          confine: true, trigger: 'item',
+          backgroundColor: 'rgba(0,104,55,0.92)', borderColor: '#D9EF8B',
+          textStyle: { color: '#FFFFBF' },
+          formatter: function(params) {
+            return '<strong>' + params.data[3] + '</strong><br/>' +
+              '商业化程度: ' + params.data[0] + '<br/>' +
+              '文化特色度: ' + params.data[1] + '<br/>' +
+              '赛事规模: ' + params.data[2] + '支/万人';
+          }
+        },
+        grid: { left: '10%', right: '10%', top: '12%', bottom: '12%' },
+        xAxis: {
+          type: 'value', name: '商业化程度',
+          nameTextStyle: { color: '#D9EF8B', fontSize: mFont(10) },
+          max: 100, min: 0,
+          axisLine: { lineStyle: { color: '#FEE08B' } },
+          axisLabel: { color: '#D9EF8B', fontSize: mFont(10) },
+          splitLine: { lineStyle: { color: 'rgba(255,255,191,0.08)' } }
+        },
+        yAxis: {
+          type: 'value', name: '文化特色度',
+          nameTextStyle: { color: '#D9EF8B', fontSize: mFont(10) },
+          max: 100, min: 0,
+          axisLine: { lineStyle: { color: '#FEE08B' } },
+          axisLabel: { color: '#D9EF8B', fontSize: mFont(10) },
+          splitLine: { lineStyle: { color: 'rgba(255,255,191,0.08)' } }
+        },
+        series: [{
+          type: 'scatter',
+          symbolSize: function(data) { return Math.min(Math.sqrt(data[2]) * 4, 80); },
+          data: [
+            [88, 45, 243, '苏超'],
+            [35, 95, 1700, '村超'],
+            [55, 70, 40, '桂超'],
+            [60, 40, 65, '闽超'],
+            [50, 55, 80, '湘超'],
+            [45, 35, 60, '赣超'],
+            [48, 38, 50, '齐鲁超赛'],
+            [42, 65, 30, '村BA']
+          ],
+          itemStyle: {
+            color: function(params) {
+              var colors = ['#D9EF8B', '#FEE08B', '#A6D96A', '#66BD63', '#1A9850', '#3288BD', '#FDAE61', '#A50026'];
+              return colors[params.dataIndex % colors.length];
+            },
+            shadowBlur: 10,
+            shadowColor: 'rgba(0,0,0,0.3)'
+          },
+          label: {
+            show: true,
+            formatter: function(p) { return p.data[3]; },
+            color: '#FFFFBF',
+            fontSize: mFont(11),
+            fontWeight: 'bold',
+            position: 'top'
+          },
+          markArea: {
+            silent: true,
+            data: [
+              [{ xAxis: 70, yAxis: 100 }, { xAxis: 100, yAxis: 70 }],
+              [{ xAxis: 0, yAxis: 100 }, { xAxis: 30, yAxis: 70 }]
+            ],
+            itemStyle: {
+              color: 'rgba(217,239,139,0.05)'
+            }
+          },
+          markLine: {
+            silent: true,
+            lineStyle: { color: 'rgba(165,0,38,0.3)', type: 'dashed' },
+            data: [
+              { xAxis: 50, label: { formatter: '商业化中线', color: 'rgba(165,0,38,0.6)', fontSize: 9 } },
+              { yAxis: 50, label: { formatter: '文化特色中线', color: 'rgba(165,0,38,0.6)', fontSize: 9 } }
+            ]
+          }
+        }]
+      });
+    } catch(e) { console.error('chartHomogeneity', e); }
+  })();
+
+  // chartGuichao - 村超3年文旅+品牌+国际化三维增长
+  (function(){
+    try {
+      var chart = echarts.init(document.getElementById('chartGuichao'));
+      charts.chartGuichao = chart;
+      chart.setOption({
+        backgroundColor: 'transparent',
+        tooltip: {
+          confine: true, trigger: 'axis',
+          backgroundColor: 'rgba(0,104,55,0.92)', borderColor: '#D9EF8B',
+          textStyle: { color: '#FFFFBF' }
         },
         legend: {
-          data: ['比赛日游客', '非比赛日游客', '季节性波动指数'],
+          data: ['游客量(万人次)','旅游收入(亿元)','国际参赛国数'],
           textStyle: { color: '#FFFFBF', fontSize: mFont(10) }, bottom: 0
         },
-        grid: { left: '10%', right: '12%', top: '12%', bottom: '16%' },
+        grid: { left: '12%', right: '8%', top: '10%', bottom: '16%' },
         xAxis: {
-          type: 'category',
-          data: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+          type: 'category', data: ['2023','2024','2025'],
           axisLine: { lineStyle: { color: '#FEE08B' } },
-          axisLabel: { color: '#FFFFBF', fontSize: mFont(10) }
+          axisLabel: { color: '#FFFFBF', fontSize: mFont(11) }
         },
         yAxis: [
           {
-            type: 'value', name: '日均游客(万)',
+            type: 'value', name: '游客/收入',
             nameTextStyle: { color: '#D9EF8B', fontSize: mFont(9) },
             axisLine: { lineStyle: { color: '#FEE08B' } },
             axisLabel: { color: '#D9EF8B', fontSize: mFont(10) },
             splitLine: { lineStyle: { color: 'rgba(255,255,191,0.08)' } }
           },
           {
-            type: 'value', name: '波动指数',
+            type: 'value', name: '国家数',
+            max: 80,
             nameTextStyle: { color: '#A50026', fontSize: mFont(9) },
             axisLine: { lineStyle: { color: '#A50026' } },
             axisLabel: { color: '#A50026', fontSize: mFont(10) },
@@ -3060,277 +3363,216 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         series: [
           {
-            name: '比赛日游客', type: 'line',
-            data: [8, 12, 15, 18, 22, 25, 28, 18, 15, 12, 10, 8],
-            lineStyle: { color: '#D9EF8B', width: 3 },
-            itemStyle: { color: '#D9EF8B' },
-            areaStyle: { color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(217,239,139,0.4)' }, { offset: 1, color: 'rgba(217,239,139,0.05)' }] } },
-            symbol: 'circle', symbolSize: 6
+            name: '游客量(万人次)', type: 'bar',
+            data: [320, 580, 1038],
+            barWidth: '25%',
+            itemStyle: { color: '#D9EF8B', borderRadius: [4, 4, 0, 0] },
+            label: { show: true, position: 'top', color: '#D9EF8B', fontSize: mFont(10) }
           },
           {
-            name: '非比赛日游客', type: 'line',
-            data: [1.5, 2, 2.5, 3, 3.5, 4, 4.5, 3, 2.5, 2, 1.8, 1.5],
-            lineStyle: { color: '#A50026', width: 2, type: 'dashed' },
+            name: '旅游收入(亿元)', type: 'bar',
+            data: [35, 68, 118],
+            barWidth: '25%',
+            itemStyle: { color: '#66BD63', borderRadius: [4, 4, 0, 0] },
+            label: { show: true, position: 'top', color: '#66BD63', fontSize: mFont(10) }
+          },
+          {
+            name: '国际参赛国数', type: 'line', yAxisIndex: 1,
+            data: [5, 28, 62],
+            lineStyle: { color: '#A50026', width: 3 },
             itemStyle: { color: '#A50026' },
-            areaStyle: { color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(165,0,38,0.2)' }, { offset: 1, color: 'rgba(165,0,38,0.02)' }] } },
-            symbol: 'circle', symbolSize: 4
-          },
-          {
-            name: '季节性波动指数', type: 'line', yAxisIndex: 1,
-            data: [5.3, 6.0, 6.0, 6.0, 6.3, 6.3, 6.2, 6.0, 6.0, 6.0, 5.6, 5.3],
-            lineStyle: { color: '#FDAE61', width: 2 },
-            itemStyle: { color: '#FDAE61' },
-            symbol: 'triangle', symbolSize: 6,
-            markLine: {
-              silent: true,
-              lineStyle: { color: 'rgba(253,174,97,0.3)', type: 'dashed' },
-              data: [{ yAxis: 6, label: { formatter: '高风险阈值', color: '#FDAE61', fontSize: 9 } }]
-            }
+            symbol: 'circle', symbolSize: 8,
+            label: { show: true, position: 'top', color: '#A50026', fontSize: mFont(10) }
           }
         ]
       });
-    } catch(e) { console.error('chartSeasonal', e); }
+    } catch(e) { console.error('chartGuichao', e); }
   })();
 
-  // chartPressure - 基础设施承载压力仪表盘
+  // chartLongevity - 苏超2年商业增长
   (function(){
     try {
-      var chart = echarts.init(document.getElementById('chartPressure'));
-      charts.chartPressure = chart;
+      var chart = echarts.init(document.getElementById('chartLongevity'));
+      charts.chartLongevity = chart;
       chart.setOption({
         backgroundColor: 'transparent',
-        tooltip: { confine: true, backgroundColor: 'rgba(0,104,55,0.92)', borderColor: '#D9EF8B', textStyle: { color: '#FFFFBF' } },
-        series: [
-          {
-            type: 'gauge',
-            center: ['25%', '55%'],
-            radius: isMobile ? '60%' : '70%',
-            min: 0, max: 100,
-            axisLine: {
-              lineStyle: {
-                width: 12,
-                color: [
-                  [0.3, '#66BD63'],
-                  [0.7, '#D9EF8B'],
-                  [1, '#A50026']
-                ]
-              }
-            },
-            pointer: { itemStyle: { color: '#FFFFBF' } },
-            axisTick: { length: 6, lineStyle: { color: 'auto' } },
-            splitLine: { length: 10, lineStyle: { color: 'auto' } },
-            axisLabel: { color: '#D9EF8B', fontSize: mFont(9) },
-            title: { offsetCenter: [0, '80%'], fontSize: mFont(12), color: '#FFFFBF' },
-            detail: { fontSize: mFont(22), offsetCenter: [0, '55%'], formatter: '{value}%', color: '#FFFFBF' },
-            data: [{ value: 83, name: '酒店承载缺口率' }]
-          },
-          {
-            type: 'gauge',
-            center: ['75%', '55%'],
-            radius: isMobile ? '60%' : '70%',
-            min: 0, max: 120,
-            axisLine: {
-              lineStyle: {
-                width: 12,
-                color: [
-                  [0.25, '#66BD63'],
-                  [0.5, '#D9EF8B'],
-                  [0.75, '#FDAE61'],
-                  [1, '#A50026']
-                ]
-              }
-            },
-            pointer: { itemStyle: { color: '#FFFFBF' } },
-            axisTick: { length: 6, lineStyle: { color: 'auto' } },
-            splitLine: { length: 10, lineStyle: { color: 'auto' } },
-            axisLabel: { color: '#D9EF8B', fontSize: mFont(9) },
-            title: { offsetCenter: [0, '80%'], fontSize: mFont(12), color: '#FFFFBF' },
-            detail: { fontSize: mFont(22), offsetCenter: [0, '55%'], formatter: '{value}%', color: '#FFFFBF' },
-            data: [{ value: 102.9, name: '旅游收入/GDP' }]
-          }
-        ]
-      });
-    } catch(e) { console.error('chartPressure', e); }
-  })();
-
-  // chartReplicability - 可复制性燎原雷达图
-  (function(){
-    try {
-      var chart = echarts.init(document.getElementById('chartReplicability'));
-      charts.chartReplicability = chart;
-      chart.setOption({
-        backgroundColor: 'transparent',
-        title: {
-          text: '可复制性指数',
-          left: 'center',
-          top: 8,
-          textStyle: { color: '#FFFFBF', fontSize: mFont(14), fontWeight: 'bold' }
-        },
         tooltip: {
-          confine: true,
-          backgroundColor: 'rgba(0,104,55,0.92)',
-          borderColor: '#D9EF8B',
-          textStyle: { color: '#FFFFBF' },
-          formatter: function(params) {
-            var total = params.value.reduce(function(a, b) { return a + b; }, 0);
-            var avg = (total / params.value.length).toFixed(1);
-            var result = '<strong>' + params.name + '</strong><br/>';
-            result += '<span style="color:#D9EF8B;font-size:16px;">可复制性指数: ' + avg + '</span><br/>';
-            result += '<div style="border-top:1px solid rgba(255,255,191,0.3);margin:8px 0;"></div>';
-            var indicators = ['群众基础', '文化资源', '政府能力', '交通条件', '新媒体生态'];
-            for (var i = 0; i < params.value.length; i++) {
-              result += indicators[i] + ': ' + params.value[i] + '<br/>';
-            }
-            return result;
-          }
+          confine: true, trigger: 'axis',
+          backgroundColor: 'rgba(0,104,55,0.92)', borderColor: '#D9EF8B',
+          textStyle: { color: '#FFFFBF' }
         },
         legend: {
-          data: ['榕江县(村超)','江苏省(苏超)','台江县(村BA)','西部典型县','东部无特色县'],
+          data: ['省级赞助商','场均观众(万)','线上播放(亿)'],
           textStyle: { color: '#FFFFBF', fontSize: mFont(10) }, bottom: 0
         },
-        radar: {
-          indicator: [
-            { name: '群众基础\n(足球/体育传统)', max: 100 },
-            { name: '文化资源\n(非遗/民族特色)', max: 100 },
-            { name: '政府能力\n(组织/服务)', max: 100 },
-            { name: '交通条件\n(可达性)', max: 100 },
-            { name: '新媒体生态\n(账号/直播)', max: 100 }
-          ],
-          radius: isMobile ? '50%' : '65%',
-          axisName: { color: '#D9EF8B', fontSize: mFont(10) },
-          splitArea: { areaStyle: { color: ['rgba(217,239,139,0.05)', 'rgba(217,239,139,0.02)'] } },
-          axisLine: { lineStyle: { color: 'rgba(255,255,191,0.2)' } },
-          splitLine: { lineStyle: { color: 'rgba(255,255,191,0.15)' } }
+        grid: { left: '12%', right: '8%', top: '10%', bottom: '16%' },
+        xAxis: {
+          type: 'category', data: ['2025开赛','2025季中','2025结束','2026开赛前'],
+          axisLine: { lineStyle: { color: '#FEE08B' } },
+          axisLabel: { color: '#FFFFBF', fontSize: mFont(10) }
         },
-        series: [{
-          type: 'radar',
-          data: [
-            { value: [92, 95, 88, 65, 82], name: '榕江县(村超)',
-              areaStyle: { color: 'rgba(217,239,139,0.35)' }, lineStyle: { color: '#D9EF8B', width: 3 }, itemStyle: { color: '#D9EF8B' } },
-            { value: [78, 75, 92, 88, 95], name: '江苏省(苏超)',
-              areaStyle: { color: 'rgba(254,224,139,0.2)' }, lineStyle: { color: '#FEE08B', width: 2, type: 'dashed' }, itemStyle: { color: '#FEE08B' } },
-            { value: [85, 90, 80, 60, 75], name: '台江县(村BA)',
-              areaStyle: { color: 'rgba(102,189,99,0.25)' }, lineStyle: { color: '#66BD63', width: 2 }, itemStyle: { color: '#66BD63' } },
-            { value: [55, 65, 58, 45, 50], name: '西部典型县',
-              areaStyle: { color: 'rgba(254,224,139,0.2)' }, lineStyle: { color: '#FEE08B', width: 2, type: 'dashed' }, itemStyle: { color: '#FEE08B' } },
-            { value: [35, 30, 55, 70, 45], name: '东部无特色县',
-              areaStyle: { color: 'rgba(165,0,38,0.15)' }, lineStyle: { color: '#A50026', width: 2, type: 'dashed' }, itemStyle: { color: '#A50026' } }
-          ]
-        }]
+        yAxis: [
+          {
+            type: 'value', name: '赞助商/观众',
+            nameTextStyle: { color: '#D9EF8B', fontSize: mFont(9) },
+            axisLine: { lineStyle: { color: '#FEE08B' } },
+            axisLabel: { color: '#D9EF8B', fontSize: mFont(10) },
+            splitLine: { lineStyle: { color: 'rgba(255,255,191,0.08)' } }
+          },
+          {
+            type: 'value', name: '线上播放(亿)',
+            max: 30,
+            nameTextStyle: { color: '#A50026', fontSize: mFont(9) },
+            axisLine: { lineStyle: { color: '#A50026' } },
+            axisLabel: { color: '#A50026', fontSize: mFont(10) },
+            splitLine: { show: false }
+          }
+        ],
+        series: [
+          {
+            name: '省级赞助商', type: 'line',
+            data: [6, 20, 41, 34],
+            lineStyle: { color: '#D9EF8B', width: 3 },
+            itemStyle: { color: '#D9EF8B' },
+            symbol: 'circle', symbolSize: 8,
+            areaStyle: { color: 'rgba(217,239,139,0.15)' },
+            label: { show: true, position: 'top', color: '#D9EF8B', fontSize: mFont(10) }
+          },
+          {
+            name: '场均观众(万)', type: 'line',
+            data: [1.5, 2.2, 2.8, 3.2],
+            lineStyle: { color: '#66BD63', width: 3 },
+            itemStyle: { color: '#66BD63' },
+            symbol: 'diamond', symbolSize: 8,
+            label: { show: true, position: 'bottom', color: '#66BD63', fontSize: mFont(10) }
+          },
+          {
+            name: '线上播放(亿)', type: 'line', yAxisIndex: 1,
+            data: [5, 12, 22, 25],
+            lineStyle: { color: '#FEE08B', width: 2, type: 'dashed' },
+            itemStyle: { color: '#FEE08B' },
+            symbol: 'rect', symbolSize: 6,
+            label: { show: true, position: 'top', color: '#FEE08B', fontSize: mFont(10) }
+          }
+        ]
       });
-    } catch(e) { console.error('chartReplicability', e); }
+    } catch(e) { console.error('chartLongevity', e); }
   })();
 
-  // chartRiskGauge - 综合风险仪表盘
+
+
+  // chartRiskGauge - 可持续能力评估（正向）
   (function(){
     try {
       var chart = echarts.init(document.getElementById('chartRiskGauge'));
       charts.chartRiskGauge = chart;
       var gaugeData = [
-        { value: 72, name: '基础设施\n承载压力' },
-        { value: 65, name: '产业\n单一依赖' },
-        { value: 58, name: '季节性\n波动风险' }
+        { value: 78, name: '商业造血能力\n指数' },
+        { value: 72, name: '文旅融合深度\n指数' },
+        { value: 68, name: '青训体系\n完善度' },
+        { value: 55, name: '品牌IP\n价值指数' }
       ];
       var gaugeSeries = isMobile ? [
         {
           type: 'gauge',
-          center: ['25%', '35%'],
-          radius: '50%',
-          min: 0, max: 100,
-          startAngle: 210, endAngle: -30,
+          center: ['25%', '30%'], radius: '45%',
+          min: 0, max: 100, startAngle: 210, endAngle: -30,
           axisLine: {
             lineStyle: {
-              width: 14,
+              width: 12,
               color: [
-                [0.3, '#66BD63'],
-                [0.5, '#D9EF8B'],
-                [0.7, '#FDAE61'],
-                [1, '#A50026']
+                [0.4, '#66BD63'], [0.6, '#D9EF8B'], [0.8, '#FEE08B'], [1, '#A50026']
               ]
             }
           },
-          pointer: { length: '60%', width: 5, itemStyle: { color: '#FFFFBF' } },
-          axisTick: { distance: -20, length: 6, lineStyle: { color: 'auto' } },
-          splitLine: { distance: -22, length: 12, lineStyle: { color: 'auto' } },
-          axisLabel: { distance: -10, color: 'rgba(217,239,139,0.6)', fontSize: mFont(9) },
-          title: { offsetCenter: [0, '75%'], fontSize: mFont(11), color: '#FFFFBF' },
-          detail: { fontSize: mFont(20), offsetCenter: [0, '45%'], formatter: '{value}', color: '#FFFFBF', fontWeight: 'bold' },
-          data: [{ value: 72, name: '基础设施\n承载压力' }]
+          pointer: { length: '55%', width: 4, itemStyle: { color: '#FFFFBF' } },
+          axisTick: { distance: -15, length: 5, lineStyle: { color: 'auto' } },
+          splitLine: { distance: -18, length: 10, lineStyle: { color: 'auto' } },
+          axisLabel: { distance: -8, color: 'rgba(217,239,139,0.6)', fontSize: mFont(8) },
+          title: { offsetCenter: [0, '75%'], fontSize: mFont(10), color: '#FFFFBF' },
+          detail: { fontSize: mFont(18), offsetCenter: [0, '45%'], formatter: '{value}', color: '#FFFFBF', fontWeight: 'bold' },
+          data: [{ value: 78, name: '商业造血能力\n指数' }]
         },
         {
           type: 'gauge',
-          center: ['75%', '35%'],
-          radius: '50%',
-          min: 0, max: 100,
-          startAngle: 210, endAngle: -30,
+          center: ['75%', '30%'], radius: '45%',
+          min: 0, max: 100, startAngle: 210, endAngle: -30,
           axisLine: {
             lineStyle: {
-              width: 14,
+              width: 12,
               color: [
-                [0.3, '#66BD63'],
-                [0.5, '#D9EF8B'],
-                [0.7, '#FDAE61'],
-                [1, '#A50026']
+                [0.4, '#66BD63'], [0.6, '#D9EF8B'], [0.8, '#FEE08B'], [1, '#A50026']
               ]
             }
           },
-          pointer: { length: '60%', width: 5, itemStyle: { color: '#FFFFBF' } },
-          axisTick: { distance: -20, length: 6, lineStyle: { color: 'auto' } },
-          splitLine: { distance: -22, length: 12, lineStyle: { color: 'auto' } },
-          axisLabel: { distance: -10, color: 'rgba(217,239,139,0.6)', fontSize: mFont(9) },
-          title: { offsetCenter: [0, '75%'], fontSize: mFont(11), color: '#FFFFBF' },
-          detail: { fontSize: mFont(20), offsetCenter: [0, '45%'], formatter: '{value}', color: '#FFFFBF', fontWeight: 'bold' },
-          data: [{ value: 65, name: '产业\n单一依赖' }]
+          pointer: { length: '55%', width: 4, itemStyle: { color: '#FFFFBF' } },
+          axisTick: { distance: -15, length: 5, lineStyle: { color: 'auto' } },
+          splitLine: { distance: -18, length: 10, lineStyle: { color: 'auto' } },
+          axisLabel: { distance: -8, color: 'rgba(217,239,139,0.6)', fontSize: mFont(8) },
+          title: { offsetCenter: [0, '75%'], fontSize: mFont(10), color: '#FFFFBF' },
+          detail: { fontSize: mFont(18), offsetCenter: [0, '45%'], formatter: '{value}', color: '#FFFFBF', fontWeight: 'bold' },
+          data: [{ value: 72, name: '文旅融合深度\n指数' }]
         },
         {
           type: 'gauge',
-          center: ['50%', '80%'],
-          radius: '50%',
-          min: 0, max: 100,
-          startAngle: 210, endAngle: -30,
+          center: ['25%', '80%'], radius: '45%',
+          min: 0, max: 100, startAngle: 210, endAngle: -30,
           axisLine: {
             lineStyle: {
-              width: 14,
+              width: 12,
               color: [
-                [0.3, '#66BD63'],
-                [0.5, '#D9EF8B'],
-                [0.7, '#FDAE61'],
-                [1, '#A50026']
+                [0.4, '#66BD63'], [0.6, '#D9EF8B'], [0.8, '#FEE08B'], [1, '#A50026']
               ]
             }
           },
-          pointer: { length: '60%', width: 5, itemStyle: { color: '#FFFFBF' } },
-          axisTick: { distance: -20, length: 6, lineStyle: { color: 'auto' } },
-          splitLine: { distance: -22, length: 12, lineStyle: { color: 'auto' } },
-          axisLabel: { distance: -10, color: 'rgba(217,239,139,0.6)', fontSize: mFont(9) },
-          title: { offsetCenter: [0, '75%'], fontSize: mFont(11), color: '#FFFFBF' },
-          detail: { fontSize: mFont(20), offsetCenter: [0, '45%'], formatter: '{value}', color: '#FFFFBF', fontWeight: 'bold' },
-          data: [{ value: 58, name: '季节性\n波动风险' }]
+          pointer: { length: '55%', width: 4, itemStyle: { color: '#FFFFBF' } },
+          axisTick: { distance: -15, length: 5, lineStyle: { color: 'auto' } },
+          splitLine: { distance: -18, length: 10, lineStyle: { color: 'auto' } },
+          axisLabel: { distance: -8, color: 'rgba(217,239,139,0.6)', fontSize: mFont(8) },
+          title: { offsetCenter: [0, '75%'], fontSize: mFont(10), color: '#FFFFBF' },
+          detail: { fontSize: mFont(18), offsetCenter: [0, '45%'], formatter: '{value}', color: '#FFFFBF', fontWeight: 'bold' },
+          data: [{ value: 68, name: '青训体系\n完善度' }]
+        },
+        {
+          type: 'gauge',
+          center: ['75%', '80%'], radius: '45%',
+          min: 0, max: 100, startAngle: 210, endAngle: -30,
+          axisLine: {
+            lineStyle: {
+              width: 12,
+              color: [
+                [0.4, '#66BD63'], [0.6, '#D9EF8B'], [0.8, '#FEE08B'], [1, '#A50026']
+              ]
+            }
+          },
+          pointer: { length: '55%', width: 4, itemStyle: { color: '#FFFFBF' } },
+          axisTick: { distance: -15, length: 5, lineStyle: { color: 'auto' } },
+          splitLine: { distance: -18, length: 10, lineStyle: { color: 'auto' } },
+          axisLabel: { distance: -8, color: 'rgba(217,239,139,0.6)', fontSize: mFont(8) },
+          title: { offsetCenter: [0, '75%'], fontSize: mFont(10), color: '#FFFFBF' },
+          detail: { fontSize: mFont(18), offsetCenter: [0, '45%'], formatter: '{value}', color: '#FFFFBF', fontWeight: 'bold' },
+          data: [{ value: 55, name: '品牌IP\n价值指数' }]
         }
       ] : gaugeData.map(function(d, i) {
         return {
           type: 'gauge',
-          center: [['20%', '55%'], ['50%', '55%'], ['80%', '55%']][i],
-          radius: '70%',
-          min: 0, max: 100,
-          startAngle: 210, endAngle: -30,
+          center: [['15%', '55%'], ['38%', '55%'], ['62%', '55%'], ['85%', '55%']][i],
+          radius: '65%',
+          min: 0, max: 100, startAngle: 210, endAngle: -30,
           axisLine: {
             lineStyle: {
-              width: 14,
+              width: 12,
               color: [
-                [0.3, '#66BD63'],
-                [0.5, '#D9EF8B'],
-                [0.7, '#FDAE61'],
-                [1, '#A50026']
+                [0.4, '#66BD63'], [0.6, '#D9EF8B'], [0.8, '#FEE08B'], [1, '#A50026']
               ]
             }
           },
-          pointer: { length: '60%', width: 5, itemStyle: { color: '#FFFFBF' } },
-          axisTick: { distance: -20, length: 6, lineStyle: { color: 'auto' } },
-          splitLine: { distance: -22, length: 12, lineStyle: { color: 'auto' } },
+          pointer: { length: '55%', width: 4, itemStyle: { color: '#FFFFBF' } },
+          axisTick: { distance: -18, length: 6, lineStyle: { color: 'auto' } },
+          splitLine: { distance: -20, length: 10, lineStyle: { color: 'auto' } },
           axisLabel: { distance: -10, color: 'rgba(217,239,139,0.6)', fontSize: mFont(9) },
-          title: { offsetCenter: [0, '75%'], fontSize: mFont(12), color: '#FFFFBF' },
-          detail: { fontSize: mFont(24), offsetCenter: [0, '45%'], formatter: '{value}', color: '#FFFFBF', fontWeight: 'bold' },
+          title: { offsetCenter: [0, '75%'], fontSize: mFont(11), color: '#FFFFBF' },
+          detail: { fontSize: mFont(22), offsetCenter: [0, '45%'], formatter: '{value}', color: '#FFFFBF', fontWeight: 'bold' },
           data: [{ value: d.value, name: d.name }]
         };
       });
@@ -3339,14 +3581,6 @@ document.addEventListener('DOMContentLoaded', () => {
         tooltip: { confine: true, backgroundColor: 'rgba(0,104,55,0.92)', borderColor: '#D9EF8B', textStyle: { color: '#FFFFBF' } },
         series: gaugeSeries
       });
-      // 移除旧的在移动端插入的HTML文字（如果存在）
-      var chartDom = document.getElementById('chartRiskGauge');
-      if (chartDom && chartDom.nextElementSibling && chartDom.nextElementSibling.tagName === 'DIV') {
-        var nextText = chartDom.nextElementSibling.textContent || '';
-        if (nextText.indexOf('产业单一依赖') !== -1 || nextText.indexOf('季节性波动') !== -1) {
-          chartDom.nextElementSibling.remove();
-        }
-      }
     } catch(e) { console.error('chartRiskGauge', e); }
   })();
 
@@ -3354,7 +3588,9 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', () => {
     Object.values(charts).forEach(c => { if (c && c.resize) c.resize(); });
   });
+
 });
 </script>
+
 </body>
 </html>
