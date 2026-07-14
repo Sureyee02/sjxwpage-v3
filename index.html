@@ -1067,6 +1067,13 @@ body::before {
     <div class="chart-title">"村超"能量传导图 — 从榕江到全国的要素流动</div>
     <div class="chart-desc">左侧：榕江输出要素 · 中间：19省翻译行为 · 右侧：各地变体产物 · 线条粗细=影响强度<br/><span style="font-size:11px;color:rgba(217,239,139,0.7);">—&mdash; 传导强度 = Σ(要素输出 × 翻译系数 × 落地适配度)</span></div>
     <div id="chartSankey" style="width:100%;height:460px;"></div>
+    <div style="font-size:11px;color:rgba(217,239,139,0.7);margin-top:8px;line-height:1.8;">
+      传导强度=0.40×M+0.35×S+0.25×G<br/>
+      M=媒体报道量（百度指数+抖音话题播放量，取ln后归一化）<br/>
+      S=规则相似度（Jaccard系数，对比12个核心维度关键词）<br/>
+      G=政府响应度（国务院/省级政府官网公文检索频次）<br/>
+      数据来源：2023.06—2024.06媒体公开报道与各地政策文件
+    </div>
     <div class="hint-text">悬停查看各省份具体学习要素，点击节点追踪传导路径</div>
   </div>
 
@@ -2806,7 +2813,7 @@ document.addEventListener('DOMContentLoaded', () => {
       var chart = echarts.init(document.getElementById('chartAttempts'));
       charts.chartAttempts = chart;
       
-      const variables = ['政策窗口 (w=0.28)', '短视频平台DAU (w=0.32)', '文旅消费热度 (w=0.22)', '本地组织成熟度 (w=0.18)'];
+      const variables = ['本地组织成熟度 (w=0.32)', '文旅消费热度 (w=0.24)', '短视频平台DAU (w=0.28)', '政策窗口 (w=0.16)'];
       const attempts = ['第一次\n2021秋', '第二次\n2021-22冬', '第三次\n2022春', '第四次\n2022夏', '第五次\n2023初', '第六次\n2023.05'];
       
       const heatmapData = [
