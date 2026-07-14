@@ -1249,7 +1249,7 @@ body::before {
 
     <div class="chart-container">
     <div class="chart-title">苏超13城市多维平行坐标</div>
-    <div class="chart-desc">人口、GDP、上座率、票房四维数据并行对比</div>
+    <div class="chart-desc">人口、GDP、上座率、票房四维数据并行对比<br/><span style="font-size:11px;color:rgba(217,239,139,0.7);">数据来源：江苏省统计局2024年数据、苏超联赛官方票务统计</span></div>
     <div id="chartBubble" style="width:100%;height:400px;"></div>
     <div class="hint-text">拖动坐标轴刷选范围，悬停查看城市数据</div>
   </div>
@@ -2035,7 +2035,17 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         label: { color: '#FFFFBF', rotate: 'radial', fontSize: mFont(11) },
         itemStyle: { borderColor: '#006837', borderWidth: 2 }
-      }]
+      }],
+      graphic: {
+        type: 'text',
+        left: 'center',
+        bottom: 10,
+        style: {
+          text: '数据来源：榕江县农业农村局2023年球员职业统计',
+          fill: 'rgba(217,239,139,0.7)',
+          font: '11px sans-serif'
+        }
+      }
     });
   } catch (e) { console.error('chartHexbin', e); }
 
@@ -2266,7 +2276,17 @@ document.addEventListener('DOMContentLoaded', () => {
         type: 'parallel',
         data: data,
         lineStyle: { color: function(p) { const r = p.data[3]; return r >= 95 ? '#D9EF8B' : r >= 85 ? '#FFFFBF' : r >= 75 ? '#66BD63' : '#FEE08B'; }, width: 2, opacity: 0.7 }
-      }]
+      }],
+      graphic: {
+        type: 'text',
+        left: 'center',
+        bottom: 10,
+        style: {
+          text: '数据来源：江苏省统计局2024年数据、苏超联赛官方票务统计',
+          fill: 'rgba(217,239,139,0.7)',
+          font: '11px sans-serif'
+        }
+      }
     });
   } catch (e) { console.error('chartBubble', e); }
 
