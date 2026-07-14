@@ -238,24 +238,24 @@ body::before {
 .logo-item:hover::after { opacity: 1; }
 
 .section-title {
-  font-size: 52px; font-weight: 900; color: #FFFFBF; margin-bottom: 24px;
-  letter-spacing: 4px; text-shadow: 0 2px 16px rgba(0,0,0,0.6), 0 0 40px rgba(217,239,139,0.2);
+  font-size: 56px; font-weight: 900; color: #FFFFBF; margin-bottom: 12px;
+  letter-spacing: 6px; text-shadow: 0 2px 16px rgba(0,0,0,0.6), 0 0 40px rgba(217,239,139,0.2);
   position: relative;
 }
 .section-title::after {
   content: '';
   display: block;
-  width: 60px;
-  height: 3px;
+  width: 80px;
+  height: 4px;
   background: linear-gradient(90deg, #D9EF8B, #66BD63);
   margin: 16px auto 0;
   border-radius: 2px;
 }
-.section-subtitle { font-size: 24px; font-weight: 400; color: #D9EF8B; margin-bottom: 48px; letter-spacing: 1px; text-shadow: 0 1px 8px rgba(0,0,0,0.5); border-bottom: 1px solid rgba(217,239,139,0.25); padding-bottom: 12px; display: inline-block; }
+.section-subtitle { font-size: 20px; font-weight: 400; color: #D9EF8B; margin-bottom: 40px; margin-top: 8px; letter-spacing: 1px; text-shadow: 0 1px 8px rgba(0,0,0,0.5); border-bottom: 1px solid rgba(217,239,139,0.25); padding-bottom: 16px; display: inline-block; }
 .section-badge {
   display: inline-block; padding: 6px 18px; border: 1.5px solid var(--gold);
-  border-radius: 20px; font-size: 14px; color: var(--gold); letter-spacing: 2px;
-  margin-bottom: 20px; font-weight: 700;
+  border-radius: 20px; font-size: 13px; color: var(--gold); letter-spacing: 2px;
+  margin-bottom: 20px; font-weight: 700; background: rgba(217,239,139,0.08);
 }
 
 /* Hero */
@@ -512,6 +512,22 @@ body::before {
 }
 
 /* Responsive */
+@media (max-width: 768px) {
+  .hero-content { padding-top: 60px; }
+  .hero-title { margin-bottom: 8px !important; }
+  .hero-title img { max-width: 100% !important; }
+  .hero-subtitle { font-size: 18px; margin-bottom: 24px; }
+  .hero-eng-subtitle, .hero-intro-box { display: none !important; }
+  .section { padding: 80px 4vw 40px; }
+  .section-title { font-size: 28px; }
+  .section-subtitle { font-size: 14px; margin-bottom: 32px; }
+@media (max-width: 768px) {
+  .hero-content { padding-top: 60px; }
+  .hero-title { margin-bottom: 8px !important; }
+  .hero-title img { max-width: 100% !important; }
+  .hero-subtitle { font-size: 18px; margin-bottom: 24px; }
+  .hero-eng-subtitle, .hero-intro-box { display: none !important; }
+  .section { padding: 80px 4vw 40px; }
 @media (max-width: 768px) {
   .hero-content { padding-top: 60px; }
   .hero-title { margin-bottom: 8px !important; }
@@ -856,9 +872,9 @@ body::before {
 <section id="hero">
   <div class="hero-content">
     <h1 class="hero-title"><img src="标题.png" alt="踢出一个'超'时代" style="max-width:950px;width:100%;height:auto;display:block;margin:0 auto;" /></h1>
-    <p style="font-size:18px;color:#F5F5DC;margin-top:16px;letter-spacing:2px;opacity:0.85;">THE ERA OF "SUPER" — A LONG PASS FROM CHINESE GRASSROOTS FOOTBALL</p>
+    <p class="hero-eng-subtitle" style="font-size:18px;color:#F5F5DC;margin-top:16px;letter-spacing:2px;opacity:0.85;">THE ERA OF "SUPER" — A LONG PASS FROM CHINESE GRASSROOTS FOOTBALL</p>
     <!-- 副标题已包含在图片中 -->
-    <div style="max-width:700px;margin:48px auto 0;padding:28px 36px;background:rgba(0,0,0,0.12);border-radius:12px;border-left:2px solid rgba(217,239,139,0.3);backdrop-filter: blur(2px);">
+    <div class="hero-intro-box" style="max-width:700px;margin:48px auto 0;padding:28px 36px;background:rgba(0,0,0,0.12);border-radius:12px;border-left:2px solid rgba(217,239,139,0.3);backdrop-filter: blur(2px);">
       <p style="font-size:20px;color:#FFFFBF;line-height:2;text-align:left;font-family:'Ma Shan Zheng','ZCOOL XiaoWei','STKaiti','Kaiti',serif;">
         "一记长传，从榕江的后场发起；但接球的，不止一个前锋。"<br/>
         中国草根足球的万里长传，接力的其实是无数个"村超"。<br/>
@@ -966,6 +982,11 @@ body::before {
   
   <div class="story-layout" style="grid-template-columns: 1fr 1fr; max-width: 900px; align-items: start;">
     <div class="story-layout-text" style="text-align: left; display: flex; flex-direction: column; gap: 20px;">
+      <div style="padding:16px 20px;background:rgba(26,58,26,0.4);border-radius:0 12px 12px 0;border-left:4px solid #D9EF8B;">
+        <p style="font-size:18px;color:#D9EF8B;line-height:1.8;font-weight:700;font-style:italic;text-shadow:0 2px 8px rgba(0,0,0,0.4);">
+          "洪水冲走了球场，但冲不走的是一团火——这团火从不仅属于榕江。"
+        </p>
+      </div>
       <div>
         <div class="name">黄国锋</div>
         <div class="title">榕江副县长</div>
@@ -978,11 +999,6 @@ body::before {
           <div class="stat-box"><div class="val">500吨</div><div class="lbl">协调物资</div></div>
           <div class="stat-box"><div class="val">3.2万㎡</div><div class="lbl">清淤面积</div></div>
         </div>
-      </div>
-      <div style="padding:16px 20px;background:rgba(26,58,26,0.4);border-radius:0 12px 12px 0;border-left:4px solid #D9EF8B;">
-        <p style="font-size:20px;color:#D9EF8B;line-height:1.8;font-weight:700;font-style:italic;text-shadow:0 2px 8px rgba(0,0,0,0.4);">
-          "洪水冲走了球场，但冲不走的是一团火——<br/>这团火从不仅属于榕江。"
-        </p>
       </div>
     </div>
     <div class="story-layout-img" style="align-self: start; overflow: hidden;">
@@ -1244,7 +1260,7 @@ body::before {
     </div>
     <div class="person-card" data-id="xiaoli">
       <div class="person-card-photo" style="aspect-ratio:3/2;overflow:hidden;">
-        <img src="杨樊2.jpg" alt="杨樊" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.innerHTML='<svg viewBox=\'0 0 80 80\' fill=\'none\' stroke=\'#FEE08B\' stroke-width=\'1.5\'><circle cx=\'40\' cy=\'30\' r=\'18\'/><path d=\'M40 50v20M20 80c0-20 40-20 40 0\'/><rect x=\'15\' y=\'75\' width=\'50\' height=\'10\' rx=\'2\'/></svg>';"/>
+        <img src="yangfan.jpg" alt="杨樊" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.innerHTML='<svg viewBox=\'0 0 80 80\' fill=\'none\' stroke=\'#FEE08B\' stroke-width=\'1.5\'><circle cx=\'40\' cy=\'30\' r=\'18\'/><path d=\'M40 50v20M20 80c0-20 40-20 40 0\'/><rect x=\'15\' y=\'75\' width=\'50\' height=\'10\' rx=\'2\'/></svg>';"/>
       </div>
       <div class="person-card-info">
         <div class="person-card-name">杨樊（老五）</div>
