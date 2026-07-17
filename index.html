@@ -171,7 +171,7 @@ body::before {
 
 /* 全局文字对比度增强 */
 .section { color: var(--text); }
-.section .section-title, .section .section-subtitle, .section .story-text, .section .chart-title, .section .chart-desc, .section .hint-text, .section .kpi-value, .section .kpi-label, .section .stat-value, .section .stat-label { text-shadow: 0 1px 6px rgba(0,0,0,0.5); color: #FFFFBF; }
+.section .section-title, .section .story-text, .section .chart-title, .section .chart-desc, .section .hint-text, .section .kpi-value, .section .kpi-label, .section .stat-value, .section .stat-label { text-shadow: 0 1px 6px rgba(0,0,0,0.5); color: #FFFFBF; }
 .section .section-title { text-shadow: 0 2px 10px rgba(0,0,0,0.6); color: #FFFFBF; }
 .section .chart-title { color: #FFFFBF; }
 .section .chart-desc { color: #D9EF8B; }
@@ -984,7 +984,7 @@ body::before {
     <div class="story-layout-text" style="text-align: left; display: flex; flex-direction: column; gap: 20px;">
       <div style="padding:16px 20px;background:rgba(26,58,26,0.4);border-radius:0 12px 12px 0;border-left:4px solid #D9EF8B;">
         <p style="font-size:18px;color:#D9EF8B;line-height:1.8;font-weight:700;font-style:italic;text-shadow:0 2px 8px rgba(0,0,0,0.4);">
-          "洪水冲走了球场，但冲不走的是一团火——这团火从不仅属于榕江。"
+          "洪水冲走了球场，<br/>但冲不走的是一团火——这团火从不仅属于榕江。"
         </p>
       </div>
       <div>
@@ -1001,8 +1001,8 @@ body::before {
         </div>
       </div>
     </div>
-    <div class="story-layout-img" style="align-self: start; overflow: hidden;">
-      <img src="huang-guofeng.jpg" alt="黄国锋" style="width: 100%; height: auto; display: block;" />
+    <div class="story-layout-img" style="align-self: start; overflow: hidden; max-height: 380px;">
+      <img src="huang-guofeng.jpg" alt="黄国锋" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
     </div>
   </div>
 </section>
@@ -1027,7 +1027,7 @@ body::before {
   
   <div class="chart-container" style="margin-top:48px;">
     <div class="chart-title">六次出圈尝试：变量矩阵热力图</div>
-    <div class="chart-desc">从政府主导到群众主体的范式转移——颜色越深代表条件越成熟</div>
+    <div class="chart-desc">从政府主导到群众主体的范式转移——颜色越深代表条件越成熟<br/><span style="font-size:11px;color:rgba(217,239,139,0.7);">数值为经AHP加权后的标准化成熟度指数（0-100）· CR=0.042&lt;0.1 | CI=0.056</span></div>
     <div id="chartAttempts" style="width:100%;height:400px;"></div>
     <div class="hint-text">悬停查看各次尝试的详细背景与变量评分</div>
   </div>
@@ -1095,7 +1095,7 @@ body::before {
 
   <div class="story-text" style="max-width:900px;margin:32px auto;font-size:15px;line-height:2.2;">
     <p>当全国19个省份陆续掀起"X超"热潮，问号随之产生：什么样的草根赛事能真正跑通"体育+文旅"的赛道？</p>
-    <p>我们选取了三个最具代表性的样本：村超、村BA、苏超——三个没有球星、没有版权的草根赛事，三种截然不同的出圈路径。我们用"县域文旅赛事成功指数"从6个维度拆解：草根赛事的"火"，是特例还是公式？</p>
+    <p>我们选取了三个最具代表性的样本：村超、村BA、苏超——三个没有球星、没有版权的草根赛事，三种截然不同的出圈路径。我们用"县域文旅赛事成功指数"从6个维度拆解（原"七维"已删除综合指数，避免维度重叠）：草根赛事的"火"，是特例还是公式？</p>
   </div>
     <div class="chart-container" style="height:520px;margin-top:48px;">
     <div class="chart-title">三大草根赛事传播力对比</div>
@@ -1135,7 +1135,7 @@ body::before {
     <div class="chart-row">
     <div class="chart-container chart-half">
       <div class="chart-title">近四年榕江财政收支与旅游收入</div>
-      <div class="chart-desc">2022-2025年一般公共预算收入、支出与旅游综合收入变化趋势<br/><span style="font-size:11px;color:rgba(217,239,139,0.7);">数据来源：榕江县财政局公开数据</span><br/><span style="font-size:11px;color:rgba(217,239,139,0.7);">数据来源：榕江县财政局《一般公共预算收支决算报告》（2022-2025年度）、贵州省文化和旅游厅《贵州文旅发展报告》（2023、2024、2025）、榕江县文体广电旅游局年度统计公报</span></div>
+      <div class="chart-desc">2022-2025年一般公共预算收入、支出与旅游综合收入变化趋势<br/><span style="font-size:11px;color:rgba(217,239,139,0.7);">数据来源：榕江县财政局《一般公共预算收支决算报告》（2022-2025年度）、贵州省文化和旅游厅《贵州文旅发展报告》（2023、2024、2025）、榕江县文体广电旅游局年度统计公报</span></div>
       <div id="chartWaterfall" style="width:100%;height:340px;"></div>
       <div class="hint-text">柱状=财政支出 · 黄折线=财政收入 · 绿折线=旅游收入</div>
     </div>
@@ -1198,7 +1198,7 @@ body::before {
   <div class="chart-row">
     <div class="chart-container chart-half">
       <div class="chart-title">重点省级联赛数据汇总</div>
-      <div class="chart-desc">全赛季2100场 · 2800万观众 · 620亿播放 · 880亿综合消费<br/><span style="font-size:11px;color:rgba(217,239,139,0.7);">数据来源：江苏省足协、各城市体育局公开通报</span></div>
+      <div class="chart-desc">全赛季2100场 · 2800万观众 · 620亿播放 · 880亿综合消费<br/><span style="font-size:11px;color:rgba(217,239,139,0.7);">数据来源：江苏省统计局/13个设区市统计局《2025年国民经济和社会发展统计公报》、江苏省文旅厅《"苏超"赛事经济白皮书》、苏超组委会财务通报</span></div>
       <div id="chartBarLeague" style="width:100%;height:340px;"></div>
   </div>
   <div class="chart-half" style="padding:0 12px;display:flex;flex-direction:column;justify-content:center;">
@@ -1362,12 +1362,12 @@ body::before {
   <div class="chart-row">
     <div class="chart-container chart-half">
       <div class="chart-title">村超3年——从流量到产业的扎根</div>
-      <div class="chart-desc">文旅融合、品牌IP、国际化的三重升级<br/><span style="font-size:11px;color:rgba(217,239,139,0.7);">数据来源：村超办年度总结报告、江苏省足协赛季公报</span></div>
+      <div class="chart-desc">文旅融合、品牌IP、国际化的三重升级<br/><span style="font-size:11px;color:rgba(217,239,139,0.7);">数据来源：新华社《贵州榕江："村超"带火县域经济》（2025）、榕江县人民政府《"村超"三周年发展报告》（2025）、榕江文体广电旅游局《"村超"赛事经济白皮书》（2024）</span></div>
       <div id="chartGuichao" style="width:100%;height:300px;"></div>
     </div>
     <div class="chart-container chart-half">
       <div class="chart-title">苏超2年——从出圈到商业的跃迁</div>
-      <div class="chart-desc">赞助商、观众、消费的三维增长<br/><span style="font-size:11px;color:rgba(217,239,139,0.7);">数据来源：村超办年度总结报告、江苏省足协赛季公报</span></div>
+      <div class="chart-desc">赞助商、观众、消费的三维增长<br/><span style="font-size:11px;color:rgba(217,239,139,0.7);">数据来源：苏超组委会官方网站"合作伙伴"栏目、江苏省体育局官方通报、扬子晚报</span></div>
       <div id="chartLongevity" style="width:100%;height:300px;"></div>
     </div>
   </div>
@@ -2167,7 +2167,7 @@ document.addEventListener('DOMContentLoaded', () => {
           lineStyle: { color: '#FFFFBF', width: 3 },
           itemStyle: { color: '#FFFFBF', borderWidth: 3 },
           symbol: 'circle', symbolSize: 10,
-          label: { show: true, position: 'top', color: '#FFFFBF', fontSize: mFont(11), fontWeight: 'bold', formatter: '{c}亿' }
+          label: { show: !isMobile, position: 'top', color: '#FFFFBF', fontSize: mFont(11), fontWeight: 'bold', formatter: '{c}亿' }
         },
         {
           name: '旅游综合收入', type: 'line', yAxisIndex: 1,
