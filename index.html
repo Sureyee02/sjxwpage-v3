@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>踢出"超"时代 — 中国草根足球联赛的万里长传</title>
 <script src="./echarts.min.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg: #006837;
@@ -47,7 +47,7 @@
   opacity: 0;
 }
 #bg-hero {
-  background-image: url('hero-bg.png');
+  background-image: url('hero-bg.jpg');
   animation: heroZoom 25s infinite alternate ease-in-out;
 }
 #bg-hero.active {
@@ -495,9 +495,9 @@ body::before {
 
 /* 五章背景色 */
 #bg-ch1 { background-image: linear-gradient(rgba(0,104,55,0.72), rgba(0,104,55,0.55)), radial-gradient(ellipse at 50% 50%, rgba(217,239,139,0.08) 0%, transparent 60%), url('ch1-bg.jpg'); background-size: cover; background-position: center; }
-#bg-ch2 { background-image: linear-gradient(rgba(0,104,55,0.72), rgba(0,104,55,0.55)), radial-gradient(ellipse at 50% 50%, rgba(217,239,139,0.08) 0%, transparent 60%), url('ch2-bg.jpg'); background-size: cover; background-position: center; }
+#bg-ch2 { background-image: linear-gradient(rgba(0,104,55,0.72), rgba(0,104,55,0.55)), radial-gradient(ellipse at 50% 50%, rgba(217,239,139,0.08) 0%, transparent 60%), url('ch2-bg-opt.jpg'); background-size: cover; background-position: center; }
 #bg-ch3 { background-image: linear-gradient(rgba(0,104,55,0.72), rgba(0,104,55,0.55)), radial-gradient(ellipse at 50% 50%, rgba(217,239,139,0.08) 0%, transparent 60%), url('ch3-bg.jpg'); background-size: cover; background-position: center; }
-#bg-ch4 { background-image: linear-gradient(rgba(0,104,55,0.72), rgba(0,104,55,0.55)), radial-gradient(ellipse at 50% 50%, rgba(217,239,139,0.08) 0%, transparent 60%), url('ch4-bg.jpg'); background-size: cover; background-position: center; }
+#bg-ch4 { background-image: linear-gradient(rgba(0,104,55,0.72), rgba(0,104,55,0.55)), radial-gradient(ellipse at 50% 50%, rgba(217,239,139,0.08) 0%, transparent 60%), url('ch4-bg-opt.jpg'); background-size: cover; background-position: center; }
 #bg-ch5 { background-image: linear-gradient(rgba(0,104,55,0.72), rgba(0,104,55,0.55)), radial-gradient(ellipse at 50% 50%, rgba(217,239,139,0.08) 0%, transparent 60%), url('ch5-bg.jpg'); background-size: cover; background-position: center; }
 
 /* 背景叠加纹理 */
@@ -514,21 +514,6 @@ body::before {
 /* Responsive */
 @media (max-width: 768px) {
   .hero-content { padding-top: 60px; }
-  .hero-title { margin-bottom: 8px !important; }
-  .hero-title img { max-width: 100% !important; }
-  .hero-subtitle { font-size: 18px; margin-bottom: 24px; }
-  .hero-eng-subtitle, .hero-intro-box { display: none !important; }
-  .section { padding: 80px 4vw 40px; }
-  .section-title { font-size: 28px; }
-  .section-subtitle { font-size: 14px; margin-bottom: 32px; }
-@media (max-width: 768px) {
-  .hero-content { padding-top: 60px; }
-  .hero-title { margin-bottom: 8px !important; }
-  .hero-title img { max-width: 100% !important; }
-  .hero-subtitle { font-size: 18px; margin-bottom: 24px; }
-  .hero-eng-subtitle, .hero-intro-box { display: none !important; }
-  .section { padding: 80px 4vw 40px; }
-@media (max-width: 768px) {
   .hero-content { padding-top: 60px; }
   .hero-title { margin-bottom: 8px !important; }
   .hero-title img { max-width: 100% !important; }
@@ -578,8 +563,12 @@ body::before {
   #chartReplicability { height: 340px !important; }
   /* 赛事生命周期移动端 */
   #chartLifeCycle { height: 340px !important; }
-  /* 苏超对阵图移动端 */
-  #chartMultiplier { height: 340px !important; }
+  /* 变量矩阵移动端 */
+  #chartAttempts { height: 340px !important; }
+  /* 双路径对比移动端 */
+  #chartCompare { height: 340px !important; }
+  /* 联赛对比树图移动端 */
+  #chartBarLeague { height: 340px !important; }
   .nav-links {
     display: none;
     position: absolute;
@@ -701,7 +690,7 @@ body::before {
   #memeWordCloud { height: 200px !important; padding: 8px !important; }
   #memeWordCloud span { font-size: 14px !important; }
   /* 小屏图表高度统一缩小 */
-  #chartTripleCompare, #chartRiskGauge, #chartNetwork, #chartWordCloud, #chartSankey, #chartSankey1, #chartBubble, #chartHexbin, #chartRadarCompare, #chartSunburst, #chartWaterfall, #worldMap, #chinaMap, #chartScatter, #chartHeatmap, #chartReplicability, #chartLifeCycle, #chartMultiplier, #chartPyramid, #chartHomogeneity, #chartGuichao, #chartLongevity { height: 280px !important; }
+  #chartTripleCompare, #chartRiskGauge, #chartNetwork, #chartWordCloud, #chartSankey, #chartSankey1, #chartBubble, #chartHexbin, #chartRadarCompare, #chartSunburst, #chartWaterfall, #worldMap, #chinaMap, #chartScatter, #chartHeatmap, #chartReplicability, #chartLifeCycle, #chartPyramid, #chartHomogeneity, #chartGuichao, #chartLongevity, #chartAttempts, #chartCompare, #chartBarLeague { height: 280px !important; }
   #chartTrend, #chartSentiment { height: 260px !important; }
   /* 结语区域小屏 */
   #ch5 [style*="padding:40px"] { padding: 20px !important; }
@@ -872,7 +861,7 @@ body::before {
 <section id="hero">
   <div class="hero-content">
     <h1 class="hero-title"><img src="标题.png" alt="踢出一个'超'时代" style="max-width:950px;width:100%;height:auto;display:block;margin:0 auto;" /></h1>
-    <p class="hero-eng-subtitle" style="font-size:18px;color:#F5F5DC;margin-top:16px;letter-spacing:2px;opacity:0.85;">THE ERA OF "SUPER" — A LONG PASS FROM CHINESE GRASSROOTS FOOTBALL</p>
+    <p class="hero-eng-subtitle" style="font-size:18px;color:#F5F5DC;margin-top:16px;letter-spacing:2px;opacity:0.85;font-family:'Caveat','Ma Shan Zheng',cursive;">THE ERA OF "SUPER" — A LONG PASS FROM CHINESE GRASSROOTS FOOTBALL</p>
     <!-- 副标题已包含在图片中 -->
     <div class="hero-intro-box" style="max-width:700px;margin:48px auto 0;padding:28px 36px;background:rgba(0,0,0,0.12);border-radius:12px;border-left:2px solid rgba(217,239,139,0.3);backdrop-filter: blur(2px);">
       <p style="font-size:20px;color:#FFFFBF;line-height:2;text-align:left;font-family:'Ma Shan Zheng','ZCOOL XiaoWei','STKaiti','Kaiti',serif;">
