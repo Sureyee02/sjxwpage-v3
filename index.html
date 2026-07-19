@@ -2309,13 +2309,14 @@ document.addEventListener('DOMContentLoaded', () => {
     chart.setOption({
       backgroundColor: 'transparent',
       tooltip: { confine: true, backgroundColor: 'rgba(0,104,55,0.92)', borderColor: '#D9EF8B', textStyle: { color: '#FFFFBF' } },
-      legend: { data: ['村超', '苏超'], textStyle: { color: '#FFFFBF', fontSize: mFont(11) }, bottom: 0 },
+      legend: { data: ['村超', '苏超'], textStyle: { color: '#FFFFBF', fontSize: mFont(11) }, bottom: 0, itemGap: 10 },
       radar: {
         indicator: [
           { name: '运营主体', max: 100 }, { name: '消费范围', max: 100 }, { name: '文化内核', max: 100 }, { name: '流量工具', max: 100 },
           { name: '赛事营收', max: 100 }, { name: '单场观众', max: 100 }, { name: '草根占比', max: 100 }, { name: '适配场景', max: 100 }
         ],
-        radius: isMobile ? '55%' : '55%',
+        center: ['50%', '38%'],
+        radius: isMobile ? '50%' : '48%',
         axisName: { color: '#D9EF8B', fontSize: mFont(12) },
         splitArea: { areaStyle: { color: ['rgba(217,239,139,0.05)', 'rgba(217,239,139,0.02)'] } },
         axisLine: { lineStyle: { color: 'rgba(255,255,191,0.2)' } },
@@ -2347,7 +2348,8 @@ document.addEventListener('DOMContentLoaded', () => {
           { name: '交通条件', max: 100 },
           { name: '产业配套', max: 100 }
         ],
-        radius: isMobile ? '50%' : '55%',
+        center: ['50%', '38%'],
+        radius: isMobile ? '48%' : '48%',
         axisName: { color: '#D9EF8B', fontSize: mFont(12) },
         splitArea: { areaStyle: { color: ['rgba(217,239,139,0.05)', 'rgba(217,239,139,0.02)'] } },
         axisLine: { lineStyle: { color: 'rgba(255,255,191,0.2)' } },
@@ -2630,9 +2632,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         radar: {
           indicator: metrics.map(m => ({ name: m, max: 100 })),
-          center: ['50%', '42%'],
-          radius: isMobile ? '55%' : '55%',
-          radius: isMobile ? '55%' : '55%',
+          center: ['50%', '38%'],
+          radius: isMobile ? '52%' : '48%',
           axisName: {
             color: '#D9EF8B',
             fontSize: mFont(11),
@@ -2902,14 +2903,14 @@ document.addEventListener('DOMContentLoaded', () => {
           calculable: false,
           orient: 'horizontal',
           left: 'center',
-          bottom: '4%',
+          bottom: '8%',
           textStyle: { color: '#FFFFBF' },
           inRange: {
             color: ['#FEE08B', '#FDAE61', '#F46D43']
           },
           text: ['高', '低'],
           itemWidth: 12,
-          itemHeight: 80
+          itemHeight: 50
         },
         series: [{
           type: 'heatmap',
@@ -2971,7 +2972,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         legend: {
           data: ['淄博烧烤(网红路径)','天水麻辣烫(网红路径)','村超(长红路径)','苏超(长红路径)'],
-          textStyle: { color: '#FFFFBF', fontSize: mFont(10) }, bottom: 0
+          textStyle: { color: '#FFFFBF', fontSize: mFont(10) }, top: 10
         },
         graphic: [
           {
@@ -2986,7 +2987,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
           }
         ],
-        grid: { left: '8%', right: '8%', top: '12%', bottom: '22%' },
+        grid: { left: '8%', right: '8%', top: '18%', bottom: '12%' },
         xAxis: {
           type: 'category', data: months,
           axisLine: { lineStyle: { color: '#FEE08B' } },
