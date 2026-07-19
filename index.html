@@ -2117,7 +2117,8 @@ document.addEventListener('DOMContentLoaded', () => {
           return result;
         }
       },
-      legend: { data: ['一般公共预算支出', '一般公共预算收入', '旅游综合收入'], textStyle: { color: '#FFFFBF', fontSize: mFont(11) }, bottom: 0 },
+      legend: { data: ['一般公共预算支出', '一般公共预算收入', '旅游综合收入'], textStyle: { color: '#FFFFBF', fontSize: mFont(11) }, top: 10 },
+      grid: { left: '10%', right: '12%', top: '20%', bottom: '12%' },
       grid: { left: '10%', right: '12%', top: '15%', bottom: '18%' },
       xAxis: {
         type: 'category', data: ['2022', '2023', '2024', '2025'],
@@ -2309,7 +2310,7 @@ document.addEventListener('DOMContentLoaded', () => {
     chart.setOption({
       backgroundColor: 'transparent',
       tooltip: { confine: true, backgroundColor: 'rgba(0,104,55,0.92)', borderColor: '#D9EF8B', textStyle: { color: '#FFFFBF' } },
-      legend: { data: ['村超', '苏超'], textStyle: { color: '#FFFFBF', fontSize: mFont(11) }, bottom: 0, itemGap: 10 },
+      legend: { data: ['村超', '苏超'], textStyle: { color: '#FFFFBF', fontSize: mFont(11) }, top: 10, itemGap: 10 },
       radar: {
         indicator: [
           { name: '运营主体', max: 100 }, { name: '消费范围', max: 100 }, { name: '文化内核', max: 100 }, { name: '流量工具', max: 100 },
@@ -2339,7 +2340,7 @@ document.addEventListener('DOMContentLoaded', () => {
     chart.setOption({
       backgroundColor: 'transparent',
       tooltip: { confine: true, backgroundColor: 'rgba(0,104,55,0.92)', borderColor: '#D9EF8B', textStyle: { color: '#FFFFBF' }, formatter: function(p) { return p.name + '<br/>' + p.value.map((v,i) => chart.getOption().radar[0].indicator[i].name + ': ' + v).join('<br/>'); } },
-      legend: { data: ['榕江·村超', '江苏·苏超', '台江·村BA', '西部典型县', '东部无特色县'], textStyle: { color: '#FFFFBF', fontSize: mFont(10) }, bottom: 0, itemWidth: 14, itemHeight: 8 },
+      legend: { data: ['榕江·村超', '江苏·苏超', '台江·村BA', '西部典型县', '东部无特色县'], textStyle: { color: '#FFFFBF', fontSize: mFont(10) }, top: 10, itemWidth: 14, itemHeight: 8 },
       radar: {
         indicator: [
           { name: '群众基础', max: 100 },
@@ -2624,7 +2625,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         legend: {
           data: events,
-          bottom: 0,
+          top: 10,
           textStyle: { color: '#FFFFBF', fontSize: mFont(12), fontWeight: 'bold' },
           itemWidth: 16,
           itemHeight: 12,
@@ -3206,9 +3207,9 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         legend: {
           data: ['游客量(万人次)','旅游收入(亿元)','国际参赛国数'],
-          textStyle: { color: '#FFFFBF', fontSize: mFont(10) }, bottom: 0
+          textStyle: { color: '#FFFFBF', fontSize: mFont(10) }, top: 10
         },
-        grid: { left: '12%', right: '8%', top: '10%', bottom: '20%' },
+        grid: { left: '12%', right: '8%', top: '18%', bottom: '12%' },
         xAxis: {
           type: 'category', data: ['2023','2024','2025'],
           axisLine: { lineStyle: { color: '#FEE08B' } },
@@ -3273,9 +3274,9 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         legend: {
           data: ['省级赞助商','场均观众(万)','线上播放(亿)'],
-          textStyle: { color: '#FFFFBF', fontSize: mFont(10) }, bottom: 0
+          textStyle: { color: '#FFFFBF', fontSize: mFont(10) }, top: 10
         },
-        grid: { left: '12%', right: '8%', top: '10%', bottom: '20%' },
+        grid: { left: '12%', right: '8%', top: '18%', bottom: '12%' },
         xAxis: {
           type: 'category', data: ['2025开赛','2025季中','2025结束','2026开赛前'],
           axisLine: { lineStyle: { color: '#FEE08B' } },
