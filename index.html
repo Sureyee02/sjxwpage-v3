@@ -2,15 +2,13 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="deploy-version" content="v3-2026-07-20-webp">
+<meta name="deploy-version" content="v3-2026-07-20-fast">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>踢出"超"时代 — 中国草根足球联赛的万里长传</title>
-<script src="./echarts.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="标题.webp" type="image/webp">
 <link rel="preload" as="image" href="hero-subtitle-en.webp" type="image/webp">
-<link rel="preload" as="image" href="hero-bg.jpg" type="image/jpeg">
-<link rel="preload" as="image" href="prologue-bg.jpg" type="image/jpeg">
+<script>(function(){var i=new Image();i.onload=function(){document.documentElement.classList.add('webp')};i.src='data:image/webp;base64,UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA';})();</script>
 <style>
 :root {
   --bg: #006837;
@@ -52,14 +50,12 @@
   opacity: 0;
 }
 #bg-hero {
-  background-image: url('hero-bg.jpg');
   animation: heroZoom 25s infinite alternate ease-in-out;
 }
 #bg-hero.active {
   opacity: 1;
 }
 #bg-prologue {
-  background-image: url('prologue-bg.jpg');
 }
 #bg-prologue.active {
   opacity: 1;
@@ -504,6 +500,16 @@ body::before {
 #bg-ch3 { background-image: linear-gradient(rgba(0,104,55,0.72), rgba(0,104,55,0.55)), radial-gradient(ellipse at 50% 50%, rgba(217,239,139,0.08) 0%, transparent 60%), url('ch3-bg.jpg'); background-size: cover; background-position: center; }
 #bg-ch4 { background-image: linear-gradient(rgba(0,104,55,0.72), rgba(0,104,55,0.55)), radial-gradient(ellipse at 50% 50%, rgba(217,239,139,0.08) 0%, transparent 60%), url('ch4-bg-opt.jpg'); background-size: cover; background-position: center; }
 #bg-ch5 { background-image: linear-gradient(rgba(0,104,55,0.72), rgba(0,104,55,0.55)), radial-gradient(ellipse at 50% 50%, rgba(217,239,139,0.08) 0%, transparent 60%), url('ch5-bg.jpg'); background-size: cover; background-position: center; }
+
+/* WebP backgrounds when supported */
+.webp #bg-hero { background-image: url('hero-bg.webp'); }
+.webp #bg-prologue { background-image: url('prologue-bg.jpg'); }
+.webp #bg-ch1 { background-image: linear-gradient(rgba(0,104,55,0.72), rgba(0,104,55,0.55)), radial-gradient(ellipse at 50% 50%, rgba(217,239,139,0.08) 0%, transparent 60%), url('ch1-bg.jpg'); }
+.webp #bg-ch2 { background-image: linear-gradient(rgba(0,104,55,0.72), rgba(0,104,55,0.55)), radial-gradient(ellipse at 50% 50%, rgba(217,239,139,0.08) 0%, transparent 60%), url('ch2-bg-opt.jpg'); }
+.webp #bg-ch3 { background-image: linear-gradient(rgba(0,104,55,0.72), rgba(0,104,55,0.55)), radial-gradient(ellipse at 50% 50%, rgba(217,239,139,0.08) 0%, transparent 60%), url('ch3-bg.jpg'); }
+.webp #bg-ch4 { background-image: linear-gradient(rgba(0,104,55,0.72), rgba(0,104,55,0.55)), radial-gradient(ellipse at 50% 50%, rgba(217,239,139,0.08) 0%, transparent 60%), url('ch4-bg-opt.jpg'); }
+.webp #bg-ch5 { background-image: linear-gradient(rgba(0,104,55,0.72), rgba(0,104,55,0.55)), radial-gradient(ellipse at 50% 50%, rgba(217,239,139,0.08) 0%, transparent 60%), url('ch5-bg.jpg'); }
+
 
 /* 背景叠加纹理 */
 .chapter-bg::after {
@@ -3460,5 +3466,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+<script src="./echarts.min.js" defer></script>
 </body>
 </html>
