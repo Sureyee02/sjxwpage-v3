@@ -2,11 +2,15 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="deploy-version" content="v3-2026-07-20-imgopt2">
+<meta name="deploy-version" content="v3-2026-07-20-webp">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>踢出"超"时代 — 中国草根足球联赛的万里长传</title>
 <script src="./echarts.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="标题.webp" type="image/webp">
+<link rel="preload" as="image" href="hero-subtitle-en.webp" type="image/webp">
+<link rel="preload" as="image" href="hero-bg.jpg" type="image/jpeg">
+<link rel="preload" as="image" href="prologue-bg.jpg" type="image/jpeg">
 <style>
 :root {
   --bg: #006837;
@@ -861,8 +865,8 @@ body::before {
 <!-- Hero Section -->
 <section id="hero">
   <div class="hero-content">
-    <h1 class="hero-title"><img src="标题.png" alt="踢出一个'超'时代" style="max-width:1100px;width:100%;height:auto;display:block;margin:0 auto;" /></h1>
-    <img class="hero-eng-subtitle" src="hero-subtitle-en.png" alt="The Long Pass of Chinese Grassroots Football" style="max-width:1100px;width:100%;height:auto;display:block;margin:0 auto;margin-top:4px;" />
+    <h1 class="hero-title"><picture><source srcset="标题.webp" type="image/webp"><picture><source srcset="标题.webp" type="image/webp"><img src="标题.png" alt="踢出一个'超'时代" style="max-width:1100px;width:100%;height:auto;display:block;margin:0 auto;" fetchpriority="high" /></picture></picture></h1>
+    <picture class="hero-eng-subtitle"><source srcset="hero-subtitle-en.webp" type="image/webp"><picture><source srcset="hero-subtitle-en.webp" type="image/webp"><img src="hero-subtitle-en.png" alt="The Long Pass of Chinese Grassroots Football" style="max-width:1100px;width:100%;height:auto;display:block;margin:0 auto;margin-top:4px;" fetchpriority="high" /></picture></picture>
     <!-- 副标题已包含在图片中 -->
 <div class="hero-scroll">
       <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
@@ -872,7 +876,7 @@ body::before {
 
 <section class="transition-section" style="height:100vh;position:relative;overflow:hidden;padding:0;margin:0;">
   <div style="width:100%;height:100%;">
-    <img src="hero-ch1.png" alt="hero到ch1转场" style="width:100%;height:100%;object-fit:cover;display:block;" />
+    <picture><source srcset="hero-ch1.webp" type="image/webp"><picture><source srcset="hero-ch1.webp" type="image/webp"><img src="hero-ch1.png" alt="hero到ch1转场" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" /></picture></picture>
   </div>
 </section>
 
@@ -946,9 +950,9 @@ body::before {
 
   <div class="carousel" id="prologueCarousel" style="margin-top:32px;">
     <div class="carousel-track" id="prologueTrack">
-      <div class="carousel-item"><img src="村超暴雨1.jpg" alt="洪水后的球场" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#1A9850,#66BD63)';this.parentNode.innerHTML='<span style=\'color:#FFFFBF;font-size:14px;\'>洪水后的球场</span>';"/></div>
-      <div class="carousel-item"><img src="村超暴雨2.jpg" alt="清淤抢工现场" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#1A9850,#66BD63)';this.parentNode.innerHTML='<span style=\'color:#FFFFBF;font-size:14px;\'>清淤抢工现场</span>';"/></div>
-      <div class="carousel-item"><img src="村超暴雨3.webp" alt="感恩专场复赛" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#1A9850,#66BD63)';this.parentNode.innerHTML='<span style=\'color:#FFFFBF;font-size:14px;\'>感恩专场复赛</span>';"/></div>
+      <div class="carousel-item"><img src="村超暴雨1.jpg" loading="lazy" alt="洪水后的球场" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#1A9850,#66BD63)';this.parentNode.innerHTML='<span style=\'color:#FFFFBF;font-size:14px;\'>洪水后的球场</span>';"/></div>
+      <div class="carousel-item"><img src="村超暴雨2.jpg" loading="lazy" alt="清淤抢工现场" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#1A9850,#66BD63)';this.parentNode.innerHTML='<span style=\'color:#FFFFBF;font-size:14px;\'>清淤抢工现场</span>';"/></div>
+      <div class="carousel-item"><img src="村超暴雨3.webp" loading="lazy" alt="感恩专场复赛" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#1A9850,#66BD63)';this.parentNode.innerHTML='<span style=\'color:#FFFFBF;font-size:14px;\'>感恩专场复赛</span>';"/></div>
     </div>
     <div class="carousel-dots">
       <div class="carousel-dot active" data-index="0"></div>
@@ -985,14 +989,14 @@ body::before {
       </div>
     </div>
     <div class="story-layout-img" style="align-self: start; overflow: hidden; max-height: 380px;">
-      <img src="huang-guofeng.jpg" alt="黄国锋" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+      <img src="huang-guofeng.jpg" loading="lazy" alt="黄国锋" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
     </div>
   </div>
 </section>
 
 <section class="transition-section" style="height:100vh;position:relative;overflow:hidden;padding:0;margin:0;">
   <div style="width:100%;height:100%;">
-    <img src="ch1-ch2.png" alt="ch1到ch2转场" style="width:100%;height:100%;object-fit:cover;display:block;" />
+    <picture><source srcset="ch1-ch2.webp" type="image/webp"><picture><source srcset="ch1-ch2.webp" type="image/webp"><img src="ch1-ch2.png" loading="lazy" loading="lazy" alt="ch1到ch2转场" style="width:100%;height:100%;object-fit:cover;display:block;" /></picture>
   </div>
 </section>
 </section>
@@ -1033,7 +1037,7 @@ body::before {
       </div>
     </div>
     <div class="story-layout-img" style="max-width: 100%;">
-      <img src="xubo.jpg" alt="徐勃" style="width: 100%; height: auto; display: block;" />
+      <img src="xubo.jpg" loading="lazy" alt="徐勃" style="width: 100%; height: auto; display: block;" />
     </div>
   </div>
 
@@ -1094,7 +1098,7 @@ body::before {
 
 <section class="transition-section" style="height:100vh;position:relative;overflow:hidden;padding:0;margin:0;">
   <div style="width:100%;height:100%;">
-    <img src="ch2-ch3.png" alt="ch2到ch3转场" style="width:100%;height:100%;object-fit:cover;display:block;" />
+    <picture><source srcset="ch2-ch3.webp" type="image/webp"><picture><source srcset="ch2-ch3.webp" type="image/webp"><img src="ch2-ch3.png" loading="lazy" loading="lazy" alt="ch2到ch3转场" style="width:100%;height:100%;object-fit:cover;display:block;" /></picture>
   </div>
 </section>
 </section>
@@ -1195,10 +1199,10 @@ body::before {
   </div>
   <div class="carousel" id="ch3Carousel">
     <div class="carousel-track" id="ch3Track">
-      <div class="carousel-item"><img src="ch5-carousel1.jpg" alt="村超赛事现场" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#1A9850,#66BD63)';this.parentNode.innerHTML='<span style=\'color:#FFFFBF;font-size:14px;\'>村超赛事现场</span>';"/></div>
-      <div class="carousel-item"><img src="ch5-carousel2.webp" alt="球迷狂欢" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#1A9850,#66BD63)';this.parentNode.innerHTML='<span style=\'color:#FFFFBF;font-size:14px;\'>球迷狂欢</span>';"/></div>
-      <div class="carousel-item"><img src="ch5-carousel3.jpg" alt="夜市经济" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#1A9850,#66BD63)';this.parentNode.innerHTML='<span style=\'color:#FFFFBF;font-size:14px;\'>夜市经济</span>';"/></div>
-      <div class="carousel-item"><img src="ch5-carousel4.png" alt="县域联赛" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#1A9850,#66BD63)';this.parentNode.innerHTML='<span style=\'color:#FFFFBF;font-size:14px;\'>县域联赛</span>';"/></div>
+      <div class="carousel-item"><img src="ch5-carousel1.jpg" loading="lazy" alt="村超赛事现场" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#1A9850,#66BD63)';this.parentNode.innerHTML='<span style=\'color:#FFFFBF;font-size:14px;\'>村超赛事现场</span>';"/></div>
+      <div class="carousel-item"><img src="ch5-carousel2.webp" loading="lazy" alt="球迷狂欢" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#1A9850,#66BD63)';this.parentNode.innerHTML='<span style=\'color:#FFFFBF;font-size:14px;\'>球迷狂欢</span>';"/></div>
+      <div class="carousel-item"><img src="ch5-carousel3.jpg" loading="lazy" alt="夜市经济" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#1A9850,#66BD63)';this.parentNode.innerHTML='<span style=\'color:#FFFFBF;font-size:14px;\'>夜市经济</span>';"/></div>
+      <div class="carousel-item"><picture><source srcset="ch5-carousel4.webp" type="image/webp"><picture><source srcset="ch5-carousel4.webp" type="image/webp"><img src="ch5-carousel4.png" loading="lazy" loading="lazy" alt="县域联赛" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#1A9850,#66BD63)';this.parentNode.innerHTML='<span style=\'color:#FFFFBF;font-size:14px;\'></picture>县域联赛</span>';"/></div>
     </div>
     <div class="carousel-dots">
       <div class="carousel-dot active" data-index="0"></div>
@@ -1223,7 +1227,7 @@ body::before {
   <div class="person-cards" id="ch2Persons">
     <div class="person-card" data-id="dongha">
       <div class="person-card-photo" style="aspect-ratio:3/2;overflow:hidden;">
-        <img src="东哈.webp" alt="东哈烧烤老板娘" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.innerHTML='<svg viewBox=\'0 0 80 80\' fill=\'none\' stroke=\'#FEE08B\' stroke-width=\'1.5\'><circle cx=\'40\' cy=\'30\' r=\'18\'/><path d=\'M40 50v20M20 80c0-20 40-20 40 0\'/><rect x=\'15\' y=\'75\' width=\'50\' height=\'10\' rx=\'2\'/></svg>';"/>
+        <img src="东哈.webp" loading="lazy" alt="东哈烧烤老板娘" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.innerHTML='<svg viewBox=\'0 0 80 80\' fill=\'none\' stroke=\'#FEE08B\' stroke-width=\'1.5\'><circle cx=\'40\' cy=\'30\' r=\'18\'/><path d=\'M40 50v20M20 80c0-20 40-20 40 0\'/><rect x=\'15\' y=\'75\' width=\'50\' height=\'10\' rx=\'2\'/></svg>';"/>
       </div>
       <div class="person-card-info">
         <div class="person-card-name">东哈烧烤老板娘</div>
@@ -1233,7 +1237,7 @@ body::before {
     </div>
     <div class="person-card" data-id="liuzhi">
       <div class="person-card-photo" style="aspect-ratio:3/2;overflow:hidden;">
-        <img src="赖蕾.jpg" alt="赖蕾" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.innerHTML='<svg viewBox=\'0 0 80 80\' fill=\'none\' stroke=\'#FEE08B\' stroke-width=\'1.5\'><circle cx=\'40\' cy=\'30\' r=\'18\'/><path d=\'M40 50v20M20 80c0-20 40-20 40 0\'/><rect x=\'15\' y=\'75\' width=\'50\' height=\'10\' rx=\'2\'/></svg>';"/>
+        <img src="赖蕾.jpg" loading="lazy" alt="赖蕾" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.innerHTML='<svg viewBox=\'0 0 80 80\' fill=\'none\' stroke=\'#FEE08B\' stroke-width=\'1.5\'><circle cx=\'40\' cy=\'30\' r=\'18\'/><path d=\'M40 50v20M20 80c0-20 40-20 40 0\'/><rect x=\'15\' y=\'75\' width=\'50\' height=\'10\' rx=\'2\'/></svg>';"/>
       </div>
       <div class="person-card-info">
         <div class="person-card-name">赖蕾</div>
@@ -1243,7 +1247,7 @@ body::before {
     </div>
     <div class="person-card" data-id="xiaoli">
       <div class="person-card-photo" style="aspect-ratio:3/2;overflow:hidden;">
-        <img src="yangfan.jpg" alt="杨樊" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.innerHTML='<svg viewBox=\'0 0 80 80\' fill=\'none\' stroke=\'#FEE08B\' stroke-width=\'1.5\'><circle cx=\'40\' cy=\'30\' r=\'18\'/><path d=\'M40 50v20M20 80c0-20 40-20 40 0\'/><rect x=\'15\' y=\'75\' width=\'50\' height=\'10\' rx=\'2\'/></svg>';"/>
+        <img src="yangfan.jpg" loading="lazy" alt="杨樊" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.innerHTML='<svg viewBox=\'0 0 80 80\' fill=\'none\' stroke=\'#FEE08B\' stroke-width=\'1.5\'><circle cx=\'40\' cy=\'30\' r=\'18\'/><path d=\'M40 50v20M20 80c0-20 40-20 40 0\'/><rect x=\'15\' y=\'75\' width=\'50\' height=\'10\' rx=\'2\'/></svg>';"/>
       </div>
       <div class="person-card-info">
         <div class="person-card-name">杨樊（老五）</div>
@@ -1267,7 +1271,7 @@ body::before {
 
 <section class="transition-section" style="height:100vh;position:relative;overflow:hidden;padding:0;margin:0;">
   <div style="width:100%;height:100%;">
-    <img src="ch3-ch4.png" alt="ch3到ch4转场" style="width:100%;height:100%;object-fit:cover;display:block;" />
+    <picture><source srcset="ch3-ch4.webp" type="image/webp"><picture><source srcset="ch3-ch4.webp" type="image/webp"><img src="ch3-ch4.png" loading="lazy" loading="lazy" alt="ch3到ch4转场" style="width:100%;height:100%;object-fit:cover;display:block;" /></picture>
   </div>
 </section>
 </section>
@@ -1386,7 +1390,7 @@ body::before {
 
 <section class="transition-section" style="height:100vh;position:relative;overflow:hidden;padding:0;margin:0;">
   <div style="width:100%;height:100%;">
-    <img src="ch4-ch5.png" alt="ch4到ch5转场" style="width:100%;height:100%;object-fit:cover;display:block;" />
+    <picture><source srcset="ch4-ch5.webp" type="image/webp"><picture><source srcset="ch4-ch5.webp" type="image/webp"><img src="ch4-ch5.png" loading="lazy" loading="lazy" alt="ch4到ch5转场" style="width:100%;height:100%;object-fit:cover;display:block;" /></picture>
   </div>
 </section>
 </section>
@@ -1403,9 +1407,9 @@ body::before {
   
     <div class="carousel" id="ch5Carousel">
     <div class="carousel-track" id="ch5Track">
-      <div class="carousel-item"><img src="ch8-carousel1.jpg" alt="2024年首届国际友谊赛" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#1A9850,#66BD63)';this.parentNode.innerHTML='<span style=\'color:#FFFFBF;font-size:14px;\'>2024年首届国际友谊赛</span>';"/></div>
-      <div class="carousel-item"><img src="ch8-carousel2.jpg" alt="2026年一带一路友谊赛" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#1A9850,#66BD63)';this.parentNode.innerHTML='<span style=\'color:#FFFFBF;font-size:14px;\'>2026年一带一路友谊赛</span>';"/></div>
-      <div class="carousel-item"><img src="ch8-carousel3.webp" alt="2028年村超世界杯" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#1A9850,#66BD63)';this.parentNode.innerHTML='<span style=\'color:#FFFFBF;font-size:14px;\'>2028年村超世界杯</span>';"/></div>
+      <div class="carousel-item"><img src="ch8-carousel1.jpg" loading="lazy" alt="2024年首届国际友谊赛" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#1A9850,#66BD63)';this.parentNode.innerHTML='<span style=\'color:#FFFFBF;font-size:14px;\'>2024年首届国际友谊赛</span>';"/></div>
+      <div class="carousel-item"><img src="ch8-carousel2.jpg" loading="lazy" alt="2026年一带一路友谊赛" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#1A9850,#66BD63)';this.parentNode.innerHTML='<span style=\'color:#FFFFBF;font-size:14px;\'>2026年一带一路友谊赛</span>';"/></div>
+      <div class="carousel-item"><img src="ch8-carousel3.webp" loading="lazy" alt="2028年村超世界杯" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#1A9850,#66BD63)';this.parentNode.innerHTML='<span style=\'color:#FFFFBF;font-size:14px;\'>2028年村超世界杯</span>';"/></div>
     </div>
     <div class="carousel-dots">
       <div class="carousel-dot active" data-index="0"></div>
@@ -1825,22 +1829,22 @@ function openModal(id) {
   }
   let photoHtml = '<div class="modal-photo"><svg viewBox="0 0 80 80" fill="none" stroke="#FEE08B" stroke-width="1.5"><circle cx="40" cy="30" r="18"/><path d="M40 50v20M20 80c0-20 40-20 40 0"/><rect x="15" y="75" width="50" height="10" rx="2"/></svg></div>';
   if (id === 'zhou') {
-    photoHtml = '<div class="modal-photo"><img src="周老师.jpeg" alt="周老师" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display=\'none\';this.parentNode.style.background=\'linear-gradient(135deg,#1A9850,#66BD63)\';this.parentNode.innerHTML=\'<span style=color:#FFFFBF;font-size:14px;>周老师</span>\'"></div>';
+    photoHtml = '<div class="modal-photo"><img src="周老师.jpeg" loading="lazy" alt="周老师" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display=\'none\';this.parentNode.style.background=\'linear-gradient(135deg,#1A9850,#66BD63)\';this.parentNode.innerHTML=\'<span style=color:#FFFFBF;font-size:14px;>周老师</span>\'"></div>';
   }
   if (id === 'wang') {
-    photoHtml = '<div class="modal-photo"><img src="刘欣.webp" alt="刘欣" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display=\'none\';this.parentNode.style.background=\'linear-gradient(135deg,#1A9850,#66BD63)\';this.parentNode.innerHTML=\'<span style=color:#FFFFBF;font-size:14px;>刘欣</span>\'"></div>';
+    photoHtml = '<div class="modal-photo"><img src="刘欣.webp" loading="lazy" alt="刘欣" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display=\'none\';this.parentNode.style.background=\'linear-gradient(135deg,#1A9850,#66BD63)\';this.parentNode.innerHTML=\'<span style=color:#FFFFBF;font-size:14px;>刘欣</span>\'"></div>';
   }
   if (id === 'yongzhou') {
-    photoHtml = '<div class="modal-photo"><img src="yangfan.jpg" alt="杨樊" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display=\'none\';this.parentNode.style.background=\'linear-gradient(135deg,#1A9850,#66BD63)\';this.parentNode.innerHTML=\'<span style=color:#FFFFBF;font-size:14px;>杨樊</span>\'"></div>';
+    photoHtml = '<div class="modal-photo"><img src="yangfan.jpg" loading="lazy" alt="杨樊" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display=\'none\';this.parentNode.style.background=\'linear-gradient(135deg,#1A9850,#66BD63)\';this.parentNode.innerHTML=\'<span style=color:#FFFFBF;font-size:14px;>杨樊</span>\'"></div>';
   }
   if (id === 'dongha') {
-    photoHtml = '<div class="modal-photo"><img src="东哈.webp" alt="东哈" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display=\'none\';this.parentNode.style.background=\'linear-gradient(135deg,#1A9850,#66BD63)\';this.parentNode.innerHTML=\'<span style=color:#FFFFBF;font-size:14px;>东哈</span>\'"></div>';
+    photoHtml = '<div class="modal-photo"><img src="东哈.webp" loading="lazy" alt="东哈" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display=\'none\';this.parentNode.style.background=\'linear-gradient(135deg,#1A9850,#66BD63)\';this.parentNode.innerHTML=\'<span style=color:#FFFFBF;font-size:14px;>东哈</span>\'"></div>';
   }
   if (id === 'liuzhi') {
-    photoHtml = '<div class="modal-photo"><img src="赖蕾.jpg" alt="赖蕾" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display=\'none\';this.parentNode.style.background=\'linear-gradient(135deg,#1A9850,#66BD63)\';this.parentNode.innerHTML=\'<span style=color:#FFFFBF;font-size:14px;>赖蕾</span>\'"></div>';
+    photoHtml = '<div class="modal-photo"><img src="赖蕾.jpg" loading="lazy" alt="赖蕾" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display=\'none\';this.parentNode.style.background=\'linear-gradient(135deg,#1A9850,#66BD63)\';this.parentNode.innerHTML=\'<span style=color:#FFFFBF;font-size:14px;>赖蕾</span>\'"></div>';
   }
   if (id === 'xiaoli') {
-    photoHtml = '<div class="modal-photo"><img src="yangfan.jpg" alt="杨樊" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display=\'none\';this.parentNode.style.background=\'linear-gradient(135deg,#1A9850,#66BD63)\';this.parentNode.innerHTML=\'<span style=color:#FFFFBF;font-size:14px;>杨樊</span>\'"></div>';
+    photoHtml = '<div class="modal-photo"><img src="yangfan.jpg" loading="lazy" alt="杨樊" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display=\'none\';this.parentNode.style.background=\'linear-gradient(135deg,#1A9850,#66BD63)\';this.parentNode.innerHTML=\'<span style=color:#FFFFBF;font-size:14px;>杨樊</span>\'"></div>';
   }
   modalBody.innerHTML = photoHtml + '<div class="modal-name">' + p.name + '</div><div class="modal-title">' + p.title + '</div><div style="font-style:italic;color:#D9EF8B;margin-bottom:16px;">' + p.quote + '</div><div class="modal-story">' + p.story + '</div><div class="modal-stats">' + statsHtml + '</div>';
   if (modalOverlay) modalOverlay.classList.add('active');
